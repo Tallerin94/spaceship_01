@@ -8,3 +8,10 @@ html, body{
     background:blue;
     border: 1px solid black
 }
+
+#main_menu{
+    position:absolute;
+    top: 100px;
+    color:blue;
+    visibility: visible;
+}
