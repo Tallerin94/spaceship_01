@@ -51,8 +51,9 @@ function main_menu(){
 function loop(){
     if(gamerunning){
         ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
-        console.log(player.getPosX());
+        //console.log(player.getPosX());
         //PLAYER
+        //player.cambiaSpeed(player.getSpeed()*3);
         ctx.fillStyle = "blue";
         player.moveX();  
         ctx.fillRect(player.getPosX(),player.getPosY(),20,20);
