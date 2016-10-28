@@ -32,7 +32,6 @@ function start(){
             console.log("has disparado");
             shot[player_shot_number] = new PlayerShot();
             player_shot_number++;
-            
         }
     });
     
@@ -48,20 +47,21 @@ function main_menu(){
 }
 
 function loop(){
-    ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
-    
-    //PLAYER
-    ctx.fillStyle = "blue";
-    player.playerMove();    
-    ctx.fillRect(player.posX,player.posY,20,20);
-    //Shot
-    ctx.fillStyle = "red";
-    for(var i=0;i<player_shot_number;i++){
-        shot[i].move();
-        ctx.fillRect(shot[i].posx,shot[i].posy,10,10);
+    if(gamerunning){
+        ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
+        
+        //PLAYER
+        ctx.fillStyle = "blue";
+        player.playerMove();    
+        ctx.fillRect(player.posX,player.posY,20,20);
+        //Shot
+        ctx.fillStyle = "red";
+        for(var i=0;i<player_shot_number;i++){
+            shot[i].move();
+            ctx.fillRect(shot[i].posx,shot[i].posy,10,10);
+        }
+            //console.log("xd");
+        clearTimeout(loop_string);
+        loop_string = setTimeout("loop()",33);
     }
-    
-    //console.log("xd");
-    clearTimeout(loop_string);
-    loop_string = setTimeout("loop()",33);
 }
