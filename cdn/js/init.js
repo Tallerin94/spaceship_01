@@ -5,5 +5,5 @@ var ctx = lienzo.getContext("2d");
 var loop_string = "";
 var gamerunning = false;
 
-var player_shot_number = 0;
+var playerShotNumber = 0;
 var shot = new Array();

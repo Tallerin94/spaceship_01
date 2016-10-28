@@ -34,7 +34,7 @@ Ship = function(type,life,ammo,speed,posX,posY){
         return posX;
     }
     
-    var setPosX = function(){
+    this.setPosX = function(){
         posX+=speed;
         //console.log(speed);
     }
@@ -48,7 +48,7 @@ Ship = function(type,life,ammo,speed,posX,posY){
     }
 }
 
-// NAVE DLE JUGADOR
+// NAVE DEL JUGADOR
 Player = function(){
     this.playerMove = function(){
         this.posX += this.getspeed();

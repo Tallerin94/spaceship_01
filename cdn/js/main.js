@@ -1,17 +1,18 @@
 // DISPARO PLANTILLA 
-Shot = function(posx,posy,type,speed){
-    this.posx = posx;
-    this.posy = posy;
+Shot = function(posX,posY,type,speedX,speedY){
+    this.posX = posX;
+    this.posY = posY;
     this.type = type;
-    this.speed = speed;
+    this.speedX = speedX;
+    this.speedY = speedY;
 }
 
 PlayerShot = function(){
     this.move = function(){
-        this.posx+=this.speed;
+        this.posX+=this.speedX;
     }   
 }
-PlayerShot.prototype = new Shot(player.getPosX(),player.getPosY(),1,10);
+PlayerShot.prototype = new Shot(player.getPosX(),player.getPosY(),1,10,0);
 
 
 
@@ -23,19 +24,8 @@ function start(){
 
     resizeCanvas();
 
-    $(document).keydown(function(){
-        if(event.which == 38 && gamerunning){console.log("Arriba")}
-        if(event.which == 40 && gamerunning){console.log("Abajo")}
-        if(event.which == 37 && gamerunning){console.log("Izquierda")}
-        if(event.which == 39 && gamerunning){console.log("Derecha")}
-        if(event.which == 32 && gamerunning){
-            console.log("has disparado");
-            shot[player_shot_number] = new PlayerShot();
-            shot[player_shot_number].posx = player.getPosX();
-            shot[player_shot_number].posy = player.getPosY();
-            player_shot_number++;
-        }
-    });
+    playerControl();
+
     
     loop_string = setTimeout("main_menu()", 10);
 }
@@ -53,15 +43,15 @@ function loop(){
         ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
         //console.log(player.getPosX());
         //PLAYER
-        //player.cambiaSpeed(player.getSpeed()*3);
+        //player.cambiaSpeed(player.getSpeed()+1);
         ctx.fillStyle = "blue";
-        player.moveX();  
+        player.setPosX();  
         ctx.fillRect(player.getPosX(),player.getPosY(),20,20);
         //Shot
         ctx.fillStyle = "red";
-        for(var i=0;i<player_shot_number;i++){
+        for(var i=0;i<playerShotNumber;i++){
             shot[i].move();
-            ctx.fillRect(shot[i].posx,shot[i].posy,10,10);
+            ctx.fillRect(shot[i].posX,shot[i].posY,10,10);
         }
             //console.log("xd");
         clearTimeout(loop_string);
