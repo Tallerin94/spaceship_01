@@ -11,7 +11,7 @@ PlayerShot = function(){
         this.posx+=this.speed;
     }   
 }
-PlayerShot.prototype = new Shot(player.posX,player.posY,1,10);
+PlayerShot.prototype = new Shot(player.getPosX(),player.getPosY(),1,10);
 
 
 
@@ -49,11 +49,11 @@ function main_menu(){
 function loop(){
     if(gamerunning){
         ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
-        
+        console.log(player.getPosX());
         //PLAYER
         ctx.fillStyle = "blue";
-        player.playerMove();    
-        ctx.fillRect(player.posX,player.posY,20,20);
+        player.setPosX();  
+        ctx.fillRect(player.getPosX(),player.getPosY(),20,20);
         //Shot
         ctx.fillStyle = "red";
         for(var i=0;i<player_shot_number;i++){
