@@ -31,6 +31,8 @@ function start(){
         if(event.which == 32 && gamerunning){
             console.log("has disparado");
             shot[player_shot_number] = new PlayerShot();
+            shot[player_shot_number].posx = player.getPosX();
+            shot[player_shot_number].posy = player.getPosY();
             player_shot_number++;
         }
     });
@@ -52,7 +54,7 @@ function loop(){
         console.log(player.getPosX());
         //PLAYER
         ctx.fillStyle = "blue";
-        player.setPosX();  
+        player.moveX();  
         ctx.fillRect(player.getPosX(),player.getPosY(),20,20);
         //Shot
         ctx.fillStyle = "red";

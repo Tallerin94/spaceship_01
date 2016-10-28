@@ -20,11 +20,13 @@ Ship = function(type,life,ammo,speed,posX,posY){
     this.getPosX = function(){
         return posX;
     }
-    // He hecho varias pruebas de diferentes maneras, esta es la ultima que he probado 
-    /*this.setPosX = function(){
-        console.log(this.getSpeed());
-        this.posx+=this.getSpeed();
-    }*/ 
+    
+    var setPosX = function(){
+        posX+=speed;
+    }
+    this.moveX = function(){
+        setPosX();
+    }
     var posY = posY;
     this.getPosY = function(){
         return posY;
