@@ -1,5 +1,9 @@
+// CANVAS
+var lienzo = document.getElementById("lienzo");
+var ctx = lienzo.getContext("2d"); 
+
 var loop_string = "";
 var gamerunning = false;
 
-var lienzo = document.getElementById("lienzo");
-var ctx = lienzo.getContext("2d"); 
+var player_shot_number = 0;
+var shot = new Array();

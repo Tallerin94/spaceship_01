@@ -1,4 +1,19 @@
-var gamerunning = false;
+// DISPARO PLANTILLA 
+Shot = function(posx,posy,type,speed){
+    this.posx = posx;
+    this.posy = posy;
+    this.type = type;
+    this.speed = speed;
+}
+
+PlayerShot = function(){
+    this.move = function(){
+        this.posx+=this.speed;
+    }   
+}
+PlayerShot.prototype = new Shot(player.posX,player.posY,1,10);
+
+
 
 $(document).ready(function(){
     start();
@@ -15,6 +30,9 @@ function start(){
         if(event.which == 39 && gamerunning){console.log("Derecha")}
         if(event.which == 32 && gamerunning){
             console.log("has disparado");
+            shot[player_shot_number] = new PlayerShot();
+            player_shot_number++;
+            
         }
     });
     
@@ -31,9 +49,18 @@ function main_menu(){
 
 function loop(){
     ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
-    ctx.fillStyle = "red";
+    
+    //PLAYER
+    ctx.fillStyle = "blue";
     player.playerMove();    
-    ctx.fillRect(player.posx,player.posy,20,20);
+    ctx.fillRect(player.posX,player.posY,20,20);
+    //Shot
+    ctx.fillStyle = "red";
+    for(var i=0;i<player_shot_number;i++){
+        shot[i].move();
+        ctx.fillRect(shot[i].posx,shot[i].posy,10,10);
+    }
+    
     //console.log("xd");
     clearTimeout(loop_string);
     loop_string = setTimeout("loop()",33);
