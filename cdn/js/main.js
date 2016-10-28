@@ -25,8 +25,7 @@ function start(){
     resizeCanvas();
 
     playerControl();
-
-    
+   
     loop_string = setTimeout("main_menu()", 10);
 }
 
