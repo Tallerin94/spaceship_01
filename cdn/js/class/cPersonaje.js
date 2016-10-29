@@ -36,7 +36,7 @@ Player = function(){
     }
     //AMMO
     var ammoMax = 0;
-    switch(player.getType()){
+    /*switch(getType()){
         case "1":
             ammoMax = maxAmmoPlayer1;
             break;
@@ -51,7 +51,7 @@ Player = function(){
             break;
         case "5":
             ammoMax = maxAmmoPlayer5;
-    }
+    }*/
     var ammo = ammoStart;
     this.getAmmo = function(){
         return ammo;
