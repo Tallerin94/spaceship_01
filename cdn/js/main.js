@@ -28,7 +28,8 @@ function loop(){
         newAsteroid();
         asteroidMove();
         ctx.fillStyle = "blue";
-        player.playerMove();  
+        player.playerMove();
+        enemy1.enemyMove();
         ctx.fillRect(player.getPosX(),player.getPosY(), 20, 20);
         //Shot
         for(var i in shot){

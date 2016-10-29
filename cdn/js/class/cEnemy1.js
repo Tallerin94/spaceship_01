@@ -1,14 +1,12 @@
 var Enemy1 = function(){
     var dirEnemy1 = "top";
-    this.enemyMoveX = function(){
+    this.enemyMove = function(){
         enemy1.newSpeedX(enemy1.getSpeedX());
-    }
-    this.enemyMoveY = function(){
         if(dirEnemy1 == "top"){
             enemy1.newSpeedY(enemy1.getSpeedY());
             if(enemy1.posY <= 0){
                 dirEnemy = "bottom";
-                enemy1.setSpeedY(5)
+                enemy1.setSpeedY(5);
             }
         }else{
             enemy1.newSpeedY(enemy1.getSpeedY());
