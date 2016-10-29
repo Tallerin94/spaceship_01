@@ -23,3 +23,4 @@
 
 - 17:11 29/10/16[IVAN]:   
         - Asteroides funcionales con 2 imágenes.
+        - asteroides redimensionasdos en función de la pantalla
