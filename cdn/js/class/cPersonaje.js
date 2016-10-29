@@ -15,9 +15,9 @@ Player = function(){
         if(player.getSpeedX()<-7){
             // Limitador de velocidad en diagonal
             if(dirPosY == "up" || dirPosY == "down"){
-                player.newSpeedX(-7);
-            }else{
                 player.newSpeedX(-4);
+            }else{
+                player.newSpeedX(-7);
             }
         }
         player.setPosX();
