@@ -39,6 +39,12 @@ Player = function(){
     this.getAmmo = function(){
         return ammo;
     }
+    this.setAmmo = function(count){
+        // El if no es necesario porque ya se controla
+        // en el archivo funciones, pero por si acaso
+        // lo ponemos.
+        if(ammo > 0){ammo -= count;}
+    }
     this.isAmmoEmpty = function(){
         if(this.getAmmo() > 0){
             return false;

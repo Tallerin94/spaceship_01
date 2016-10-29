@@ -10,7 +10,7 @@ function playerControl(){
         if(event.which == 37 && gamerunning){dirPosX="left";}
         if(event.which == 39 && gamerunning){dirPosX="right";}
         if(event.which == 32 && gamerunning){
-            if(player.isAmmoEmpty){
+            if(player.isAmmoEmpty()){
                 console.log("no quedan balas");
             }else{
                 console.log("has disparado");
@@ -18,6 +18,7 @@ function playerControl(){
                 shot[playerShotNumber].type = ammoSelected;
                 shot[playerShotNumber].posX = player.getPosX();
                 shot[playerShotNumber].posY = player.getPosY();
+                player.setAmmo(1);
                 playerShotNumber++;
             }
             
