@@ -36,8 +36,21 @@ Player = function(){
     }
     //AMMO
     var ammoMax = 0;
-    if(player.getType() == "1"){
-        ammoMax = maxAmmoPlayer1;
+    switch(player.getType()){
+        case "1":
+            ammoMax = maxAmmoPlayer1;
+            break;
+        case "2":
+            ammoMax = maxAmmoPlayer2;
+            break;
+        case "3":
+            ammoMax = maxAmmoPlayer3;
+            break;
+        case "4":
+            ammoMax = maxAmmoPlayer4;
+            break;
+        case "5":
+            ammoMax = maxAmmoPlayer5;
     }
     var ammo = ammoStart;
     this.getAmmo = function(){
