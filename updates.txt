@@ -8,3 +8,4 @@
         - Se han añadido imágenes para naves aliadas.
         - Se han añadido imágenes para los asteroides.
         - Se han añadido imágenes para los recogibles.
+        - Se ha añadido un archivo créditos.txt para ir guardando los crétidos de los gráficos, sonidos, etc.
