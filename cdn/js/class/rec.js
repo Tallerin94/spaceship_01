@@ -5,5 +5,7 @@ Rec = function(type){
     this.speed = 5;
 }
 
+var rec = new Array();
+
 
 
