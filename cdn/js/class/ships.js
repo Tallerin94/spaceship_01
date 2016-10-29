@@ -101,14 +101,14 @@ Player = function(){
         // UP / DOWN
         if(dirPosY == "up"){player.newSpeedY(player.getSpeedY()-1);}
         if(dirPosY == "down"){player.newSpeedY(player.getSpeedY()+1);}
-        if(player.getSpeedY()>10){player.newSpeedY(10);}
-        if(player.getSpeedY()<-10){player.newSpeedY(-10);}
+        if(player.getSpeedY() > 10){player.newSpeedY(10);}
+        if(player.getSpeedY() < -10){player.newSpeedY(-10);}
         player.setPosY();
         // NONE 
-        if(dirPosY == "" && player.getSpeedY()<0){player.newSpeedY(player.getSpeedY()+0.5);}
-        if(dirPosY == "" && player.getSpeedY()>0){player.newSpeedY(player.getSpeedY()-0.5);}
-        if(dirPosX == "" && player.getSpeedX()<0){player.newSpeedX(player.getSpeedX()+0.5);}
-        if(dirPosX == "" && player.getSpeedX()>0){player.newSpeedX(player.getSpeedX()-0.5);}
+        if(dirPosY == "" && player.getSpeedY() < 0){player.newSpeedY(player.getSpeedY()+0.5);}
+        if(dirPosY == "" && player.getSpeedY() > 0){player.newSpeedY(player.getSpeedY()-0.5);}
+        if(dirPosX == "" && player.getSpeedX() < 0){player.newSpeedX(player.getSpeedX()+0.5);}
+        if(dirPosX == "" && player.getSpeedX() > 0){player.newSpeedX(player.getSpeedX()-0.5);}
         //  
     }
 }
