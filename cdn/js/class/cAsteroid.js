@@ -5,18 +5,3 @@ cAsteroid = function(posX,posY,type){
     this.speed = 2;
 }
 
-function newAsteroid(){ 
-    if(Math.random()*100<0.5){
-        asteroid[asteroidCount] = new cAsteroid(window.innerWidth,Math.random()*window.innerHeight,Math.ceil(Math.random()*2));
-        console.log("Se ha creado el asteroide"+(asteroidCount+1)); 
-        asteroidCount++;
-    }
-}
-function asteroidMove(){
-    for(var i in asteroid){
-        asteroid[i].posX-=asteroid[i].speed;
-        console.log("Es un asteroide de tipo: "+asteroid[i].type);
-        ctx.fillStyle = "white";
-        ctx.fillRect(asteroid[i].posX,asteroid[i].posY,50,50);
-    }
-}

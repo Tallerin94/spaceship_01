@@ -1,7 +1,11 @@
+// CANVAS
+
 function resizeCanvas(){
     $("#lienzo").attr("height", window.innerHeight);
     $("#lienzo").attr("width", window.innerWidth);
 }
+
+// PLAYER 
 
 function playerControl(){
     $(document).keydown(function(){
@@ -37,4 +41,19 @@ function playerControl(){
         if(event.which == 37 && gamerunning && dirPosX == "left"){dirPosX = "";}
         if(event.which == 39 && gamerunning && dirPosX == "right"){dirPosX = "";}
     });
+}
+
+// ASTEROIDES
+
+function newAsteroid(){ 
+    if(Math.random()*100<0.5){
+        asteroid[asteroidCount] = new cAsteroid(window.innerWidth,Math.random()*window.innerHeight,Math.ceil(Math.random()*2));   
+        asteroidCount++;
+    }
+}
+function asteroidMove(){
+    for(var i in asteroid){
+        asteroid[i].posX-=asteroid[i].speed;
+        ctx.drawImage(asteroidImg[asteroid[i].type],asteroid[i].posX,asteroid[i].posY);       
+    }
 }
