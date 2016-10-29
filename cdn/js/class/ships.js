@@ -81,8 +81,8 @@ Player = function(){
         // LEFT / RIGHT
         if(dirPosX=="left"){player.newSpeedX(player.getSpeedX()-1);}
         if(dirPosX=="right"){player.newSpeedX(player.getSpeedX()+1);}
-        if(player.getSpeedX()>10){player.newSpeedX(10);}
-        if(player.getSpeedX()<-10){player.newSpeedX(-10);}
+        if(player.getSpeedX()>14){player.newSpeedX(14);}
+        if(player.getSpeedX()<-7){player.newSpeedX(-7);}
         player.setPosX();
         // UP / DOWN
         if(dirPosY=="up"){player.newSpeedY(player.getSpeedY()-1);}
