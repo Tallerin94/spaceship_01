@@ -1,19 +1,3 @@
-// DISPARO PLANTILLA 
-Shot = function(posX,posY,type,speedX,speedY){
-    this.posX = posX;
-    this.posY = posY;
-    this.type = type;
-    this.speedX = speedX;
-    this.speedY = speedY;
-}
-
-PlayerShot = function(){
-    this.move = function(){
-        this.posX+=this.speedX;
-    }   
-}
-PlayerShot.prototype = new Shot(player.getPosX(),player.getPosY(),1,10,0);
-
 
 
 $(document).ready(function(){
@@ -42,13 +26,21 @@ function loop(){
         ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
         //console.log(player.getPosX());
         //PLAYER
-        //player.cambiaSpeed(player.getSpeed()+1);
+        
         ctx.fillStyle = "blue";
-        player.setPosX();  
+        player.playerMove();  
         ctx.fillRect(player.getPosX(),player.getPosY(),20,20);
         //Shot
-        ctx.fillStyle = "red";
-        for(var i=0;i<playerShotNumber;i++){
+        
+        for(var i in shot){
+            switch(shot[i].type){
+                case 1:
+                 ctx.fillStyle = "red";
+                    break;
+                case 2:
+                    ctx.fillStyle = "green";
+                    break;
+            } 
             shot[i].move();
             ctx.fillRect(shot[i].posX,shot[i].posY,10,10);
         }
