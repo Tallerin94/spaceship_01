@@ -31,7 +31,6 @@ function loop(){
         player.playerMove();  
         ctx.fillRect(player.getPosX(),player.getPosY(),20,20);
         //Shot
-        
         for(var i in shot){
             switch(shot[i].type){
                 case 1:

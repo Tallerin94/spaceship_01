@@ -18,9 +18,9 @@ function playerControl(){
         }
     });
     $(document).keyup(function(){
-        if(event.which == 38 && gamerunning){dirPosY="";}
-        if(event.which == 40 && gamerunning){dirPosY="";}
-        if(event.which == 37 && gamerunning){dirPosX="";}
-        if(event.which == 39 && gamerunning){dirPosX="";}
+        if(event.which == 38 && gamerunning && dirPosY=="up"){dirPosY="";}
+        if(event.which == 40 && gamerunning && dirPosY=="down"){dirPosY="";}
+        if(event.which == 37 && gamerunning && dirPosX=="left"){dirPosX="";}
+        if(event.which == 39 && gamerunning && dirPosX=="right"){dirPosX="";}
     });
 }
