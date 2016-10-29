@@ -17,7 +17,7 @@ Ship = function(type, life, speedX, speedY, posX, posY){
     }
 
     var setSpeedX = function(setSpX){ // Funcion para comprobar si 
-        speedX=setSpX;                 // puedo pasar desde fuera por parámetro
+        speedX = setSpX;                 // puedo pasar desde fuera por parámetro
         //console.log(speedX);         // (FUNCIONA)
     }
     this.newSpeedX = function(setSpX){
@@ -30,7 +30,7 @@ Ship = function(type, life, speedX, speedY, posX, posY){
     }
 
     var setSpeedY = function(setSpY){ // Funcion para comprobar si 
-        speedY=setSpY;                 // puedo pasar desde fuera por parámetro
+        speedY = setSpY;                 // puedo pasar desde fuera por parámetro
         //console.log(speedY);         // (FUNCIONA)
     }
     this.newSpeedY = function(setSpY){
