@@ -1,8 +1,8 @@
-Rec = function(type){
-    this.posX = window.innerWidth;
-    this.posY = Math.random()*window.innerHeight;
+Rec = function(posX,posY,type){
+    this.posX = posX;
+    this.posY = posY;
     this.type = type;
-    this.speed = 5;
+    this.speed = 2;
 }
 
-var rec = new Array();
+

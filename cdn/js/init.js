@@ -13,3 +13,9 @@ var ammoStart = 20;
 // Player Controler
 var dirPosX = "";
 var dirPosY = "";
+
+//Asteroids
+var asteroid = new Array();
+var asteroidCount = 0;
+//Rec
+var rec = new Array();
