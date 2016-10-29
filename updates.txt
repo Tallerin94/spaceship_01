@@ -1,4 +1,3 @@
-penepene
 ///////////// ACTUALIZACIONES /////////////
 
 - 12:43 29/10/16[IVAN]:
@@ -11,5 +10,4 @@ penepene
         - Se han añadido imágenes para los recogibles.
         - Se ha añadido un gif para las explosiones.
         - Se ha añadido un archivo créditos.txt para ir guardando los crétidos de los gráficos, sonidos, etc.
-
-Hola xd    
+        
