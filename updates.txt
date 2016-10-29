@@ -1,5 +1,7 @@
-- 11:08 [Ivan]:
+- 11:08 29/10/16[Ivan]:
         Acabado el sistema de movimiento de la navel del jugador, con aceleraciones, deceleración y cambio de 
         dirección varias teclas pulsadas a la vez
-- 11:40 [IVAN]:
+- 11:40 29/10/16[IVAN]:
         Se han añadido límites para el movimiento del jugador en los bordes de la pantalla
+- 11:55 29/10/16[IVAN]:
+        Se puede cambiar el tipo de disparo del jugador.

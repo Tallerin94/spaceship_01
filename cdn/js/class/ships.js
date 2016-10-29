@@ -49,6 +49,7 @@ Ship = function(type,life,ammo,speedX,speedY,posX,posY){
     
     this.setPosX = function(){
         posX+=speedX;
+        // LIMITS posX
         if(posX>window.innerWidth){posX=window.innerWidth;}
         if(posX<0){posX=0;}
 
@@ -64,6 +65,7 @@ Ship = function(type,life,ammo,speedX,speedY,posX,posY){
     }
     this.setPosY = function(){
         posY+=speedY;
+        // Limits posY
         if(posY>window.innerHeight){posY=window.innerHeight;}
         if(posY<0){posY=0;}
         //console.log(speed);
@@ -93,9 +95,7 @@ Player = function(){
         if(dirPosY=="" && player.getSpeedY()>0){player.newSpeedY(player.getSpeedY()-0.5);}
         if(dirPosX=="" && player.getSpeedX()<0){player.newSpeedX(player.getSpeedX()+0.5);}
         if(dirPosX=="" && player.getSpeedX()>0){player.newSpeedX(player.getSpeedX()-0.5);}
-        //
-        // LIMITS 
-       
+        //  
     }
 }
 Player.prototype = new Ship(1,3,10,0,0,100,window.innerHeight/2);

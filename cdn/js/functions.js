@@ -12,9 +12,17 @@ function playerControl(){
         if(event.which == 32 && gamerunning){
             console.log("has disparado");
             shot[playerShotNumber] = new PlayerShot();
+            shot[playerShotNumber].type = ammoSelected;
             shot[playerShotNumber].posX = player.getPosX();
             shot[playerShotNumber].posY = player.getPosY();
             playerShotNumber++;
+        }
+        if(event.which == 81 && gamerunning){
+            if(ammoSelected == 1){
+                ammoSelected = 2;
+            }else{
+                ammoSelected = 1;
+            }
         }
     });
     $(document).keyup(function(){
