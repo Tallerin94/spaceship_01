@@ -54,6 +54,6 @@ function newAsteroid(){
 function asteroidMove(){
     for(var i in asteroid){
         asteroid[i].posX-=asteroid[i].speed;
-        ctx.drawImage(asteroidImg[asteroid[i].type],asteroid[i].posX,asteroid[i].posY);       
+        ctx.drawImage(asteroidImg[asteroid[i].type],asteroid[i].posX,asteroid[i].posY,asteroidWidth,asteroidHeight);       
     }
 }

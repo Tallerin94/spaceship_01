@@ -24,14 +24,13 @@ var asteroid = new Array();
 var asteroidCount = 0;
 var asteroidImg = new Array();
 var asteroids = 2;
-
+var asteroidWidth = window.innerHeight/10
+var asteroidHeight = asteroidWidth;
 
 asteroidImg[1] = new Image();
 asteroidImg[1].src = "cdn/img/asteroid/1.png";
 asteroidImg[2] = new Image();
 asteroidImg[2].src = "cdn/img/asteroid/2.png";
-
-
 
 //Rec
 var rec = new Array();

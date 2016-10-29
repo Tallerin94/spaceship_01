@@ -50,9 +50,9 @@ Ship = function(type, life, speedX, speedY, posX, posY){
 
         //console.log(speed);
     }
-    this.moveX = function(){
+    /*this.moveX = function(){
         setPosX();
-    }
+    }*/
     //POSY
     var posY = posY;
     this.getPosY = function(){
@@ -65,9 +65,10 @@ Ship = function(type, life, speedX, speedY, posX, posY){
         if(posY<0){posY=0;}
         //console.log(speed);
     }
+    /*
     this.moveY = function(){
         setPosY();
-    }
+    }*/
 }
 
 // NAVES ENEMIGAS 
