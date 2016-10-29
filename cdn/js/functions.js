@@ -10,12 +10,17 @@ function playerControl(){
         if(event.which == 37 && gamerunning){dirPosX="left";}
         if(event.which == 39 && gamerunning){dirPosX="right";}
         if(event.which == 32 && gamerunning){
-            console.log("has disparado");
-            shot[playerShotNumber] = new PlayerShot();
-            shot[playerShotNumber].type = ammoSelected;
-            shot[playerShotNumber].posX = player.getPosX();
-            shot[playerShotNumber].posY = player.getPosY();
-            playerShotNumber++;
+            if(player.isAmmoEmpty){
+                console.log("no quedan balas");
+            }else{
+                console.log("has disparado");
+                shot[playerShotNumber] = new PlayerShot();
+                shot[playerShotNumber].type = ammoSelected;
+                shot[playerShotNumber].posX = player.getPosX();
+                shot[playerShotNumber].posY = player.getPosY();
+                playerShotNumber++;
+            }
+            
         }
         if(event.which == 81 && gamerunning){
             if(ammoSelected == 1){
@@ -26,9 +31,9 @@ function playerControl(){
         }
     });
     $(document).keyup(function(){
-        if(event.which == 38 && gamerunning && dirPosY=="up"){dirPosY="";}
-        if(event.which == 40 && gamerunning && dirPosY=="down"){dirPosY="";}
-        if(event.which == 37 && gamerunning && dirPosX=="left"){dirPosX="";}
-        if(event.which == 39 && gamerunning && dirPosX=="right"){dirPosX="";}
+        if(event.which == 38 && gamerunning && dirPosY == "up"){dirPosY = "";}
+        if(event.which == 40 && gamerunning && dirPosY == "down"){dirPosY = "";}
+        if(event.which == 37 && gamerunning && dirPosX == "left"){dirPosX = "";}
+        if(event.which == 39 && gamerunning && dirPosX == "right"){dirPosX = "";}
     });
 }

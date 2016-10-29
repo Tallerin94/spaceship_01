@@ -6,6 +6,3 @@ Rec = function(type){
 }
 
 var rec = new Array();
-
-
-

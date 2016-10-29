@@ -9,6 +9,7 @@ var gamerunning = false;
 var playerShotNumber = 0;
 var shot = new Array();
 var ammoSelected = 1;
+var ammoStart = 20;
 // Player Controler
 var dirPosX = "";
 var dirPosY = "";

@@ -34,7 +34,19 @@ Player = function(){
         if(dirPosX == "" && player.getSpeedX() > 0){player.newSpeedX(player.getSpeedX()-0.5);}
         //  
     }
+    //AMMO
+    var ammo = ammoStart;
+    this.getAmmo = function(){
+        return ammo;
+    }
+    this.isAmmoEmpty = function(){
+        if(this.getAmmo() > 0){
+            return false;
+        }else{
+            return true;
+        }
+    }
 }
-Player.prototype = new Ship(1,3,10,0,0,100,window.innerHeight/2);
+Player.prototype = new Ship(1, 3, 0, 0, 100, window.innerHeight/2);
 
 var player = new Player();

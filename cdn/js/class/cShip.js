@@ -1,5 +1,5 @@
 // NAVE PLANTILLA
-Ship = function(type,life,ammo,speedX,speedY,posX,posY){
+Ship = function(type, life, speedX, speedY, posX, posY){
     // TYPE
     var type = type;
     this.getType = function(){
@@ -9,11 +9,6 @@ Ship = function(type,life,ammo,speedX,speedY,posX,posY){
     var life = life;
     this.getLife = function(){
         return life;
-    }
-    //AMMO
-    var ammo = ammo;
-    this.getAmmo = function(){
-        return ammo;
     }
     //SPEED X
     var speedX = speedX;
