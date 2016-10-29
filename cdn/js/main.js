@@ -26,7 +26,8 @@ function loop(){
         ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
         //console.log(player.getPosX());
         //PLAYER
-        
+        newAsteroid();
+        asteroidMove();
         ctx.fillStyle = "blue";
         player.playerMove();  
         ctx.fillRect(player.getPosX(),player.getPosY(),20,20);
