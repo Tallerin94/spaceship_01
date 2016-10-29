@@ -46,7 +46,7 @@ function playerControl(){
 // ASTEROIDES
 
 function newAsteroid(){ 
-    if(Math.random()*100<0.5){
+    if(Math.random()*100<0.1){
         asteroid[asteroidCount] = new cAsteroid(window.innerWidth,Math.random()*window.innerHeight,Math.ceil(Math.random()*2));   
         asteroidCount++;
     }
