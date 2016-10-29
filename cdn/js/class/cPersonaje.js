@@ -35,6 +35,10 @@ Player = function(){
         //  
     }
     //AMMO
+    var ammoMax = 0;
+    if(player.getType() == "1"){
+        ammoMax = maxAmmoPlayer1;
+    }
     var ammo = ammoStart;
     this.getAmmo = function(){
         return ammo;
@@ -44,6 +48,14 @@ Player = function(){
         // en el archivo funciones, pero por si acaso
         // lo ponemos.
         if(ammo > 0){ammo -= count;}
+    }
+    // Creamos función para recargar
+    this.recAmmo = function(count){
+        if((ammo+count < ammoMax)){
+            ammo += count;
+        }else{
+            ammo = ammoMax;
+        }
     }
     this.isAmmoEmpty = function(){
         if(this.getAmmo() > 0){

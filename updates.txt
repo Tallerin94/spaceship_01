@@ -14,3 +14,9 @@
 
 - XX:XX 29/10/16[IVAN]:   
         -cAsteroid creada con sus funciones.
+
+- 29/10/16[Taleirusu]:
+        - Limitar velocidad nave en diagonal.
+        - Cuando no tienes balas no dispara.
+        - Función de recargar balas.
+        - En función del tipo de nave carga una cantidad de ammoMax.
