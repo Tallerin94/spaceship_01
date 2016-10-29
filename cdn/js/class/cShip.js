@@ -43,10 +43,10 @@ Ship = function(type, life, speedX, speedY, posX, posY){
     }
     
     this.setPosX = function(){
-        posX+=speedX;
+        posX += speedX;
         // LIMITS posX
-        if(posX>window.innerWidth){posX=window.innerWidth;}
-        if(posX<0){posX=0;}
+        if(posX > window.innerWidth){posX = window.innerWidth;}
+        if(posX < 0){posX = 0;}
 
         //console.log(speed);
     }
@@ -59,7 +59,7 @@ Ship = function(type, life, speedX, speedY, posX, posY){
         return posY;
     }
     this.setPosY = function(){
-        posY+=speedY;
+        posY += speedY;
         // Limits posY
         if(posY>window.innerHeight){posY=window.innerHeight;}
         if(posY<0){posY=0;}
