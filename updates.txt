@@ -1,6 +1,6 @@
 ///////////// ACTUALIZACIONES /////////////
 
-- 12:43 29/10/16[IVAN]:
+- 29/10/16[IVAN]:
         - Acabado el sistema de movimiento de la navel del jugador, con aceleraciones, deceleración y cambio de 
           dirección varias teclas pulsadas a la vez.
         - Se han añadido límites para el movimiento del jugador en los bordes de la pantalla.
@@ -10,17 +10,14 @@
         - Se han añadido imágenes para los recogibles.
         - Se ha añadido un gif para las explosiones.
         - Se ha añadido un archivo créditos.txt para ir guardando los crétidos de los gráficos, sonidos, etc.
-
-
-- 13:35 29/10/16[IVAN]:   
+        //////
         -cAsteroid creada con sus funciones.
+        /////
+        - Asteroides funcionales con 2 imágenes.
+        - asteroides redimensionasdos en función de la pantalla
 
 - 29/10/16[Taleirusu]:
         - Limitar velocidad nave en diagonal.
         - Cuando no tienes balas no dispara.
         - Función de recargar balas.
         - En función del tipo de nave carga una cantidad de ammoMax.
-
-- 17:11 29/10/16[IVAN]:   
-        - Asteroides funcionales con 2 imágenes.
-        - asteroides redimensionasdos en función de la pantalla
