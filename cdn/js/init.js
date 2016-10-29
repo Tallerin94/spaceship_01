@@ -17,5 +17,17 @@ var dirPosY = "";
 //Asteroids
 var asteroid = new Array();
 var asteroidCount = 0;
+var AsteroidImg = new Array();
+var asteroids = 2;
+for(var i =1;i<asteroids;i++){
+    
+}
+AsteroidImg[0] = new Image();
+AsteroidImg[0].src = "cdn/img/asteroid/1.png";
+AsteroidImg[1] = new Image();
+AsteroidImg[0].src = "cdn/img/asteroid/2.png";
+
+
+
 //Rec
 var rec = new Array();
