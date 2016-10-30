@@ -26,17 +26,14 @@ function loop(){
         newAsteroid();
         asteroidMove();
         ctx.fillStyle = "blue";
-<<<<<<< HEAD
         player.playerMove();
-        /*newEnemy1();
+        newEnemy1();
         for(var i in enemy1){
             enemy1[i].enemyMove();
-        }*/
+        }
         ctx.drawImage(playerShipImg,player.getPosX(),player.getPosY(), playerHeight, playerWidth);
-=======
->>>>>>> 2220cfbecd039fc4eb96eeca6d5ab4cb0360e4fc
         //Shot
-        /*for(var i in shot){
+        for(var i in shot){
             switch(shot[i].type){
                 case 1:
                     ctx.fillStyle = "red";
@@ -48,7 +45,7 @@ function loop(){
             shot[i].move();
             ctx.fillRect(shot[i].posX, shot[i].posY, 10, 10);
             ctx.fillRect(shot[i].posX,shot[i].posY, playerShotWidth, playerShotHeight);
-        }*/
+        }
         clearTimeout(loop_string);
         loop_string = setTimeout("loop()", 30);
     }

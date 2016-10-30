@@ -4,15 +4,6 @@ var ctx = lienzo.getContext("2d");
 // Game Loop Control
 var loop_string = "";
 var gamerunning = false;
-// Stars 
-var star = new Array();
-var numStrars = 6;
-for(var i =0;i<numStrars;i++){
-    star[i] = new Image();
-    star[i].src = "cdn/img/stars/1.png";
-}
-var starPosX = new Array();
-var starPosY = new Array();
 //Player Ship
 var playerHeight = window.innerHeight/5;
 var playerWidth = playerHeight;

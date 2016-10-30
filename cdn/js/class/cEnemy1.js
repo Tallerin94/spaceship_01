@@ -1,18 +1,4 @@
-cEnemy = function(){
-    this.posX = posX;
-    this.posY = posY;
-    this.speedX = speedX;
-    this.speedY = speedY;
-    this.type = type;
-}
-
-
-
-
-
-
-
-/*var cEnemy1 = function(){
+var cEnemy1 = function(){
     this.enemyMove = function(){
         if(this.getPosY() <= 0){
             this.newSpeedY(2);
@@ -27,4 +13,3 @@ cEnemy = function(){
     }
 }
 cEnemy1.prototype = new Ship(101, 100, -2, -2, window.innerWidth-100, window.innerHeight/2);
-*/
