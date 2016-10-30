@@ -4,3 +4,13 @@ cAsteroid = function(posX,posY,type){
     this.type=type;
     this.speed = 1;
 }
+
+function asteroidKill(){
+    for(var i in asteroid){
+        for(var x in shot){
+            if(true){
+
+            }
+        }
+    }
+}
