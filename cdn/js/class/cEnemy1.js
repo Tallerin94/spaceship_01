@@ -1,22 +1,15 @@
 var cEnemy1 = function(){
-    var dirEnemy1 = "top";
     this.enemyMove = function(){
-        enemy1.newSpeedX(enemy1.getSpeedX());
-        if(dirEnemy1 == "top"){
-            enemy1.newSpeedY(enemy1.getSpeedY());
-            if(enemy1.posY <= 0){
-                dirEnemy = "bottom";
-                enemy1.setSpeedY(5);
-            }
-        }else{
-            enemy1.newSpeedY(enemy1.getSpeedY());
-            if(enemy1.posY >= window.innerHeight){
-                dirEnemy = "top";
-                enemy1.setSpeedY(-5);
-            }
+        if(this.getPosY() <= 0){
+            this.newSpeedY(2);
         }
+        if(this.getPosY() >= window.innerHeight){
+            this.newSpeedY(-2);
+        }
+        this.setPosX();
+        this.setPosY();
+        ctx.fillStyle = "green";
+        ctx.fillRect(this.getPosX(), this.getPosY(), 10, 10);
     }
 }
-cEnemy1.prototype = new Ship(101, 100, -5, -5, window.innerWidth-100, window.innerHeight/2);
-
-var enemy1 = new cEnemy1();
+cEnemy1.prototype = new Ship(101, 100, -2, -2, window.innerWidth-100, window.innerHeight/2);
