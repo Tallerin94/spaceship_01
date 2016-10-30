@@ -29,13 +29,14 @@ function loop(){
         asteroidMove();
         ctx.fillStyle = "blue";
         player.playerMove();
-        enemy1.enemyMove();
+        //newEnemy1();
+        //enemy1[enemy1Count].enemyMove();
         ctx.fillRect(player.getPosX(),player.getPosY(), 20, 20);
         //Shot
         for(var i in shot){
             switch(shot[i].type){
                 case 1:
-                 ctx.fillStyle = "red";
+                    ctx.fillStyle = "red";
                     break;
                 case 2:
                     ctx.fillStyle = "green";

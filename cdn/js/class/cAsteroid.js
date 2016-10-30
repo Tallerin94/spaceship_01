@@ -1,4 +1,4 @@
-cAsteroid = function(posX,posY,type){
+var cAsteroid = function(posX,posY,type){
     this.posX=posX;
     this.posY=posY;
     this.type=type;
