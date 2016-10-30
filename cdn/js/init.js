@@ -4,8 +4,14 @@ var ctx = lienzo.getContext("2d");
 // Game Loop Control
 var loop_string = "";
 var gamerunning = false;
-
+//Player Ship
+var playerHeight = window.innerHeight/5;
+var playerWidth = playerHeight;
+var playerShipImg = new Image();
+playerShipImg.src ="cdn/img/ships/1.png" 
 // Player Shots
+var playerShotHeight = 10;
+var playerShotWidth = 15;
 var playerShotNumber = 0;
 var shot = new Array();
 var ammoSelected = 1;

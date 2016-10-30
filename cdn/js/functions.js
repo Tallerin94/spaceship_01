@@ -20,8 +20,8 @@ function playerControl(){
                 //console.log("has disparado");
                 shot[playerShotNumber] = new PlayerShot();
                 shot[playerShotNumber].type = ammoSelected;
-                shot[playerShotNumber].posX = player.getPosX();
-                shot[playerShotNumber].posY = player.getPosY();
+                shot[playerShotNumber].posX = player.getPosX()+playerWidth;
+                shot[playerShotNumber].posY = player.getPosY()+playerHeight/2;
                 player.setAmmo(1);
                 playerShotNumber++;
             }

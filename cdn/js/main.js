@@ -1,5 +1,3 @@
-
-
 $(document).ready(function(){
     start();
 });
@@ -30,6 +28,9 @@ function loop(){
         ctx.fillStyle = "blue";
         player.playerMove();
         ctx.fillRect(player.getPosX(), player.getPosY(), 20, 20);
+        //newEnemy1();
+        //enemy1[enemy1Count].enemyMove();
+        ctx.drawImage(playerShipImg,player.getPosX(),player.getPosY(), playerHeight, playerWidth);
         //Shot
         for(var i in shot){
             switch(shot[i].type){
@@ -42,6 +43,7 @@ function loop(){
             } 
             shot[i].move();
             ctx.fillRect(shot[i].posX, shot[i].posY, 10, 10);
+            ctx.fillRect(shot[i].posX,shot[i].posY, playerShotWidth, playerShotHeight);
         }
         clearTimeout(loop_string);
         loop_string = setTimeout("loop()", 30);

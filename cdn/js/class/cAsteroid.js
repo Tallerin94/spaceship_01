@@ -9,7 +9,7 @@ function asteroidKill(){
     for(var i in asteroid){
         for(var x in shot){
             if(true){
-
+                
             }
         }
     }

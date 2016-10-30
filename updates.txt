@@ -21,3 +21,8 @@
         - Cuando no tienes balas no dispara.
         - Función de recargar balas.
         - En función del tipo de nave carga una cantidad de ammoMax.
+
+- 30/10/16[IVAN]:
+        - Las balas salen de la parte central de la nave.
+        - La nave jugador ahora tiene imágen.
+        - La nave jugador tiene las medidas en formato "responsive" en función de la pantalla
