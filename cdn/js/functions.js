@@ -58,10 +58,11 @@ function asteroidMove(){
     }
 }
 
-function newEnemy1(){
+// ENEMIGOS
+/*function newEnemy1(){
     if(Math.random()*100 < 5){
         enemy1[enemy1Count] = new cEnemy1();
         //console.log("se ha creado el "+enemy1Count);
         enemy1Count++;
     }
-}
+}*/
