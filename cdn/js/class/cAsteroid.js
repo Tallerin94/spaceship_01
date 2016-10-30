@@ -4,4 +4,3 @@ cAsteroid = function(posX,posY,type){
     this.type=type;
     this.speed = 1;
 }
-
