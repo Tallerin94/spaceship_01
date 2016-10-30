@@ -27,7 +27,6 @@ function loop(){
         asteroidMove();
         ctx.fillStyle = "blue";
         player.playerMove();
-        ctx.fillRect(player.getPosX(), player.getPosY(), 20, 20);
         //newEnemy1();
         //enemy1[enemy1Count].enemyMove();
         ctx.drawImage(playerShipImg,player.getPosX(),player.getPosY(), playerHeight, playerWidth);
