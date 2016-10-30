@@ -57,12 +57,3 @@ function asteroidMove(){
         ctx.drawImage(asteroidImg[asteroid[i].type],asteroid[i].posX,asteroid[i].posY,asteroidWidth,asteroidHeight);       
     }
 }
-
-// ENEMY 1
-
-function newEnemy1(){
-    if(Math.random()*100 < 0.5){
-        enemy1[enemy1Count] = new cEnemy1();
-        enemy1Count++;
-    }
-}

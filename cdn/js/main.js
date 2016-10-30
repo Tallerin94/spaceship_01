@@ -29,9 +29,7 @@ function loop(){
         asteroidMove();
         ctx.fillStyle = "blue";
         player.playerMove();
-        //newEnemy1();
-        //enemy1[enemy1Count].enemyMove();
-        ctx.fillRect(player.getPosX(),player.getPosY(), 20, 20);
+        ctx.fillRect(player.getPosX(), player.getPosY(), 20, 20);
         //Shot
         for(var i in shot){
             switch(shot[i].type){
@@ -43,9 +41,8 @@ function loop(){
                     break;
             } 
             shot[i].move();
-            ctx.fillRect(shot[i].posX,shot[i].posY, 10, 10);
+            ctx.fillRect(shot[i].posX, shot[i].posY, 10, 10);
         }
-            //console.log("xd");
         clearTimeout(loop_string);
         loop_string = setTimeout("loop()", 30);
     }

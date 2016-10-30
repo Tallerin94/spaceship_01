@@ -1,4 +1,4 @@
-Rec = function(posX,posY,type){
+Rec = function(posX, posY, type){
     this.posX = posX;
     this.posY = posY;
     this.type = type;

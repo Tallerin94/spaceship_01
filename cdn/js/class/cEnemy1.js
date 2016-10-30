@@ -18,3 +18,5 @@ var cEnemy1 = function(){
     }
 }
 cEnemy1.prototype = new Ship(101, 100, -5, -5, window.innerWidth-100, window.innerHeight/2);
+
+var enemy1 = new cEnemy1();

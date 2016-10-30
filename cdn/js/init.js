@@ -34,3 +34,7 @@ asteroidImg[2].src = "cdn/img/asteroid/2.png";
 
 //Rec
 var rec = new Array();
+
+// Enemy1
+var enemy1 = new Array();
+var enemy1Count = 0;
