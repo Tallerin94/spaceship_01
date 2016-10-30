@@ -31,7 +31,7 @@ function loop(){
         player.playerMove();
         //newEnemy1();
         //enemy1[enemy1Count].enemyMove();
-        ctx.fillRect(player.getPosX(),player.getPosY(), 20, 20);
+        ctx.drawImage(playerShipImg,player.getPosX(),player.getPosY(), playerHeight, playerWidth);
         //Shot
         for(var i in shot){
             switch(shot[i].type){
@@ -43,7 +43,7 @@ function loop(){
                     break;
             } 
             shot[i].move();
-            ctx.fillRect(shot[i].posX,shot[i].posY, 10, 10);
+            ctx.fillRect(shot[i].posX,shot[i].posY, playerShotWidth, playerShotHeight);
         }
             //console.log("xd");
         clearTimeout(loop_string);
