@@ -46,7 +46,7 @@ function playerControl(){
 // ASTEROIDES
 
 function newAsteroid(){ 
-    if(Math.random()*100<0.1){
+    if(Math.random()*100 < 0.1){
         asteroid[asteroidCount] = new cAsteroid(window.innerWidth,Math.random()*window.innerHeight,Math.ceil(Math.random()*2));   
         asteroidCount++;
     }
@@ -55,5 +55,14 @@ function asteroidMove(){
     for(var i in asteroid){
         asteroid[i].posX-=asteroid[i].speed;
         ctx.drawImage(asteroidImg[asteroid[i].type],asteroid[i].posX,asteroid[i].posY,asteroidWidth,asteroidHeight);       
+    }
+}
+
+// ENEMY 1
+
+function newEnemy1(){
+    if(Math.random()*100 < 0.5){
+        enemy1[enemy1Count] = new cEnemy1();
+        enemy1Count++;
     }
 }

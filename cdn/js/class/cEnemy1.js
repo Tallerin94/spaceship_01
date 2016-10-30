@@ -1,4 +1,4 @@
-var Enemy1 = function(){
+var cEnemy1 = function(){
     var dirEnemy1 = "top";
     this.enemyMove = function(){
         enemy1.newSpeedX(enemy1.getSpeedX());
@@ -17,6 +17,4 @@ var Enemy1 = function(){
         }
     }
 }
-Enemy1.prototype = new Ship(101, 100, -5, -5, window.innerWidth-100, window.innerHeight/2);
-
-var enemy1 = new Enemy1();
+cEnemy1.prototype = new Ship(101, 100, -5, -5, window.innerWidth-100, window.innerHeight/2);

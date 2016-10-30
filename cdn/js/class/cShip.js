@@ -28,7 +28,7 @@ Ship = function(type, life, speedX, speedY, posX, posY){
     this.getSpeedY = function(){
         return speedY;
     }
-
+    
     var setSpeedY = function(setSpY){ // Funcion para comprobar si 
         speedY = setSpY;                 // puedo pasar desde fuera por parámetro
         //console.log(speedY);         // (FUNCIONA)
