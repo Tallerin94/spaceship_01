@@ -60,17 +60,17 @@ function asteroidMove(){
 
 function destroyAsteroid(){  
     for(var s in shot){
-        for(var a in asteroid){
-            
-            if(Math.abs((asteroid[a].posX+asteroid[a].width/2)-(shot[s].posX+shot[s].width/2)) < shot[s].width/2+asteroid[a].width/2){
-                if(Math.abs((asteroid[a].posY+asteroid[a].height/2)-(shot[s].posY+shot[s].height/2)) < shot[s].height/2+asteroid[a].height/2){
-                    if(Math.random()*2<1){
-                        console.log("Ha soltado recompensa");
-                    }
-                    shot.splice(s, 1);
-                    asteroid.splice(a ,1);
-                    
+        for(var a in asteroid){          
+            if(Math.abs((asteroid[a].posY+asteroid[a].height/2)-(shot[s].posY+shot[s].height/2)) < shot[s].height/2+asteroid[a].height/2 && Math.abs((asteroid[a].posX+asteroid[a].width/2)-(shot[s].posX+shot[s].width/2)) < shot[s].width/2+asteroid[a].width/2){  
+                if(Math.random()*2<1){
+                    console.log("Ha soltado recompensa");
                 }
+                
+                shot.splice(s, 1);
+                asteroid.splice(a ,1);
+                
+                console.log("le has dado");
+                break;
             }
         }
     }
