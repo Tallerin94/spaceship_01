@@ -1,6 +1,8 @@
-var cBackground = function(){
+var cBackground = function(posx, posy){
     var width = window.innerWidth;
     var height = window.innerHeight;
+    this.posX = posx
+    this.posY = posy;
 
     this.getWidth = function(){
         return width;
@@ -14,13 +16,29 @@ var cBackground = function(){
     this.setHeight = function(value){
         height = value;
     }
+     this.getPosX = function(){
+        return this.posX;
+    }
+    this.getPosY = function(){
+        return this.posY;
+    }
+    this.setPosX = function(value){
+        this.posX += value;
+    }
+    this.setPosY = function(value){
+        this.posY += value;
+    }
+    this.moveBackgroundX = function(value){
+        this.setPosX(value);
+    }
 }
-cBackground.prototype = new cBgobject();
+
 
 var bg = new Array();
 
 // Generamos 50 bgs que son suficientes para terminar el nivel
 for(var i=0;i<50;i++){
-    bg[i] = new cBackground();
-    bg[i].setPosX(i*bg[i].getWidth());
+    bg[i] = new cBackground(0,0);
+    //bg[i].setPosX(i*bg[i].getWidth());
+    bg[i].setPosX(10);
 }

@@ -1,4 +1,4 @@
-var cBgobject = function(){
+/*var cBgobject = function(){
     var posX = 0;
     var posY = 0;
 
@@ -17,4 +17,4 @@ var cBgobject = function(){
     this.moveBackgroundX = function(value){
         this.setPosX(value);
     }
-}
+}*/

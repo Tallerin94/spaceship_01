@@ -65,11 +65,12 @@ function destroyAsteroid(){
                 if(Math.random()*2<1){
                     console.log("Ha soltado recompensa");
                 }
-                $("body").append("<img src='cdn/img/explosion/1.gif' id="+asteroidExplosionCount+" style='top:"+(asteroid[a].posY-asteroid[a].height)+"px;left:"+(asteroid[a].posX-asteroid[a].width)+"px;visibility:'></img>");             ;
+                $("body").append("<img src='cdn/img/explosion/1.gif' id='asteroide"+contadortiempo+"' style='top:"+(asteroid[a].posY-asteroid[a].height)+"px;left:"+(asteroid[a].posX-asteroid[a].width)+"px;visibility:'></img>");             ;
+                $("#asteroide"+(contadortiempo)).fadeOut(300);
                 asteroidExplosionCount++;
                 shot.splice(s, 1);
                 asteroid.splice(a ,1);
-                console.log("le has dado");
+                console.log("le has dado");              
                 break;
             }
         }
@@ -83,5 +84,6 @@ function newEnemy1(){
         enemy1[enemy1Count] = new cEnemy1();
         //console.log("se ha creado el "+enemy1Count);
         enemy1Count++;
+        
     }
 }
