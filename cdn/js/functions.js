@@ -20,8 +20,8 @@ function playerControl(){
                 //console.log("has disparado");
                 shot[playerShotNumber] = new PlayerShot();
                 shot[playerShotNumber].type = ammoSelected;
-                shot[playerShotNumber].posX = player.getPosX()+playerWidth;
-                shot[playerShotNumber].posY = player.getPosY()+playerHeight/2;
+                shot[playerShotNumber].posX = player.getPosX()+playerWidth-5;
+                shot[playerShotNumber].posY = player.getPosY()+playerHeight/2-shot[playerShotNumber].height/2;
                 player.setAmmo(1);
                 playerShotNumber++;
             }
@@ -46,7 +46,7 @@ function playerControl(){
 // ASTEROIDES
 
 function newAsteroid(){ 
-    if(Math.random()*100 < 0.1){
+    if(Math.random()*100 < 2.5){
         asteroid[asteroidCount] = new cAsteroid(window.innerWidth,Math.random()*window.innerHeight,Math.ceil(Math.random()*2));   
         asteroidCount++;
     }
@@ -54,9 +54,28 @@ function newAsteroid(){
 function asteroidMove(){
     for(var i in asteroid){
         asteroid[i].posX-=asteroid[i].speed;
-        ctx.drawImage(asteroidImg[asteroid[i].type],asteroid[i].posX,asteroid[i].posY,asteroidWidth,asteroidHeight);       
+        ctx.drawImage(asteroidImg[asteroid[i].type],asteroid[i].posX,asteroid[i].posY,asteroid[i].width,asteroid[i].height);       
     }
 }
+
+function destroyAsteroid(){  
+    for(var s in shot){
+        for(var a in asteroid){          
+            if(Math.abs((asteroid[a].posY+asteroid[a].height/2)-(shot[s].posY+shot[s].height/2)) < shot[s].height/2+asteroid[a].height/2 && Math.abs((asteroid[a].posX+asteroid[a].width/2)-(shot[s].posX+shot[s].width/2)) < shot[s].width/2+asteroid[a].width/2){  
+                if(Math.random()*2<1){
+                    console.log("Ha soltado recompensa");
+                }
+                $("body").append("<img src='cdn/img/explosion/1.gif' id="+asteroidExplosionCount+" style='top:"+(asteroid[a].posY-asteroid[a].height)+"px;left:"+(asteroid[a].posX-asteroid[a].width)+"px;visibility:'></img>");             ;
+                asteroidExplosionCount++;
+                shot.splice(s, 1);
+                asteroid.splice(a ,1);
+                console.log("le has dado");
+                break;
+            }
+        }
+    }
+}
+
 
 // ENEMIGOS
 function newEnemy1(){
