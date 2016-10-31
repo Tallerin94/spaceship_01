@@ -32,6 +32,7 @@ function loop(){
         asteroidMove();
         ctx.fillStyle = "blue";
         player.playerMove();
+        // ENEMY
         /*newEnemy1();
         for(var i in enemy1){
             enemy1[i].enemyMove();
