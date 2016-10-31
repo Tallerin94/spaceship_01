@@ -26,3 +26,6 @@
         - Las balas salen de la parte central de la nave.
         - La nave jugador ahora tiene imágen.
         - La nave jugador tiene las medidas en formato "responsive" en función de la pantalla
+
+- 31/10/16[IVAN]:
+        - Bala mata asteroides(bug)
