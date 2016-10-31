@@ -22,15 +22,18 @@ function loop(){
     if(gamerunning){
         ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
         //console.log(player.getPosX());
+        // BACKGROUND
+        bg.moveBackgroundX();
+        ctx.drawImage(backgroundImg[1], bg.getPosX(), bg.getPosY(), bg.getWidth(), bg.getHeight());
         //PLAYER
         newAsteroid();
         asteroidMove();
         ctx.fillStyle = "blue";
         player.playerMove();
-        newEnemy1();
+        /*newEnemy1();
         for(var i in enemy1){
             enemy1[i].enemyMove();
-        }
+        }*/
         ctx.drawImage(playerShipImg,player.getPosX(),player.getPosY(), playerHeight, playerWidth);
         //Shot
         for(var i in shot){
