@@ -10,8 +10,6 @@ var playerWidth = playerHeight;
 var playerShipImg = new Image();
 playerShipImg.src ="cdn/img/ships/1.png" 
 // Player Shots
-var playerShotHeight = 10;
-var playerShotWidth = 15;
 var playerShotNumber = 0;
 var shot = new Array();
 var ammoSelected = 1;
@@ -30,8 +28,7 @@ var asteroid = new Array();
 var asteroidCount = 0;
 var asteroidImg = new Array();
 var asteroids = 2;
-var asteroidWidth = window.innerHeight/10
-var asteroidHeight = asteroidWidth;
+
 
 asteroidImg[1] = new Image();
 asteroidImg[1].src = "cdn/img/asteroid/1.png";

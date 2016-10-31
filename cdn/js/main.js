@@ -37,7 +37,7 @@ function loop(){
             enemy1[i].enemyMove();
         }*/
         ctx.drawImage(playerShipImg,player.getPosX(),player.getPosY(), playerHeight, playerWidth);
-        //Shot
+        //Shot        
         for(var i in shot){
             switch(shot[i].type){
                 case 1:
@@ -48,9 +48,9 @@ function loop(){
                     break;
             } 
             shot[i].move();
-            ctx.fillRect(shot[i].posX, shot[i].posY, 10, 10);
-            ctx.fillRect(shot[i].posX,shot[i].posY, playerShotWidth, playerShotHeight);
+            ctx.fillRect(shot[i].posX,shot[i].posY, shot[i].width, shot[i].height);
         }
+        destroyAsteroid();
         clearTimeout(loop_string);
         loop_string = setTimeout("loop()", 30);
     }
