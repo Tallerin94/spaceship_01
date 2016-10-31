@@ -1,21 +1,7 @@
 var cBackground = function(){
-    var posX = 0;
-    var posY = 0;
     var width = window.innerWidth;
     var height = window.innerHeight;
 
-    this.getPosX = function(){
-        return posX;
-    }
-    this.getPosY = function(){
-        return posY;
-    }
-    this.setPosX = function(value){
-        posX += value;
-    }
-    this.setPosY = function(value){
-        posY += value;
-    }
     this.getWidth = function(){
         return width;
     }
@@ -28,10 +14,8 @@ var cBackground = function(){
     this.setHeight = function(value){
         height = value;
     }
-    this.moveBackgroundX = function(value){
-        this.setPosX(value);
-    }
 }
+cBackground.prototype = new cBgobject();
 
 var bg = new Array();
 

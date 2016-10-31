@@ -25,7 +25,9 @@ function loop(){
         // BACKGROUND
         for(var i in bg){
             bg[i].moveBackgroundX(-0.1);
-            ctx.drawImage(backgroundImg[1], bg[i].getPosX(), bg[i].getPosY(), bg[i].getWidth(), bg[i].getHeight());
+            if(bg[i].getPosX() > -(bg[i].getWidth())){
+                ctx.drawImage(backgroundImg[1], bg[i].getPosX(), bg[i].getPosY(), bg[i].getWidth(), bg[i].getHeight());
+            }
         }
         //PLAYER
         newAsteroid();

@@ -47,7 +47,7 @@ var enemy1Count = 0;
 
 // Background
 var backgroundImg = new Array();
-var backgroundCount = 5;
+var backgroundCount = 2;
 for(var i=1;i<backgroundCount;i++){
     backgroundImg[i] = new Image();
     backgroundImg[i].src = "cdn/img/background/"+i+".png";
