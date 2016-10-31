@@ -30,3 +30,8 @@
 - 31/10/16[IVAN]:
         - Bala mata asteroides implementado y arreglado
         - Al destruir un asteroide hace el gif de la explosión(bug gif infinito)
+
+        // CAMBIOS CLASE //
+        - Los enemigos ya no heredan de ship, tienen una clase propia.(nombres de funciones y variables idénticos)
+        - El background ya tiene la herencia bien.
+        - Ahora las explosiones desaparecen después de acabar.

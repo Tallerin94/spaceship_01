@@ -51,3 +51,5 @@ for(var i=1;i<backgroundCount;i++){
     backgroundImg[i] = new Image();
     backgroundImg[i].src = "cdn/img/background/"+i+".png";
 }
+
+var contadortiempo = 0;
