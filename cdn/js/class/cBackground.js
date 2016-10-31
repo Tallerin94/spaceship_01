@@ -28,12 +28,15 @@ var cBackground = function(){
     this.setHeight = function(value){
         height = value;
     }
-    this.moveBackgroundX = function(){
-        this.setPosX(-0.1);
-        if(this.getPosX()%this.getWidth() == 0){
-            
-        }
+    this.moveBackgroundX = function(value){
+        this.setPosX(value);
     }
 }
 
-var bg = new cBackground();
+var bg = new Array();
+
+// Generamos 50 bgs que son suficientes para terminar el nivel
+for(var i=0;i<50;i++){
+    bg[i] = new cBackground();
+    bg[i].setPosX(i*bg[i].getWidth());
+}

@@ -23,8 +23,10 @@ function loop(){
         ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
         //console.log(player.getPosX());
         // BACKGROUND
-        bg.moveBackgroundX();
-        ctx.drawImage(backgroundImg[1], bg.getPosX(), bg.getPosY(), bg.getWidth(), bg.getHeight());
+        for(var i in bg){
+            bg[i].moveBackgroundX(-0.1);
+            ctx.drawImage(backgroundImg[1], bg[i].getPosX(), bg[i].getPosY(), bg[i].getWidth(), bg[i].getHeight());
+        }
         //PLAYER
         newAsteroid();
         asteroidMove();
