@@ -15,3 +15,8 @@ html, body{
     color:blue;
     visibility: visible;
 }
+
+img{
+    position:absolute;
+    visibility: visible;
+}

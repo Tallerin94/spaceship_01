@@ -65,16 +65,18 @@ function destroyAsteroid(){
                 if(Math.random()*2<1){
                     console.log("Ha soltado recompensa");
                 }
-                
+                $("body").append("<img src='cdn/img/explosion/1.gif' id="+asteroidExplosionCount+" style='top:"+(asteroid[a].posY-asteroid[a].height)+"px;left:"+(asteroid[a].posX-asteroid[a].width)+"px;visibility:'></img>");             ;
+                asteroidExplosionCount++;
                 shot.splice(s, 1);
                 asteroid.splice(a ,1);
-                
                 console.log("le has dado");
                 break;
             }
         }
     }
 }
+
+
 // ENEMIGOS
 function newEnemy1(){
     if(Math.random()*100 < 5){
