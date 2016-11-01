@@ -37,7 +37,12 @@
         - las explosiones desaparecen.
 
 - 1/11/16[IVAN]:
+        // ORGANIZACIÓN
         - Se ha organizado mejor el código de main.js en funciones por clases
+        // ENEMIGOS
         - Ahora los enemigos tienen su posición Y aleatoria
         - Los enemigos tienen una dirección inicial aleatoria (2 o -2)
-        - El backgraund hace la sensación de ser infinito dibujando solo 2 sprites.
+        - Se crea un enemigo mínimo cada X tiempo, pero hay cierta probabilidad de que se creen más entre tiempos de spawn de forma aleatoria.
+        - Los enemigos no se salen por la parte inferior de la pantalla.
+        //BACKGROUND
+        - El backgraund hace la sensación de ser infinito dibujando 2 sprites.

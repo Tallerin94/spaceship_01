@@ -1,7 +1,7 @@
 // CANVAS
 function resizeCanvas(){
-    $("#lienzo").attr("height", window.innerHeight);
-    $("#lienzo").attr("width", window.innerWidth);
+    $("#lienzo").attr("height", windowHeight);
+    $("#lienzo").attr("width", windowWidth);
 }
 
 // PLAYER 
@@ -66,7 +66,7 @@ function asteroidFunc(){
 
 function newAsteroid(){ 
     if(Math.random()*100 < 0.25){
-        asteroid[asteroidCount] = new cAsteroid(window.innerWidth,Math.random()*window.innerHeight,Math.ceil(Math.random()*2));   
+        asteroid[asteroidCount] = new cAsteroid(windowWidth,Math.random()*windowHeight,Math.ceil(Math.random()*2));   
         asteroidCount++;
     }
 }
@@ -125,7 +125,7 @@ function drawBg(){
         if(bg[i].getPosX() > -(bg[i].getWidth())){  
             ctx.drawImage(backgroundImg[1], bg[i].getPosX(), bg[i].getPosY(), bg[i].getWidth(), bg[i].getHeight());
         }else{
-            bg[i].posX = window.innerHeight;
+            bg[i].posX = windowHeight;
         }
     }
 }

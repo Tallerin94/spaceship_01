@@ -20,7 +20,7 @@ function main_menu(){
 
 function loop(){
     if(gamerunning){
-        ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
+        ctx.clearRect(0,0,windowWidth,windowHeight);
         
         // BACKGROUND
         drawBg();

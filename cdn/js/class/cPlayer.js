@@ -62,6 +62,6 @@ Player = function(){
         }
     }
 }
-Player.prototype = new Ship(1, 3, 0, 0, 100, window.innerHeight/2);
+Player.prototype = new Ship(1, 3, 0, 0, 100, windowHeight/2);
 
 var player = new Player();

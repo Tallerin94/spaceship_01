@@ -1,6 +1,6 @@
 var cBackground = function(posx, posy){
-    var width = window.innerWidth;
-    var height = window.innerHeight;
+    var width = windowWidth;
+    var height = windowHeight;
     this.posX = posx
     this.posY = posy;
 
@@ -40,5 +40,5 @@ var bg = new Array();
 for(var i=0;i<3;i++){
     bg[i] = new cBackground(0,0);
     //bg[i].setPosX(i*bg[i].getWidth());
-    bg[i].setPosX(i*window.innerWidth);
+    bg[i].setPosX(i*windowWidth);
 }

@@ -29,7 +29,7 @@ var cEnemy1 = function(){
         setSpeedY(setSpY);
     }
     //POSX
-    var posX = window.innerWidth;
+    var posX = windowWidth;
     this.getPosX = function(){
         return posX;
     }
@@ -37,36 +37,41 @@ var cEnemy1 = function(){
     this.setPosX = function(){
         posX += speedX;
         // LIMITS posX
-        if(posX > window.innerWidth){posX = window.innerWidth;}
+        if(posX > windowWidth){posX = windowWidth;}
         if(posX < 0){posX = 0;}
 
         //console.log(speed);
     }
     
     //POSY
-    var posY = Math.random()*window.innerHeight;
+    var posY = Math.random()*windowHeight;
     this.getPosY = function(){
         return posY;
     }
     this.setPosY = function(){
         posY += speedY;
         // Limits posY
-        if(posY>window.innerHeight){posY=window.innerHeight;}
+        if(posY>windowHeight){posY=windowHeight;}
         if(posY<0){posY=0;}
         //console.log(speed);
     }
+   
+    // DIMENSIONS
+    var enemy1height = windowHeight/8;
+    var enemy1width = enemy1height;
+
 
     this.enemyMove = function(){
         if(this.getPosY() <= 0){
             this.newSpeedY(2);
         }
-        if(this.getPosY() >= window.innerHeight){
+        if(this.getPosY() >= windowHeight-enemy1height){
             this.newSpeedY(-2);
         }
         this.setPosX();
         this.setPosY();
-        ctx.fillStyle = "green";
-        ctx.fillRect(this.getPosX(), this.getPosY(), 10, 10);
+
+        ctx.drawImage(enemy1Img,this.getPosX(),this.getPosY(),enemy1height,enemy1width);
     }
 }
-//cEnemy1.prototype = new Ship(101, 100, -2, -2, window.innerWidth-100, window.innerHeight/2);
+//cEnemy1.prototype = new Ship(101, 100, -2, -2, windowWidth-100, windowHeight/2);
