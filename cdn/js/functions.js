@@ -100,7 +100,7 @@ function destroyAsteroid(){
 
 // ENEMIGOS
 function newEnemy1(){
-    if(Math.random()*100 < 5){
+    if(Math.random()*100 < 1){
         enemy1[enemy1Count] = new cEnemy1();
         //console.log("se ha creado el "+enemy1Count);
         enemy1Count++;
@@ -119,10 +119,12 @@ function enemy1func(){
 // BACKGROUND
 function drawBg(){
     for(var i in bg){
-        bg[i].moveBackgroundX(-0.1);
+        bg[i].moveBackgroundX(-0.5);
         console.log(bg[i].posX+"-"+ bg[i].getPosY()+"-"+ bg[i].getWidth()+"-"+ bg[i].getHeight())
         if(bg[i].getPosX() > -(bg[i].getWidth())){  
             ctx.drawImage(backgroundImg[1], bg[i].getPosX(), bg[i].getPosY(), bg[i].getWidth(), bg[i].getHeight());
+        }else{
+            bg[i].posX = window.innerHeight;
         }
     }
 }
