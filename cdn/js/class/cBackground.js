@@ -1,7 +1,7 @@
 var cBackground = function(posx, posy){
     var width = window.innerWidth;
     var height = window.innerHeight;
-    this.posX = posx
+    this.posX = posx;
     this.posY = posy;
 
     this.getWidth = function(){
@@ -16,7 +16,7 @@ var cBackground = function(posx, posy){
     this.setHeight = function(value){
         height = value;
     }
-     this.getPosX = function(){
+    this.getPosX = function(){
         return this.posX;
     }
     this.getPosY = function(){
