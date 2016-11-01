@@ -1,7 +1,24 @@
 // CANVAS
 function resizeCanvas(){
-    $("#lienzo").attr("height", windowHeight);
     $("#lienzo").attr("width", windowWidth);
+    $("#lienzo").attr("height", windowHeight);
+}
+
+function newResize(){
+    $(window).resize(function(){
+        windowHeight = window.innerHeight;
+        windowWidth = window.innerWidth;
+        resizeCanvas();
+        playerHeight = windowHeight/5;
+        playerWidth = playerHeight;
+        for(var i in enemy1){
+            enemy1[i].autoHeight();
+            enemy1[i].autoWidth();
+        }
+        for(var i in bg){
+            bg[i].autoHeight();
+        }
+    });
 }
 
 // PLAYER 

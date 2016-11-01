@@ -50,3 +50,8 @@
 
         ------ PENDIENTE DE HACER --------
         - poner choque de enemigos y asteroides con la nave del jugador.
+
+- 01/11/16[NONAME]:
+        - Ahora todos los enemigos, el personaje principal, el background y los asteroides se redimensionan.
+        - Se ha reestructurado el main.js.
+        

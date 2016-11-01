@@ -1,7 +1,7 @@
 var cBackground = function(posx, posy){
-    var width = window.innerWidth;
+    /*var width = window.innerWidth;
     var height = window.innerHeight;
-    this.posX = posx;
+    this.posX = posx;*/
     var width = windowWidth;
     var height = windowHeight;
     this.posX = posx
@@ -33,6 +33,9 @@ var cBackground = function(posx, posy){
     }
     this.moveBackgroundX = function(value){
         this.setPosX(value);
+    }
+    this.autoHeight = function(){
+        height = windowHeight;
     }
 }
 
