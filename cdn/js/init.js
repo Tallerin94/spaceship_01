@@ -1,11 +1,19 @@
 // CANVAS
 var lienzo = document.getElementById("lienzo");
 var ctx = lienzo.getContext("2d"); 
+
+var windowHeight  = window.innerHeight;
+var windowWidth = window.innerWidth;
+
+/*$(window).resize(function(){
+    windowHeight  = window.innerHeight;
+    windowWidth = window.innerWidth
+})*/
 // Game Loop Control
 var loop_string = "";
 var gamerunning = false;
 //Player Ship
-var playerHeight = window.innerHeight/5;
+var playerHeight = windowHeight/5;
 var playerWidth = playerHeight;
 var playerShipImg = new Image();
 playerShipImg.src ="cdn/img/ships/1.png" 
@@ -43,7 +51,8 @@ var rec = new Array();
 // Enemy1
 var enemy1 = new Array();
 var enemy1Count = 0;
-
+var enemy1Img = new Image();
+enemy1Img.src = "cdn/img/ships/2.png" 
 // Background
 var backgroundImg = new Array();
 var backgroundCount = 2;

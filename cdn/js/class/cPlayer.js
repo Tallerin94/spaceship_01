@@ -33,6 +33,7 @@ Player = function(){
         if(dirPosX == "" && player.getSpeedX() < 0){player.newSpeedX(player.getSpeedX()+0.5);}
         if(dirPosX == "" && player.getSpeedX() > 0){player.newSpeedX(player.getSpeedX()-0.5);}
         //  
+        ctx.drawImage(playerShipImg,player.getPosX(),player.getPosY(), playerHeight, playerWidth);
     }
     //AMMO
     var ammo = ammoStart;
@@ -61,6 +62,6 @@ Player = function(){
         }
     }
 }
-Player.prototype = new Ship(1, 3, 0, 0, 100, window.innerHeight/2);
+Player.prototype = new Ship(1, 3, 0, 0, 100, windowHeight/2);
 
 var player = new Player();

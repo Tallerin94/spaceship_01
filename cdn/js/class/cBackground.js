@@ -1,7 +1,13 @@
 var cBackground = function(posx, posy){
+<<<<<<< HEAD
     var width = window.innerWidth;
     var height = window.innerHeight;
     this.posX = posx;
+=======
+    var width = windowWidth;
+    var height = windowHeight;
+    this.posX = posx
+>>>>>>> 1bb76671810a5abf51b35ec496fda916818bf903
     this.posY = posy;
 
     this.getWidth = function(){
@@ -37,8 +43,8 @@ var cBackground = function(posx, posy){
 var bg = new Array();
 
 // Generamos 50 bgs que son suficientes para terminar el nivel
-for(var i=0;i<50;i++){
+for(var i=0;i<3;i++){
     bg[i] = new cBackground(0,0);
     //bg[i].setPosX(i*bg[i].getWidth());
-    bg[i].setPosX(10);
+    bg[i].setPosX(i*windowWidth);
 }

@@ -20,47 +20,28 @@ function main_menu(){
 
 function loop(){
     if(gamerunning){
-        //console.log(enemy1Count)
-        ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
-        //console.log(player.getPosX());
-        // BACKGROUND
-        for(var i in bg){
-            bg[i].moveBackgroundX(-0.1);
-            console.log(bg[i].posX+"-"+ bg[i].getPosY()+"-"+ bg[i].getWidth()+"-"+ bg[i].getHeight())
-            if(bg[i].getPosX() > -(bg[i].getWidth())){
-                
-                ctx.drawImage(backgroundImg[1], bg[i].getPosX(), bg[i].getPosY(), bg[i].getWidth(), bg[i].getHeight());
-            }
-        }
-        //PLAYER
-        newAsteroid();
-        asteroidMove();
-        ctx.fillStyle = "blue";
-        player.playerMove();
-        // ENEMY
-        newEnemy1();
-        for(var i in enemy1){
-            enemy1[i].enemyMove();
-            //console.log(enemy1[i].getPosX()+"-"+enemy1[i].getPosY())
-        }
-        ctx.drawImage(playerShipImg,player.getPosX(),player.getPosY(), playerHeight, playerWidth);
-        //Shot        
-        for(var i in shot){
-            switch(shot[i].type){
-                case 1:
-                    ctx.fillStyle = "red";
-                    break;
-                case 2:
-                    ctx.fillStyle = "green";
-                    break;
-            } 
-            shot[i].move();
-            ctx.fillRect(shot[i].posX,shot[i].posY, shot[i].width, shot[i].height);
-        }
-        destroyAsteroid();
-        clearTimeout(loop_string);
-        loop_string = setTimeout("loop()", 30);
+        ctx.clearRect(0,0,windowWidth,windowHeight);
         
+        // BACKGROUND
+        drawBg();
+
+        //PLAYER
+        player.playerMove();
+
+        //ENEMY
+        enemy1func();  
+
+        //SHOTS 
+        drawPlayerShot();  
+
+        //ASTEROIDS
+        asteroidFunc();
+
+        // VAR
         contadortiempo++;
+
+        // LOOP CONTROL
+        clearTimeout(loop_string);
+        loop_string = setTimeout("loop()", 30); 
     }
 }
