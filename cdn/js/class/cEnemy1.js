@@ -12,8 +12,11 @@ var cEnemy1 = function(){
     this.newSpeedX = function(setSpX){
         setSpeedX(setSpX);
     }
-     // SPEED Y
-    var speedY = 2;
+    // SPEED Y
+    var speedY = Math.random()*2;
+    // Ajusta la valocidad Y a 2 || -2
+    if(speedY<=1){speedY = -2;}else{speedY = 2;}
+
     this.getSpeedY = function(){
         return speedY;
     }
@@ -25,7 +28,7 @@ var cEnemy1 = function(){
     this.newSpeedY = function(setSpY){
         setSpeedY(setSpY);
     }
-     //POSX
+    //POSX
     var posX = window.innerWidth;
     this.getPosX = function(){
         return posX;
@@ -40,8 +43,8 @@ var cEnemy1 = function(){
         //console.log(speed);
     }
     
-     //POSY
-    var posY = window.innerHeight/2;
+    //POSY
+    var posY = Math.random()*window.innerHeight;
     this.getPosY = function(){
         return posY;
     }

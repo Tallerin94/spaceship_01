@@ -35,3 +35,8 @@
         - Los enemigos ya no heredan de ship, tienen una clase propia.(nombres de funciones y variables idénticos)
         - el bg hereda bien
         - las explosiones desaparecen.
+
+- 1/11/16[IVAN]:
+        - Se ha organizado mejor el código de main.js en funciones por clases
+        - Ahora los enemigos tienen su posición Y aleatoria
+        - Los enemigos tienen una dirección inicial aleatoria (2 o -2)

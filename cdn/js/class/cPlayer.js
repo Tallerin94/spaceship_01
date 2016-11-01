@@ -33,6 +33,7 @@ Player = function(){
         if(dirPosX == "" && player.getSpeedX() < 0){player.newSpeedX(player.getSpeedX()+0.5);}
         if(dirPosX == "" && player.getSpeedX() > 0){player.newSpeedX(player.getSpeedX()-0.5);}
         //  
+        ctx.drawImage(playerShipImg,player.getPosX(),player.getPosY(), playerHeight, playerWidth);
     }
     //AMMO
     var ammo = ammoStart;

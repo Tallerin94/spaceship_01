@@ -1,12 +1,10 @@
 // CANVAS
-
 function resizeCanvas(){
     $("#lienzo").attr("height", window.innerHeight);
     $("#lienzo").attr("width", window.innerWidth);
 }
 
 // PLAYER 
-
 function playerControl(){
     $(document).keydown(function(){
         if(event.which == 38 && gamerunning){dirPosY="up";}
@@ -43,7 +41,28 @@ function playerControl(){
     });
 }
 
+// Player Shots
+function drawPlayerShot(){
+    for(var i in shot){
+        switch(shot[i].type){
+            case 1:
+                ctx.fillStyle = "red";
+                break;
+            case 2:
+                ctx.fillStyle = "green";
+                break;
+        } 
+        shot[i].move();
+        ctx.fillRect(shot[i].posX,shot[i].posY, shot[i].width, shot[i].height);
+    }
+}   
+
 // ASTEROIDES
+function asteroidFunc(){
+        newAsteroid();
+        asteroidMove();
+        destroyAsteroid();
+}
 
 function newAsteroid(){ 
     if(Math.random()*100 < 2.5){
@@ -51,6 +70,7 @@ function newAsteroid(){
         asteroidCount++;
     }
 }
+
 function asteroidMove(){
     for(var i in asteroid){
         asteroid[i].posX-=asteroid[i].speed;
@@ -85,5 +105,24 @@ function newEnemy1(){
         //console.log("se ha creado el "+enemy1Count);
         enemy1Count++;
         
+    }
+}
+
+function enemy1func(){
+    newEnemy1();
+    for(var i in enemy1){
+        enemy1[i].enemyMove();
+        //console.log(enemy1[i].getPosX()+"-"+enemy1[i].getPosY())
+    }
+}
+
+// BACKGROUND
+function drawBg(){
+    for(var i in bg){
+        bg[i].moveBackgroundX(-0.1);
+        console.log(bg[i].posX+"-"+ bg[i].getPosY()+"-"+ bg[i].getWidth()+"-"+ bg[i].getHeight())
+        if(bg[i].getPosX() > -(bg[i].getWidth())){  
+            ctx.drawImage(backgroundImg[1], bg[i].getPosX(), bg[i].getPosY(), bg[i].getWidth(), bg[i].getHeight());
+        }
     }
 }
