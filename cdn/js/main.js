@@ -37,9 +37,11 @@ function loop(){
         //ASTEROIDS
         asteroidFunc();
 
-        clearTimeout(loop_string);
-        loop_string = setTimeout("loop()", 30);
-        
+        // VAR
         contadortiempo++;
+
+        // LOOP CONTROL
+        clearTimeout(loop_string);
+        loop_string = setTimeout("loop()", 30); 
     }
 }

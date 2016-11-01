@@ -65,7 +65,7 @@ function asteroidFunc(){
 }
 
 function newAsteroid(){ 
-    if(Math.random()*100 < 2.5){
+    if(Math.random()*100 < 0.25){
         asteroid[asteroidCount] = new cAsteroid(window.innerWidth,Math.random()*window.innerHeight,Math.ceil(Math.random()*2));   
         asteroidCount++;
     }
@@ -100,11 +100,12 @@ function destroyAsteroid(){
 
 // ENEMIGOS
 function newEnemy1(){
-    if(Math.random()*100 < 1){
+    if(contadortiempo%300 == 0){
         enemy1[enemy1Count] = new cEnemy1();
-        //console.log("se ha creado el "+enemy1Count);
         enemy1Count++;
-        
+    }else if(Math.random()*100 < 0.1){        
+        enemy1[enemy1Count] = new cEnemy1();
+        enemy1Count++; 
     }
 }
 
