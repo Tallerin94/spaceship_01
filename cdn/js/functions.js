@@ -109,19 +109,39 @@ function newEnemy1(){
     }
 }
 
-function enemy1func(){
-    newEnemy1();
+function enemyMovement(){
     for(var i in enemy1){
         enemy1[i].enemyMove();
         //console.log(enemy1[i].getPosX()+"-"+enemy1[i].getPosY())
     }
 }
 
+function enemyKill(){
+    for(var e in enemy1){
+        // si se sale de la pantalla por la izq se elimina de la matriz
+         if(enemy1[e].getPosX() <= 0-enemy1[e].width){
+            enemy1.splice(e ,1);
+        }
+        // choque con jugador
+        for(var s in shot){
+            /*if(Math.abs((enemy1[e].getPosY()+enemy1[e].height/2)-(shot[s].posY+shot[s].height/2)) < shot[s].height/2+enemy1[e].height/2){
+                console.log("xd");
+            }*/
+        }       
+    }
+}
+
+function enemy1func(){
+    newEnemy1();
+    enemyMovement();
+    enemyKill();
+}
+
 // BACKGROUND
 function drawBg(){
     for(var i in bg){
         bg[i].moveBackgroundX(-0.5);
-        console.log(bg[i].posX+"-"+ bg[i].getPosY()+"-"+ bg[i].getWidth()+"-"+ bg[i].getHeight())
+        //console.log(bg[i].posX+"-"+ bg[i].getPosY()+"-"+ bg[i].getWidth()+"-"+ bg[i].getHeight())
         if(bg[i].getPosX() > -(bg[i].getWidth())){  
             ctx.drawImage(backgroundImg[1], bg[i].getPosX(), bg[i].getPosY(), bg[i].getWidth(), bg[i].getHeight());
         }else{

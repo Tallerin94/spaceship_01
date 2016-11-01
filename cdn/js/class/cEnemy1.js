@@ -38,7 +38,7 @@ var cEnemy1 = function(){
         posX += speedX;
         // LIMITS posX
         if(posX > windowWidth){posX = windowWidth;}
-        if(posX < 0){posX = 0;}
+        //if(posX < 0-this.width){posX = 0;}
 
         //console.log(speed);
     }
@@ -57,21 +57,20 @@ var cEnemy1 = function(){
     }
    
     // DIMENSIONS
-    var enemy1height = windowHeight/8;
-    var enemy1width = enemy1height;
+    this.height = windowHeight/8;
+    this.width = this.height;
 
 
     this.enemyMove = function(){
         if(this.getPosY() <= 0){
             this.newSpeedY(2);
         }
-        if(this.getPosY() >= windowHeight-enemy1height){
+        if(this.getPosY() >= windowHeight-this.height){
             this.newSpeedY(-2);
         }
         this.setPosX();
         this.setPosY();
-
-        ctx.drawImage(enemy1Img,this.getPosX(),this.getPosY(),enemy1height,enemy1width);
+        ctx.drawImage(enemy1Img,this.getPosX(),this.getPosY(),this.height,this.width);
     }
 }
 //cEnemy1.prototype = new Ship(101, 100, -2, -2, windowWidth-100, windowHeight/2);

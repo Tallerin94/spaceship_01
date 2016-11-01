@@ -44,5 +44,9 @@
         - Los enemigos tienen una dirección inicial aleatoria (2 o -2)
         - Se crea un enemigo mínimo cada X tiempo, pero hay cierta probabilidad de que se creen más entre tiempos de spawn de forma aleatoria.
         - Los enemigos no se salen por la parte inferior de la pantalla.
+        - Los enemigos se eliminan del Array al desaparecer por la parte izquierda de la pantalla.
         //BACKGROUND
         - El backgraund hace la sensación de ser infinito dibujando 2 sprites.
+
+        ------ PENDIENTE DE HACER --------
+        - poner choque de enemigos y asteroides con la nave del jugador.
