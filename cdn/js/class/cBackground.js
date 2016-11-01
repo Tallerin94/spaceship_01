@@ -41,12 +41,9 @@ var cBackground = function(posx, posy){
     }
 }
 
-
 var bg = new Array();
 
-// Generamos 50 bgs que son suficientes para terminar el nivel
 for(var i=0;i<3;i++){
     bg[i] = new cBackground(0,0);
-    //bg[i].setPosX(i*bg[i].getWidth());
     bg[i].setPosX(i*windowWidth);
 }
