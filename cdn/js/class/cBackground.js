@@ -34,8 +34,10 @@ var cBackground = function(posx, posy){
     this.moveBackgroundX = function(value){
         this.setPosX(value);
     }
-    this.autoHeight = function(){
+    this.autoSize = function(){
+        width = windowWidth;
         height = windowHeight;
+        this.posX = 0;
     }
 }
 

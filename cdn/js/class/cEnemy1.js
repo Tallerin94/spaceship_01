@@ -60,14 +60,10 @@ var cEnemy1 = function(){
     this.height = windowHeight/8;
     this.width = this.height;
 
-    this.autoHeight = function(){
+    this.autoSize = function(){
         this.height = windowHeight/8;
-    }
-
-    this.autoWidth = function(){
         this.width = this.height;
     }
-
 
     this.enemyMove = function(){
         if(this.getPosY() <= 0){

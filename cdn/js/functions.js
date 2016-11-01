@@ -12,11 +12,14 @@ function newResize(){
         playerHeight = windowHeight/5;
         playerWidth = playerHeight;
         for(var i in enemy1){
-            enemy1[i].autoHeight();
-            enemy1[i].autoWidth();
+            enemy1[i].autoSize();
         }
         for(var i in bg){
-            bg[i].autoHeight();
+            bg[i].autoSize();
+            bg[i].setPosX(i*windowWidth);
+        }
+        for(var i in asteroid){
+            asteroid[i].autoSize();
         }
     });
 }
@@ -24,11 +27,11 @@ function newResize(){
 // PLAYER 
 function playerControl(){
     $(document).keydown(function(){
-        if(event.which == 38 && gamerunning){dirPosY="up";}
-        if(event.which == 40 && gamerunning){dirPosY="down";}
-        if(event.which == 37 && gamerunning){dirPosX="left";}
-        if(event.which == 39 && gamerunning){dirPosX="right";}
-        if(event.which == 32 && gamerunning){
+        if(event.which == 38 && gameRunning){dirPosY="up";}
+        if(event.which == 40 && gameRunning){dirPosY="down";}
+        if(event.which == 37 && gameRunning){dirPosX="left";}
+        if(event.which == 39 && gameRunning){dirPosX="right";}
+        if(event.which == 32 && gameRunning){
             if(player.isAmmoEmpty()){
                 //console.log("no quedan balas");
             }else{
@@ -42,7 +45,7 @@ function playerControl(){
             }
             
         }
-        if(event.which == 81 && gamerunning){
+        if(event.which == 81 && gameRunning){
             if(ammoSelected == 1){
                 ammoSelected = 2;
             }else{
@@ -51,10 +54,10 @@ function playerControl(){
         }
     });
     $(document).keyup(function(){
-        if(event.which == 38 && gamerunning && dirPosY == "up"){dirPosY = "";}
-        if(event.which == 40 && gamerunning && dirPosY == "down"){dirPosY = "";}
-        if(event.which == 37 && gamerunning && dirPosX == "left"){dirPosX = "";}
-        if(event.which == 39 && gamerunning && dirPosX == "right"){dirPosX = "";}
+        if(event.which == 38 && gameRunning && dirPosY == "up"){dirPosY = "";}
+        if(event.which == 40 && gameRunning && dirPosY == "down"){dirPosY = "";}
+        if(event.which == 37 && gameRunning && dirPosX == "left"){dirPosX = "";}
+        if(event.which == 39 && gameRunning && dirPosX == "right"){dirPosX = "";}
     });
 }
 
@@ -157,7 +160,7 @@ function enemy1func(){
 // BACKGROUND
 function drawBg(){
     for(var i in bg){
-        bg[i].moveBackgroundX(-0.5);
+        bg[i].moveBackgroundX(-10);
         //console.log(bg[i].posX+"-"+ bg[i].getPosY()+"-"+ bg[i].getWidth()+"-"+ bg[i].getHeight())
         if(bg[i].getPosX() > -(bg[i].getWidth())){  
             ctx.drawImage(backgroundImg[1], bg[i].getPosX(), bg[i].getPosY(), bg[i].getWidth(), bg[i].getHeight());

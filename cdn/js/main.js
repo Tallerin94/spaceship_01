@@ -2,7 +2,7 @@
 //                   Función para el bucle principal                    //
 //////////////////////////////////////////////////////////////////////////
 function loop(){
-    if(gamerunning){
+    if(gameRunning){
         newResize();            // Nuevo tamaño de la ventana
         ctx.clearRect(0,0,windowWidth,windowHeight);
         drawBg();               // Dibuja el bg
@@ -23,7 +23,7 @@ function main_menu(){
     $(document).keydown(function(){
         $("#main_menu").css("visibility", "hidden");
          loop_string = setTimeout("loop()", 1000);
-         gamerunning = true;
+         gameRunning = true;
     });
 }
 
