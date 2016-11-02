@@ -15,7 +15,8 @@ function loop(){
         Colisions();
         contadortiempo++;
         clearTimeout(loop_string);
-        loop_string = setTimeout("loop()", 30); 
+        loop_string = setTimeout("loop()", 30);
+        console.log("Life: "+player.getLife()+" Ammo: "+player.getAmmo()); 
     }
 }
 

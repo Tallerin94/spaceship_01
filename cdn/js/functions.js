@@ -107,13 +107,13 @@ function drawPlayerShot(){
 
 function enemy1Shots() {
     for(var e in enemy1){
-        if(Math.random()*100<=10){
+        if(Math.random()*100<=0.2){
             console.log(enemy1[e].getPosX());
             enemy1Shotx[enemy1ShotCounter] = new cEnemy1Shot();
             enemy1Shotx[enemy1ShotCounter].type = 3;
             enemy1Shotx[enemy1ShotCounter].posX = enemy1[e].getPosX();
             enemy1Shotx[enemy1ShotCounter].posY = enemy1[e].getPosY()+enemy1[e].height/2-enemy1Shotx[enemy1ShotCounter].height/2;
-            console.log(enemy1Shotx[enemy1ShotCounter]);
+            //console.log(enemy1Shotx[enemy1ShotCounter]);
             enemy1ShotCounter++;
         }
     }
@@ -207,6 +207,8 @@ function Colisions(){
             if(Math.abs((asteroid[a].posX+asteroid[a].width/2)-(player.getPosX()+playerWidth/2)) < playerWidth/2+asteroid[a].width/2){
                 console.log("as xocao");
                 asteroid.splice(a, 1);
+                //RESTA VIDA
+                player.setLessHP();
             }
         }
     }

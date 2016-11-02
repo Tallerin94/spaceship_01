@@ -10,6 +10,10 @@ Ship = function(type, life, speedX, speedY, posX, posY){
     this.getLife = function(){
         return life;
     }
+    
+    this.setLessHP = function(hp){
+        life--;
+    }
     //SPEED X
     var speedX = speedX;
     this.getSpeedX = function(){
