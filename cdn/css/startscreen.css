@@ -1,0 +1,9 @@
+#undefined-logo{
+    background-image: url("../img/startscreen/undefined.png");
+    background-size: contain;
+    width: 396px;
+    height: 100px;
+    margin: auto;
+    margin-top: 22%;
+    display: none;
+}

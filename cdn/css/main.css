@@ -2,6 +2,7 @@ html, body{
     padding: 0px;
     overflow: hidden;
     margin: 0;
+    background-color: black;
 }
 
 #lienzo{
@@ -13,10 +14,10 @@ html, body{
     position:absolute;
     top: 100px;
     color:blue;
-    visibility: visible;
+    display: none;
 }
 
 img{
     position:absolute;
-    visibility: visible;
+    display: none;
 }
