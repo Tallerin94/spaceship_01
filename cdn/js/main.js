@@ -24,7 +24,7 @@ function main_menu(){
     newResize();            // Nuevo tamaño de la ventana
     $(document).keydown(function(){
         if(menuActive && gameRunning==false){
-            $("#main_menu").css("visibility", "hidden");
+            $("#main_menu").css("display", "none");
             getSizeImg = setTimeout("sizeImg()", 500);
             loop_string = setTimeout("loop()", 1000);
             gameRunning = true;
@@ -38,13 +38,17 @@ function main_menu(){
 //             Función para llamar la pantalla principal                //
 //////////////////////////////////////////////////////////////////////////
 function start(){
+    $("#main_menu").css("display", "block");
     resizeCanvas();
-
     playerControl();
-   
     loop_string = setTimeout("main_menu()", 10);
 }
 
+function undefinedScreen(){
+    manageUndefined();
+}
+
 $(document).ready(function(){
-    start();
+    //start();
+    undefinedScreen();
 });

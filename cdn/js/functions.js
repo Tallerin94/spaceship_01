@@ -137,7 +137,7 @@ function asteroidColisions(){
                 if(Math.random()*2<1){
                     console.log("Ha soltado recompensa");
                 }
-                $("body").append("<img src='cdn/img/explosion/1.gif' id='asteroide"+contadortiempo+"' style='top:"+(asteroid[a].posY-(asteroid[a].height/2))+"px;left:"+(asteroid[a].posX-(asteroid[a].width/2))+"px;visibility:'></img>");
+                $("body").append("<img src='cdn/img/explosion/1.gif' id='asteroide"+contadortiempo+"' style='top:"+(asteroid[a].posY-(asteroid[a].height/2))+"px;left:"+(asteroid[a].posX-(asteroid[a].width/2))+"px;display: block;'></img>");
                 $("#asteroide"+(contadortiempo)).fadeOut(300);
                 asteroidExplosionCount++;
                 shot.splice(s, 1);
