@@ -116,7 +116,7 @@ function asteroidColisions(){
                 if(Math.random()*2<1){
                     console.log("Ha soltado recompensa");
                 }
-                $("body").append("<img src='cdn/img/explosion/1.gif' id='asteroide"+contadortiempo+"' style='top:"+(asteroid[a].posY-asteroid[a].height)+"px;left:"+(asteroid[a].posX-asteroid[a].width)+"px;visibility:'></img>");
+                $("body").append("<img src='cdn/img/explosion/1.gif' id='asteroide"+contadortiempo+"' style='top:"+(asteroid[a].posY-(asteroid[a].height/2))+"px;left:"+(asteroid[a].posX-(asteroid[a].width/2))+"px;visibility:'></img>");
                 $("#asteroide"+(contadortiempo)).fadeOut(300);
                 asteroidExplosionCount++;
                 shot.splice(s, 1);
@@ -219,7 +219,7 @@ function drawBg3(){
         if(bg3[i].getPosX() > -imgBg3Width){
             ctx.drawImage(backgroundImg[3], bg3[i].getPosX(), bg3[i].getPosY(), imgBg3Width, imgBg3Height);
         }else{
-            bg3[i].posX = windowWidth+Math.random()*+imgBg3Width-imgBg3Width;
+            bg3[i].posX = windowWidth+Math.random()*imgBg3Width;
             bg3[i].posY = Math.random()*(windowHeight+imgBg3Height) - imgBg3Height/2;
         }
     }
@@ -232,7 +232,7 @@ function drawBg4(){
         if(bg4[i].getPosX() > -imgBg4Width){
             ctx.drawImage(backgroundImg[4], bg4[i].getPosX(), bg4[i].getPosY(), imgBg4Width, imgBg4Height);
         }else{
-            bg4[i].posX = windowWidth+Math.random()*+imgBg4Width-imgBg4Width;
+            bg4[i].posX = windowWidth+Math.random()*imgBg4Width;
             bg4[i].posY = Math.random()*(windowHeight+imgBg4Height) - imgBg4Height/2;
         }
     }
