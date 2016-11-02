@@ -89,10 +89,13 @@ function drawPlayerShot(){
     for(var i in shot){
         switch(shot[i].type){
             case 1:
-                ctx.fillStyle = "red";
+                ctx.fillStyle = "blue";
                 break;
             case 2:
                 ctx.fillStyle = "green";
+                break;
+            case 3:
+                ctx.fillStyle = "red";
                 break;
         } 
         shot[i].move();
@@ -101,12 +104,20 @@ function drawPlayerShot(){
 } 
 
 function enemy1Shots() {
+    console.log(enemy1Shotx);
     for(var e in enemy1){
-        if(Math.random()*100<=1){
-            
+        if(Math.random()*100<=5){
+            console.log("e disparao xd");
+            enemy1Shotx[enemy1ShotCounter] = new cEnemy1Shot();
+            enemy1Shotx[enemy1ShotCounter].type = 3;
+            enemy1Shotx[enemy1ShotCounter].posX = enemy1[e].posX();
+            enemy1Shotx[enemy1ShotCounter].posY = enemy1[e].posY()+enemy1[e].height/2-enemy1Shotx[enemy1ShotCounter].height/2;
+            enemy1ShotCounter++;
         }
     }
 }
+
+
 
 // ASTEROIDES
 function asteroidFunc(){
