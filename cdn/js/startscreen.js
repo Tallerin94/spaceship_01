@@ -16,5 +16,5 @@ function fadeOutLogo(){
 
 function manageUndefined(){
     $("#undefined-logo").fadeIn(1000);
-    startScreenTimer = setTimeout("fadeOutLogo()", 2000);
+    startScreenTimer = setTimeout("fadeOutLogo()", 2500);
 }

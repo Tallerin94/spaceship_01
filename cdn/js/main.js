@@ -50,6 +50,5 @@ function undefinedScreen(){
 }
 
 $(document).ready(function(){
-    //start();
     undefinedScreen();
 });
