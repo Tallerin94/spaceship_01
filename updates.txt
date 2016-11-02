@@ -71,3 +71,4 @@
 - 2/11/16[IVAN]:
         - Los asteroides tienen colisión con el jugador (aún no hace nada).
         - Los asteroides tienen colisión con los enemy1 (aún no hace nada).
+        - Se puede pausar pulsando el escape, la pausa se quita pulsándolo de nuevo (playerControl function).

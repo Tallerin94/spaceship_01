@@ -54,7 +54,7 @@ function playerControl(){
                 playerShotNumber++;
             }
             
-        }
+        }        
         if(event.which == 81 && gameRunning){
             if(ammoSelected == 1){
                 ammoSelected = 2;
@@ -69,6 +69,17 @@ function playerControl(){
         if(event.which == 37 && gameRunning && dirPosX == "left"){dirPosX = "";}
         if(event.which == 39 && gameRunning && dirPosX == "right"){dirPosX = "";}
     });
+
+    // PAUSE
+    
+    if(event.which == 27){
+         gameRunning = !gameRunning;
+            if(gameRunning){
+                loop();
+            }else{
+                // MOSTRAR MENÚ PAUSA
+            }
+        }
 }
 
 // Player Shots

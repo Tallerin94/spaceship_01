@@ -12,6 +12,7 @@ var windowWidth = window.innerWidth;
 // Game Loop Control
 var loop_string = "";
 var gameRunning = false;
+var menuActive = true;
 //Player Ship
 var playerHeight = windowHeight/5;
 var playerWidth = playerHeight;
