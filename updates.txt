@@ -82,4 +82,4 @@
         - Se ha arreglado un bugfix con la creación de las nebulosas.
         - Se ha añadido una pequeña atmósfera a Marte.
         - La nave ya no puede salirse de los límites.
-        
+        - Se ha mejorado el movimiento de la nave.
