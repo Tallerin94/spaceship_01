@@ -47,12 +47,13 @@
         - Los enemigos se eliminan del Array al desaparecer por la parte izquierda de la pantalla.
         //BACKGROUND
         - El backgraund hace la sensación de ser infinito dibujando 2 sprites.
-
+        // GENERAL
+        - Ahora todos los enemigos, el personaje principal y los asteroides se redimensionan. (ANTES DE EMPEZAR)
         ------ PENDIENTE DE HACER --------
         - poner choque de enemigos y asteroides con la nave del jugador.
 
 - 01/11/16[NONAME]:
-        - Ahora todos los enemigos, el personaje principal, el background y los asteroides se redimensionan.
+        - Ahora todos los enemigos, el personaje principal, el background y los asteroides se redimensionan. (EN CUALQUIER MOMENTO)
         - Se ha reestructurado el main.js.
         - Se ha añadido la nebulosa 1.
         - Se ha añadido opacidad a la nebulsa 1.
@@ -66,3 +67,7 @@
         - Las nuevas estrellas ya tienen correcto el resize.
         - Las nebulosas se hacen pequeñas en función del tamaño de la pantalla.
         - Al principio del nivel dibuja Marte (todavía está algo mal, pero creo que si la idea de mejora, puede quedar bien).
+
+- 2/11/16[IVAN]:
+        - Los asteroides tienen colisión con el jugador (aún no hace nada).
+        - Los asteroides tienen colisión con los enemy1 (aún no hace nada).

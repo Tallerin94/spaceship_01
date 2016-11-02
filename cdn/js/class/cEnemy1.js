@@ -65,7 +65,7 @@ var cEnemy1 = function(){
         this.width = this.height;
     }
 
-    this.enemyMove = function(){
+    this.move = function(){
         if(this.getPosY() <= 0){
             this.newSpeedY(2);
         }

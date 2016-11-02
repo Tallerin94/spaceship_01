@@ -91,7 +91,7 @@ function drawPlayerShot(){
 function asteroidFunc(){
         newAsteroid();
         asteroidMove();
-        destroyAsteroid();
+        asteroidColisions();
 }
 
 function newAsteroid(){ 
@@ -108,14 +108,15 @@ function asteroidMove(){
     }
 }
 
-function destroyAsteroid(){  
-    for(var s in shot){
-        for(var a in asteroid){          
+function asteroidColisions(){  
+    for(var a in asteroid){
+        // Collision w/shots
+        for(var s in shot){          
             if(Math.abs((asteroid[a].posY+asteroid[a].height/2)-(shot[s].posY+shot[s].height/2)) < shot[s].height/2+asteroid[a].height/2 && Math.abs((asteroid[a].posX+asteroid[a].width/2)-(shot[s].posX+shot[s].width/2)) < shot[s].width/2+asteroid[a].width/2){  
                 if(Math.random()*2<1){
                     console.log("Ha soltado recompensa");
                 }
-                $("body").append("<img src='cdn/img/explosion/1.gif' id='asteroide"+contadortiempo+"' style='top:"+(asteroid[a].posY-asteroid[a].height)+"px;left:"+(asteroid[a].posX-asteroid[a].width)+"px;visibility:'></img>");             ;
+                $("body").append("<img src='cdn/img/explosion/1.gif' id='asteroide"+contadortiempo+"' style='top:"+(asteroid[a].posY-asteroid[a].height)+"px;left:"+(asteroid[a].posX-asteroid[a].width)+"px;visibility:'></img>");
                 $("#asteroide"+(contadortiempo)).fadeOut(300);
                 asteroidExplosionCount++;
                 shot.splice(s, 1);
@@ -125,6 +126,24 @@ function destroyAsteroid(){
             }
         }
     }
+    // Collision w/ player Ship
+    for(var a in asteroid){   
+        if(Math.abs((asteroid[a].posY+asteroid[a].height/2)-(player.getPosY()+playerHeight/2)) < playerHeight/2+asteroid[a].height/2 ){  
+            if(Math.abs((asteroid[a].posX+asteroid[a].width/2)-(player.getPosX()+playerWidth/2)) < playerWidth/2+asteroid[a].width/2){
+                console.log("as xocao");
+            }
+        }
+    }
+        // Collision w/ enemy1 Ships
+    for(var a in asteroid){
+        for(var e in enemy1){
+            if(Math.abs((asteroid[a].posY+asteroid[a].height/2)-(enemy1[e].getPosY()+enemy1[e].height/2)) < enemy1[e].height/2+asteroid[a].height/2 ){  
+                if(Math.abs((asteroid[a].posX+asteroid[a].width/2)-(enemy1[e].getPosX()+enemy1[e].width/2)) < enemy1[e].width/2+asteroid[a].width/2){
+                    console.log("as xocao");
+                }
+            }
+        }
+    }  
 }
 
 
@@ -141,7 +160,7 @@ function newEnemy1(){
 
 function enemyMovement(){
     for(var i in enemy1){
-        enemy1[i].enemyMove();
+        enemy1[i].move();
         //console.log(enemy1[i].getPosX()+"-"+enemy1[i].getPosY())
     }
 }
