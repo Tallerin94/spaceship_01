@@ -71,8 +71,11 @@
 - 2/11/16[IVAN]:
         - Los asteroides tienen colisión con el jugador (aún no hace nada).
         - Los asteroides tienen colisión con los enemy1 (aún no hace nada).
+        - Se puede pausar pulsando el escape, la pausa se quita pulsándolo de nuevo (playerControl function).
 
 - 2/11/16[NONAME]:
         - La explosión de los asteroides se ha centrado.
         - Se ha arreglado un bugfix con la creación de las nebulosas.
         - Se ha añadido una pequeña atmósfera a Marte.
+
+        

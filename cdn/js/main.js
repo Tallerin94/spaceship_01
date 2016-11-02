@@ -20,12 +20,17 @@ function loop(){
 //                     Función para empezar el bucle                    //
 //////////////////////////////////////////////////////////////////////////
 function main_menu(){
+    
     $(document).keydown(function(){
-        $("#main_menu").css("visibility", "hidden");
-        getSizeImg = setTimeout("sizeImg()", 500);
-        loop_string = setTimeout("loop()", 1000);
-        gameRunning = true;
+        if(menuActive && gameRunning==false){
+            $("#main_menu").css("visibility", "hidden");
+            getSizeImg = setTimeout("sizeImg()", 500);
+            loop_string = setTimeout("loop()", 1000);
+            gameRunning = true;
+            menuActive = false;
+        }
     });
+    
 }
 
 //////////////////////////////////////////////////////////////////////////
