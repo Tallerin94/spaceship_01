@@ -12,6 +12,7 @@ function loop(){
         enemy1Shots();          
         drawPlayerShot();       // Dibuja las balas
         asteroidFunc();         // Crea asteroides, los mueve y los destruye
+        Colisions();
         contadortiempo++;
         clearTimeout(loop_string);
         loop_string = setTimeout("loop()", 30); 
