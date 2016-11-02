@@ -8,3 +8,4 @@ Shot = function(posX, posY, type, speedX, speedY){
     this.width = playerWidth/8 ;
     this.height = this.width/2;
 }
+

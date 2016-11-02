@@ -57,6 +57,8 @@ var enemy1 = new Array();
 var enemy1Count = 0;
 var enemy1Img = new Image();
 enemy1Img.src = "cdn/img/ships/2.png" 
+var enemy1Shotx = new Array();
+var enemy1ShotCounter = 0;
 // Background
 var backgroundImg = new Array();
 var backgroundCount = 6;
