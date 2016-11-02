@@ -38,7 +38,7 @@ function newResize(){
 
 // PLAYER 
 function playerControl(){
-    $(document).keydown(function(){
+    $(document).keydown(function(event){
         if(event.which == 38 && gameRunning){dirPosY="up";}
         if(event.which == 40 && gameRunning){dirPosY="down";}
         if(event.which == 37 && gameRunning){dirPosX="left";}

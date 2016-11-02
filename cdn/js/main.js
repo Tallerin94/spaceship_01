@@ -24,8 +24,8 @@ function loop(){
 //////////////////////////////////////////////////////////////////////////
 function main_menu(){
     newResize();            // Nuevo tamaño de la ventana
-    $(document).keydown(function(event){
-        if(event.which == 13){
+    $(document).keydown(function(key){
+        if(key.which == 13){
             switch(menu_option){
                 case 1:
                     if(menuActive && gameRunning == false){
@@ -38,7 +38,7 @@ function main_menu(){
                     break;
             }
         }
-        if(event.which == 38){
+        if(key.which == 38){
             console.log("has movido hacia arriba");
         }
     });
