@@ -55,10 +55,34 @@ var enemy1Img = new Image();
 enemy1Img.src = "cdn/img/ships/2.png" 
 // Background
 var backgroundImg = new Array();
-var backgroundCount = 2;
+var backgroundCount = 6;
 for(var i=1;i<backgroundCount;i++){
     backgroundImg[i] = new Image();
     backgroundImg[i].src = "cdn/img/background/"+i+".png";
 }
+var imgBg2Width = 0;
+var imgBg2Height = 0;
+var imgBg3Width = 0;
+var imgBg3Height = 0;
+var imgBg4Width = 0;
+var imgBg4Height = 0;
+var imgBg5Width = 0;
+var imgBg5Height = 0;
+
+var marsImg = new Image();
+marsImg.src = "cdn/img/planets/mars.png";
 
 var contadortiempo = 0;
+
+var getSizeImg = "";
+
+function sizeImg(){
+    imgBg2Width = windowWidth/1.5;
+    imgBg2Height = windowHeight/1.5;
+    imgBg3Width = windowWidth/1.5;
+    imgBg3Height = windowHeight/1.5;
+    imgBg4Width = windowWidth/1.5;
+    imgBg4Height = windowHeight/1.5;
+    imgBg5Width = backgroundImg[5].width;
+    imgBg5Height = backgroundImg[5].height;
+}

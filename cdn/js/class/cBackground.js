@@ -44,6 +44,39 @@ var cBackground = function(posx, posy){
 var bg = new Array();
 
 for(var i=0;i<3;i++){
-    bg[i] = new cBackground(0,0);
+    bg[i] = new cBackground(0, 0);
     bg[i].setPosX(i*windowWidth);
 }
+
+var bg2 = new Array();
+
+for(var i=0;i<5;i++){
+    bg2[i] = new cBackground(Math.random()*(innerWidth*2), Math.random()*(innerHeight));
+    bg2[i].setPosX(i*(Math.random()*(imgBg2Width*2)));
+}
+
+var bg3 = new Array();
+
+for(var i=0;i<5;i++){
+    bg3[i] = new cBackground(Math.random()*(innerWidth*2), Math.random()*(innerHeight));
+    bg3[i].setPosX(i*(Math.random()*(imgBg3Width*2)));
+}
+
+var bg4 = new Array();
+
+for(var i=0;i<5;i++){
+    bg4[i] = new cBackground(Math.random()*(innerWidth*2), Math.random()*(innerHeight));
+    bg4[i].setPosX(i*(Math.random()*(imgBg4Width*2)));
+}
+
+var bg5 = new Array();
+
+for(var i=0;i<3;i++){
+    bg5[i] = new cBackground(0, 0);
+    bg5[i].setPosX(i*bg5[i].getHeight());
+}
+
+var mars = new Array();
+
+//mars = new cBackground(windowWidth, Math.random()*(windowHeight - 500));
+mars = new cBackground(windowWidth - 500, windowHeight - 1000);

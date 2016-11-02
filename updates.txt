@@ -54,4 +54,15 @@
 - 01/11/16[NONAME]:
         - Ahora todos los enemigos, el personaje principal, el background y los asteroides se redimensionan.
         - Se ha reestructurado el main.js.
-        
+        - Se ha añadido la nebulosa 1.
+        - Se ha añadido opacidad a la nebulsa 1.
+        - Se ha añadido la nebulosa 2.
+        - Se ha añadido opacidad a la nebulsa 2.
+        - Se ha añadido la nebulosa 3.
+        - Se ha añadido opacidad a la nebulsa 3.
+        - Se han mejorado las posiciones de creación de las 3 nebulosas para que no aparezcan espacios vacíos.
+        - Se ha creado una función para gestionar todos los backgrounds.
+        - Se ha añadido unas nuevas estrellas.
+        - Las nuevas estrellas ya tienen correcto el resize.
+        - Las nebulosas se hacen pequeñas en función del tamaño de la pantalla.
+        - Al principio del nivel dibuja Marte (todavía está algo mal, pero creo que si la idea de mejora, puede quedar bien).

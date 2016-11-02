@@ -5,7 +5,7 @@ function loop(){
     if(gameRunning){
         newResize();            // Nuevo tamaño de la ventana
         ctx.clearRect(0,0,windowWidth,windowHeight);
-        drawBg();               // Dibuja el bg
+        manageBackground();     // Crea los backgrounds
         player.playerMove();    // Mueve el personaje
         enemy1func();           // Crea enemigos, los mueve y los mata
         drawPlayerShot();       // Dibuja las balas
@@ -22,8 +22,9 @@ function loop(){
 function main_menu(){
     $(document).keydown(function(){
         $("#main_menu").css("visibility", "hidden");
-         loop_string = setTimeout("loop()", 1000);
-         gameRunning = true;
+        getSizeImg = setTimeout("sizeImg()", 500);
+        loop_string = setTimeout("loop()", 1000);
+        gameRunning = true;
     });
 }
 

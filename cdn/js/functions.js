@@ -18,9 +18,19 @@ function newResize(){
             bg[i].autoSize();
             bg[i].setPosX(i*windowWidth);
         }
+        for(var i in bg5){
+            bg5[i].autoSize();
+            bg5[i].setPosX(i*bg5[i].getHeight());
+        }
         for(var i in asteroid){
             asteroid[i].autoSize();
         }
+        imgBg2Width = windowWidth/1.5;
+        imgBg2Height = windowHeight/1.5;
+        imgBg3Width = windowWidth/1.5;
+        imgBg3Height = windowHeight/1.5;
+        imgBg4Width = windowWidth/1.5;
+        imgBg4Height = windowHeight/1.5;
     });
 }
 
@@ -147,7 +157,7 @@ function enemyKill(){
             /*if(Math.abs((enemy1[e].getPosY()+enemy1[e].height/2)-(shot[s].posY+shot[s].height/2)) < shot[s].height/2+enemy1[e].height/2){
                 console.log("xd");
             }*/
-        }       
+        }
     }
 }
 
@@ -160,12 +170,79 @@ function enemy1func(){
 // BACKGROUND
 function drawBg(){
     for(var i in bg){
-        bg[i].moveBackgroundX(-10);
-        //console.log(bg[i].posX+"-"+ bg[i].getPosY()+"-"+ bg[i].getWidth()+"-"+ bg[i].getHeight())
+        bg[i].moveBackgroundX(-0.2);
+        //console.log(bg[i].getPosX()+"-"+ bg[i].getPosY()+"-"+ bg[i].getWidth()+"-"+ bg[i].getHeight())
         if(bg[i].getPosX() > -(bg[i].getWidth())){  
             ctx.drawImage(backgroundImg[1], bg[i].getPosX(), bg[i].getPosY(), bg[i].getWidth(), bg[i].getHeight());
         }else{
             bg[i].posX = windowHeight;
         }
     }
+}
+
+function drawBg2(){
+    for(var i in bg2){
+        bg2[i].moveBackgroundX(-0.8);
+        //console.log(bg2[i].getPosX()+" - "+ bg2[i].getPosY());
+        if(bg2[i].getPosX() > -imgBg2Width){
+            ctx.drawImage(backgroundImg[2], bg2[i].getPosX(), bg2[i].getPosY(), imgBg2Width, imgBg2Height);
+        }else{
+            bg2[i].posX = windowWidth+Math.random()*imgBg2Width;
+            bg2[i].posY = Math.random()*(windowHeight+imgBg3Height) - imgBg3Height/2;
+        }
+    }
+}
+
+function drawBg3(){
+    for(var i in bg3){
+        bg3[i].moveBackgroundX(-1);
+        //console.log(bg3[i].getPosX()+" - "+ bg3[i].getPosY());
+        if(bg3[i].getPosX() > -imgBg3Width){
+            ctx.drawImage(backgroundImg[3], bg3[i].getPosX(), bg3[i].getPosY(), imgBg3Width, imgBg3Height);
+        }else{
+            bg3[i].posX = windowWidth+Math.random()*+imgBg3Width-imgBg3Width;
+            bg3[i].posY = Math.random()*(windowHeight+imgBg3Height) - imgBg3Height/2;
+        }
+    }
+}
+
+function drawBg4(){
+    for(var i in bg4){
+        bg4[i].moveBackgroundX(-1.2);
+        //console.log(bg4[i].getPosX()+" - "+ bg4[i].getPosY());
+        if(bg4[i].getPosX() > -imgBg4Width){
+            ctx.drawImage(backgroundImg[4], bg4[i].getPosX(), bg4[i].getPosY(), imgBg4Width, imgBg4Height);
+        }else{
+            bg4[i].posX = windowWidth+Math.random()*+imgBg4Width-imgBg4Width;
+            bg4[i].posY = Math.random()*(windowHeight+imgBg4Height) - imgBg4Height/2;
+        }
+    }
+}
+
+function drawBg5(){
+    for(var i in bg){
+        bg5[i].moveBackgroundX(-0.6);
+        //console.log(bg5[i].getPosX()+"-"+ bg5[i].getPosY()+"-"+ bg5[i].getWidth()+"-"+ bg5[i].getHeight())
+        if(bg5[i].getPosX() > -imgBg5Width){  
+            ctx.drawImage(backgroundImg[5], bg5[i].getPosX(), bg5[i].getPosY(), bg5[i].getHeight(), bg5[i].getHeight());
+        }else{
+            bg5[i].setPosX(3*bg5[i].getHeight());
+        }
+    }
+}
+
+function drawMars(){
+    mars.moveBackgroundX(-2);
+    if(mars.getPosX() > -(windowWidth*1.5)){
+        ctx.drawImage(marsImg, mars.getPosX(), mars.getPosY(), windowWidth*1.5, windowWidth*1.5);
+    }
+}
+
+function manageBackground(){
+    drawBg();               // Dibuja el bg principal
+    drawBg2();              // Dibuja la nebulosa 1
+    drawBg3();              // Dibuja la nebulosa 2
+    drawBg4();              // Dibuja la nebulosa 3
+    drawBg5();              // Dibuja las segundas estrellas
+    drawMars();             // Dibuja marte
 }
