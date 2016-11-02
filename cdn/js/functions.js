@@ -84,7 +84,7 @@ function playerControl(){
     });    
 }
 
-// Player Shots
+//  Shots
 function drawPlayerShot(){
     for(var i in shot){
         switch(shot[i].type){
@@ -98,7 +98,15 @@ function drawPlayerShot(){
         shot[i].move();
         ctx.fillRect(shot[i].posX,shot[i].posY, shot[i].width, shot[i].height);
     }
-}   
+} 
+
+function enemy1Shots() {
+    for(var e in enemy1){
+        if(Math.random()*100<=1){
+            
+        }
+    }
+}
 
 // ASTEROIDES
 function asteroidFunc(){
@@ -144,6 +152,7 @@ function asteroidColisions(){
         if(Math.abs((asteroid[a].posY+asteroid[a].height/2)-(player.getPosY()+playerHeight/2)) < playerHeight/2+asteroid[a].height/2 ){  
             if(Math.abs((asteroid[a].posX+asteroid[a].width/2)-(player.getPosX()+playerWidth/2)) < playerWidth/2+asteroid[a].width/2){
                 console.log("as xocao");
+                asteroid.splice(a, 1);
             }
         }
     }
@@ -153,6 +162,9 @@ function asteroidColisions(){
             if(Math.abs((asteroid[a].posY+asteroid[a].height/2)-(enemy1[e].getPosY()+enemy1[e].height/2)) < enemy1[e].height/2+asteroid[a].height/2 ){  
                 if(Math.abs((asteroid[a].posX+asteroid[a].width/2)-(enemy1[e].getPosX()+enemy1[e].width/2)) < enemy1[e].width/2+asteroid[a].width/2){
                     console.log("as xocao");
+                    asteroid.splice(a, 1);
+                    enemy1.splice(e, 1);
+                    break;
                 }
             }
         }

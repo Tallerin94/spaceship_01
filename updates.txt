@@ -69,9 +69,13 @@
         - Al principio del nivel dibuja Marte (todavía está algo mal, pero creo que si la idea de mejora, puede quedar bien).
 
 - 2/11/16[IVAN]:
+                                // MAÑANA
         - Los asteroides tienen colisión con el jugador (aún no hace nada).
         - Los asteroides tienen colisión con los enemy1 (aún no hace nada).
         - Se puede pausar pulsando el escape, la pausa se quita pulsándolo de nuevo (playerControl function).
+                                // TARDE
+        - Los asteroides desaparecen en la colisión con la nave player.
+        - Los asteroides y naves enemigas enemy1 desaparecen al chocar entre sí.
 
 - 2/11/16[NONAME]:
         - La explosión de los asteroides se ha centrado.
