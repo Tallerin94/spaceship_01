@@ -94,24 +94,26 @@ function drawPlayerShot(){
             case 2:
                 ctx.fillStyle = "green";
                 break;
-            case 3:
-                ctx.fillStyle = "red";
-                break;
         } 
         shot[i].move();
         ctx.fillRect(shot[i].posX,shot[i].posY, shot[i].width, shot[i].height);
     }
+    for(var i in enemy1Shotx){
+        enemy1Shotx[i].move();
+        ctx.fillStyle = "red";
+        ctx.fillRect(enemy1Shotx[i].posX,enemy1Shotx[i].posY, enemy1Shotx[i].width, enemy1Shotx[i].height); 
+    }
 } 
 
 function enemy1Shots() {
-    console.log(enemy1Shotx);
     for(var e in enemy1){
-        if(Math.random()*100<=5){
-            console.log("e disparao xd");
+        if(Math.random()*100<=1){
+            console.log(enemy1[e].getPosX());
             enemy1Shotx[enemy1ShotCounter] = new cEnemy1Shot();
             enemy1Shotx[enemy1ShotCounter].type = 3;
-            enemy1Shotx[enemy1ShotCounter].posX = enemy1[e].posX();
-            enemy1Shotx[enemy1ShotCounter].posY = enemy1[e].posY()+enemy1[e].height/2-enemy1Shotx[enemy1ShotCounter].height/2;
+            enemy1Shotx[enemy1ShotCounter].posX = enemy1[e].getPosX();
+            enemy1Shotx[enemy1ShotCounter].posY = enemy1[e].getPosY()+enemy1[e].height/2-enemy1Shotx[enemy1ShotCounter].height/2;
+            console.log(enemy1Shotx[enemy1ShotCounter]);
             enemy1ShotCounter++;
         }
     }

@@ -76,6 +76,8 @@
                                 // TARDE
         - Los asteroides desaparecen en la colisión con la nave player.
         - Los asteroides y naves enemigas enemy1 desaparecen al chocar entre sí.
+                                //NOCHE
+        - Los enemigos tienen una matriz de disparos
 
 - 2/11/16[NONAME]:
         - La explosión de los asteroides se ha centrado.
