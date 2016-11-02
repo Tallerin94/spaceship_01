@@ -23,23 +23,33 @@ function loop(){
 //////////////////////////////////////////////////////////////////////////
 function main_menu(){
     newResize();            // Nuevo tamaño de la ventana
-    $(document).keydown(function(){
-        if(menuActive && gameRunning==false){
-            $("#main_menu").css("display", "none");
-            getSizeImg = setTimeout("sizeImg()", 500);
-            loop_string = setTimeout("loop()", 1000);
-            gameRunning = true;
-            menuActive = false;
+    $(document).keydown(function(event){
+        if(event.which == 13){
+            switch(menu_option){
+                case 1:
+                    if(menuActive && gameRunning == false){
+                        $("#main_menu").fadeOut(500);
+                        getSizeImg = setTimeout("sizeImg()", 500);
+                        loop_string = setTimeout("loop()", 1000);
+                        gameRunning = true;
+                        menuActive = false;
+                    }
+                    break;
+            }
+        }
+        if(event.which == 38){
+            console.log("has movido hacia arriba");
         }
     });
-    
 }
 
 //////////////////////////////////////////////////////////////////////////
 //             Función para llamar la pantalla principal                //
 //////////////////////////////////////////////////////////////////////////
 function start(){
-    $("#main_menu").css("display", "block");
+    $("#logo").css("width", windowHeight/1.5);
+    $("#logo").css("height", windowHeight/1.5);
+    $("#main_menu").fadeIn(200);
     resizeCanvas();
     playerControl();
     loop_string = setTimeout("main_menu()", 10);

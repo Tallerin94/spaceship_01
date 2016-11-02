@@ -7,3 +7,17 @@
     margin-top: 22%;
     display: none;
 }
+
+#main_menu{
+    display: none;
+}
+
+#logo{
+    background-image: url("../img/startscreen/logo.png");
+    background-size: contain;
+    width: 300px;
+    height: 300px;
+    top: 12%;
+    left: 12%;
+    position: absolute;
+}

@@ -31,6 +31,8 @@ function newResize(){
         imgBg3Height = windowHeight/1.5;
         imgBg4Width = windowWidth/1.5;
         imgBg4Height = windowHeight/1.5;
+        $("#logo").css("width", windowHeight/1.5);
+        $("#logo").css("height", windowHeight/1.5);
     });
 }
 
