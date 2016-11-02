@@ -107,7 +107,7 @@ function drawPlayerShot(){
 
 function enemy1Shots() {
     for(var e in enemy1){
-        if(Math.random()*100<=1){
+        if(Math.random()*100<=10){
             console.log(enemy1[e].getPosX());
             enemy1Shotx[enemy1ShotCounter] = new cEnemy1Shot();
             enemy1Shotx[enemy1ShotCounter].type = 3;
@@ -125,7 +125,7 @@ function enemy1Shots() {
 function asteroidFunc(){
         newAsteroid();
         asteroidMove();
-        asteroidColisions();
+        
 }
 
 function newAsteroid(){ 
@@ -140,48 +140,6 @@ function asteroidMove(){
         asteroid[i].posX-=asteroid[i].speed;
         ctx.drawImage(asteroidImg[asteroid[i].type],asteroid[i].posX,asteroid[i].posY,asteroid[i].width,asteroid[i].height);       
     }
-}
-
-function asteroidColisions(){  
-    for(var a in asteroid){
-        // Collision w/shots
-        for(var s in shot){          
-            if(Math.abs((asteroid[a].posY+asteroid[a].height/2)-(shot[s].posY+shot[s].height/2)) < shot[s].height/2+asteroid[a].height/2 && Math.abs((asteroid[a].posX+asteroid[a].width/2)-(shot[s].posX+shot[s].width/2)) < shot[s].width/2+asteroid[a].width/2){  
-                if(Math.random()*2<1){
-                    console.log("Ha soltado recompensa");
-                }
-                $("body").append("<img src='cdn/img/explosion/1.gif' id='asteroide"+contadortiempo+"' style='top:"+(asteroid[a].posY-(asteroid[a].height/2))+"px;left:"+(asteroid[a].posX-(asteroid[a].width/2))+"px;display: block;'></img>");
-                $("#asteroide"+(contadortiempo)).fadeOut(300);
-                asteroidExplosionCount++;
-                shot.splice(s, 1);
-                asteroid.splice(a ,1);
-                console.log("le has dado");              
-                break;
-            }
-        }
-    }
-    // Collision w/ player Ship
-    for(var a in asteroid){   
-        if(Math.abs((asteroid[a].posY+asteroid[a].height/2)-(player.getPosY()+playerHeight/2)) < playerHeight/2+asteroid[a].height/2 ){  
-            if(Math.abs((asteroid[a].posX+asteroid[a].width/2)-(player.getPosX()+playerWidth/2)) < playerWidth/2+asteroid[a].width/2){
-                console.log("as xocao");
-                asteroid.splice(a, 1);
-            }
-        }
-    }
-        // Collision w/ enemy1 Ships
-    for(var a in asteroid){
-        for(var e in enemy1){
-            if(Math.abs((asteroid[a].posY+asteroid[a].height/2)-(enemy1[e].getPosY()+enemy1[e].height/2)) < enemy1[e].height/2+asteroid[a].height/2 ){  
-                if(Math.abs((asteroid[a].posX+asteroid[a].width/2)-(enemy1[e].getPosX()+enemy1[e].width/2)) < enemy1[e].width/2+asteroid[a].width/2){
-                    console.log("as xocao");
-                    asteroid.splice(a, 1);
-                    enemy1.splice(e, 1);
-                    break;
-                }
-            }
-        }
-    }  
 }
 
 
@@ -222,6 +180,62 @@ function enemy1func(){
     newEnemy1();
     enemyMovement();
     enemyKill();
+}
+
+// COLLISIONS
+function Colisions(){  
+    for(var a in asteroid){
+        // Collision  Asteroid w/shots
+        for(var s in shot){          
+            if(Math.abs((asteroid[a].posY+asteroid[a].height/2)-(shot[s].posY+shot[s].height/2)) < shot[s].height/2+asteroid[a].height/2 && Math.abs((asteroid[a].posX+asteroid[a].width/2)-(shot[s].posX+shot[s].width/2)) < shot[s].width/2+asteroid[a].width/2){  
+                if(Math.random()*2<1){
+                    console.log("Ha soltado recompensa");
+                }
+                $("body").append("<img src='cdn/img/explosion/1.gif' id='asteroide"+contadortiempo+"' style='top:"+(asteroid[a].posY-(asteroid[a].height/2))+"px;left:"+(asteroid[a].posX-(asteroid[a].width/2))+"px;display: block;'></img>");
+                $("#asteroide"+(contadortiempo)).fadeOut(300);
+                asteroidExplosionCount++;
+                shot.splice(s, 1);
+                asteroid.splice(a ,1);
+                console.log("le has dado");              
+                break;
+            }
+        }
+    }
+    // Collision Asteroid w/ player Ship
+    for(var a in asteroid){   
+        if(Math.abs((asteroid[a].posY+asteroid[a].height/2)-(player.getPosY()+playerHeight/2)) < playerHeight/2+asteroid[a].height/2 ){  
+            if(Math.abs((asteroid[a].posX+asteroid[a].width/2)-(player.getPosX()+playerWidth/2)) < playerWidth/2+asteroid[a].width/2){
+                console.log("as xocao");
+                asteroid.splice(a, 1);
+            }
+        }
+    }
+        // Collision Asteroid w/ enemy1 Ships
+    for(var a in asteroid){
+        for(var e in enemy1){
+            if(Math.abs((asteroid[a].posY+asteroid[a].height/2)-(enemy1[e].getPosY()+enemy1[e].height/2)) < enemy1[e].height/2+asteroid[a].height/2 ){  
+                if(Math.abs((asteroid[a].posX+asteroid[a].width/2)-(enemy1[e].getPosX()+enemy1[e].width/2)) < enemy1[e].width/2+asteroid[a].width/2){
+                    console.log("as xocao");
+                    asteroid.splice(a, 1);
+                    enemy1.splice(e, 1);
+                    break;
+                }
+            }
+        }
+    }
+    // Collision Asteroid w/ enemy1Shot
+    for(var a in asteroid){
+        for(var s in enemy1Shotx){
+            if(Math.abs((asteroid[a].posY+asteroid[a].height/2)-(enemy1Shotx[s].posY+enemy1Shotx[s].height/2)) < enemy1Shotx[s].height/2+asteroid[a].height/2 ){  
+                if(Math.abs((asteroid[a].posX+asteroid[a].width/2)-(enemy1Shotx[s].posX+enemy1Shotx[s].width/2)) < enemy1Shotx[s].width/2+asteroid[a].width/2){
+                    console.log("as xocao");
+                    asteroid.splice(a, 1);
+                    enemy1Shotx.splice(s, 1);
+                    break;
+                }
+            }
+        }
+    } 
 }
 
 // BACKGROUND
