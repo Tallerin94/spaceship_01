@@ -63,23 +63,25 @@ function playerControl(){
             }
         }
     });
+   
+
+    
     $(document).keyup(function(){
         if(event.which == 38 && gameRunning && dirPosY == "up"){dirPosY = "";}
         if(event.which == 40 && gameRunning && dirPosY == "down"){dirPosY = "";}
         if(event.which == 37 && gameRunning && dirPosX == "left"){dirPosX = "";}
         if(event.which == 39 && gameRunning && dirPosX == "right"){dirPosX = "";}
-    });
-
-    // PAUSE
-    
-    if(event.which == 27){
-         gameRunning = !gameRunning;
+        
+        // PAUSE
+        if(event.which == 27){
+            gameRunning = !gameRunning;
             if(gameRunning){
                 loop();
             }else{
                 // MOSTRAR MENÚ PAUSA
             }
         }
+    });    
 }
 
 // Player Shots
