@@ -6,6 +6,7 @@ function loop(){
         newResize();            // Nuevo tamaño de la ventana
         ctx.clearRect(0,0,windowWidth,windowHeight);
         manageBackground();     // Crea los backgrounds
+        bottomHUD.createHUD();  // Crea la HUD de abajo
         player.playerMove();    // Mueve el personaje
         enemy1func();           // Crea enemigos, los mueve y los mata
         drawPlayerShot();       // Dibuja las balas
@@ -20,7 +21,7 @@ function loop(){
 //                     Función para empezar el bucle                    //
 //////////////////////////////////////////////////////////////////////////
 function main_menu(){
-    
+    newResize();            // Nuevo tamaño de la ventana
     $(document).keydown(function(){
         if(menuActive && gameRunning==false){
             $("#main_menu").css("visibility", "hidden");

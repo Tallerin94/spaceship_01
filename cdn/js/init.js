@@ -77,6 +77,11 @@ var contadortiempo = 0;
 
 var getSizeImg = "";
 
+var hudBottom = new Image();
+hudBottom.src = "cdn/img/hud/bottom.png";
+var hudBottomWidth = 0;
+var hudBottomHeight = 0;
+
 function sizeImg(){
     imgBg2Width = windowWidth/1.5;
     imgBg2Height = windowHeight/1.5;
@@ -86,4 +91,6 @@ function sizeImg(){
     imgBg4Height = windowHeight/1.5;
     imgBg5Width = backgroundImg[5].width;
     imgBg5Height = backgroundImg[5].height;
+    hudBottomWidth = hudBottom.width;
+    hudBottomHeight = hudBottom.height;
 }

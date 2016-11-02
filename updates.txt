@@ -83,3 +83,7 @@
         - Se ha añadido una pequeña atmósfera a Marte.
         - La nave ya no puede salirse de los límites.
         - Se ha mejorado el movimiento de la nave.
+        - Ahora también se redimensiona en el main menu.
+        - Se ha creado la clase cHUD.
+        - Se ha corregido la posición al crear la nave aliada.
+        - Se llama la función para crear la HUD de abajo.
