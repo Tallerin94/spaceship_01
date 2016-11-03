@@ -284,7 +284,8 @@ function Colisions(){
                 }
                 shot.splice(s, 1);
                 asteroid.splice(a, 1);
-                console.log("le has dado");
+                player.setScore(1);
+                //console.log("le has dado");
                 break;
             }
         }
@@ -305,7 +306,8 @@ function Colisions(){
                 }
                 shot.splice(s, 1);
                 enemy1.splice(e, 1);
-                console.log("le has dado");              
+                player.setScore(10);
+                //console.log("le has dado");              
                 break;
             }
         }
@@ -326,7 +328,8 @@ function Colisions(){
                 }
                 shot.splice(s, 1);
                 enemy2.splice(e, 1);
-                console.log("le has dado");              
+                player.setScore(30);
+                //console.log("le has dado");              
                 break;
             }
         }
@@ -355,7 +358,8 @@ function Colisions(){
                     }
                     shot.splice(s, 1);
                     enemy3.splice(e, 1);
-                    console.log("le has dado");              
+                    player.setScore(100);
+                    //console.log("le has dado");              
                     break;
                 }
             }
@@ -372,7 +376,8 @@ function Colisions(){
                 if(ExplosionCount >= 3){
                     document.getElementById("explotion"+(ExplosionCount-3)).remove();
                 }
-                console.log("as xocao");
+                //console.log("as xocao");
+                player.setScore(1);
                 asteroid.splice(a, 1);
                 //RESTA VIDA
                 player.setLessHP(10);
@@ -389,8 +394,9 @@ function Colisions(){
                 if(ExplosionCount >= 3){
                     document.getElementById("explotion"+(ExplosionCount-3)).remove();
                 }
-                console.log("as xocao");
+                //console.log("as xocao");
                 enemy1.splice(e, 1);
+                player.setScore(5);
                 player.setLessHP(20);
             }
         }
@@ -406,9 +412,10 @@ function Colisions(){
                 if(ExplosionCount >= 3){
                     document.getElementById("explotion"+(ExplosionCount-3)).remove();
                 }
-                console.log("as xocao");
+                //console.log("as xocao");
                 enemy2.splice(e, 1);
-                player.setLessHP(20);
+                player.setScore(15);
+                player.setLessHP(15);
             }
         }
     }
@@ -425,7 +432,8 @@ function Colisions(){
                 if(ExplosionCount >= 3){
                     document.getElementById("explotion"+(ExplosionCount-3)).remove();
                 }
-                console.log("as xocao");
+                //console.log("as xocao");
+                player.setScore(50);
                 enemy3.splice(e, 1);
                 player.setLessHP(100);
             }
@@ -458,7 +466,7 @@ function Colisions(){
         }
     }
 
-    // Collision Asteroid w/ enemy1 Ships
+    // Collision Asteroid w/ enemy2 Ships
     for(var a in asteroid){
         for(var e in enemy2){
             if(Math.abs((asteroid[a].posY+asteroid[a].height/2)-(enemy2[e].getPosY()+enemy2[e].height/2)) < enemy2[e].height/2+asteroid[a].height/2 ){  
