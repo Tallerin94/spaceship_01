@@ -79,6 +79,7 @@
                                 //NOCHE
         - Los enemigos tienen una matriz de disparos
         - Las balas enemigas destruyen los asteroides.
+        - Las colisiones w/Asteroides quitan vidas.
 
 - 2/11/16[NONAME]:
         - La explosión de los asteroides se ha centrado.
@@ -90,3 +91,7 @@
         - Se ha creado la clase cHUD.
         - Se ha corregido la posición al crear la nave aliada.
         - Se llama la función para crear la HUD de abajo.
+
+                --JATONCIONATION--
+
+        - Ya funcionan todas las colisiones, al chocar la nave con enemigos/asteroides/balas pierdes vida        
