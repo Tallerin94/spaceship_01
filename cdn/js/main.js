@@ -7,7 +7,7 @@ function loop(){
         ctx.clearRect(0,0,windowWidth,windowHeight);
         manageBackground();     // Crea los backgrounds
         lifeHUD.createHUD(player.getLife(), "hud1");  // Crea la HUD de la vida
-        shotHUD.createHUD(player.getAmmo(), "hud2");    // Crea la HUD de la bala
+        //shotHUD.createHUD(player.getAmmo(), "hud2");    // Crea la HUD de la bala
         player.playerMove();    // Mueve el personaje
         enemy1Func();           // Crea enemigos, los mueve y los mata
         enemy1Shots();          // Gestiona los disparos del enemy 1
