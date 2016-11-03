@@ -3,4 +3,4 @@ PlayerShot = function(){
         this.posX += this.speedX;
     }   
 }
-PlayerShot.prototype = new Shot(player.getPosX(), player.getPosY(), 2, 10, 0);
+PlayerShot.prototype = new Shot(player.getPosX(), player.getPosY(), 2, 50, 0);

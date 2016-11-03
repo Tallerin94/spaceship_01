@@ -25,38 +25,7 @@ function loop(){
 //////////////////////////////////////////////////////////////////////////
 function main_menu(){
     newResize();            // Nuevo tamaño de la ventana
-    $(document).keydown(function(key){
-        if(isInMenu){
-            if(key.which == 13){
-                switch(menu_option){
-                    case 1:
-                        if(menuActive && gameRunning == false){
-                            $("#main_menu").fadeOut(500);
-                            getSizeImg = setTimeout("sizeImg()", 500);
-                            loop_string = setTimeout("loop()", 1000);
-                            gameRunning = true;
-                            menuActive = false;
-                            isInMenu = false;
-                        }
-                        break;
-                }
-            }
-            if(key.which == 38){
-                if(menu_option <= 1){
-                    menu_option = 4;
-                }else{
-                    menu_option--;
-                }
-            }
-            if(key.which == 40){
-                if(menu_option >= 4){
-                    menu_option = 1;
-                }else{
-                    menu_option++;
-                }
-            }
-        }
-    });
+    selectOption();         // SElecciona la opción del menu
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -65,6 +34,11 @@ function main_menu(){
 function start(){
     $("#logo").css("width", windowHeight/1.5);
     $("#logo").css("height", windowHeight/1.5);
+    $("#startMenu").css("font-size", windowHeight/14.7);
+    $("#startControls").css("font-size", windowHeight/30+"px");
+    $("#startControls").css("line-height", ((windowHeight/30)+25)+"px");
+    $("#startBest").css("font-size", windowHeight/30+"px");
+    $("#startBest").css("line-height", ((windowHeight/30)+25)+"px");
     $("#main_menu").fadeIn(200);
     resizeCanvas();
     playerControl();

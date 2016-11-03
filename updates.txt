@@ -92,6 +92,9 @@
         - Se ha corregido la posición al crear la nave aliada.
         - Se llama la función para crear la HUD de abajo.
 
-                --JATONCIONATION--
+--JATONCIONATION--
 
-        - Ya funcionan todas las colisiones, al chocar la nave con enemigos/asteroides/balas pierdes vida        
+        - Ya funcionan todas las colisiones, al chocar la nave con enemigos/asteroides/balas pierdes vida
+
+- 3/11/16[NONAME]:
+        - Se ha creado una pantalla de inicio con todas sus opciones.

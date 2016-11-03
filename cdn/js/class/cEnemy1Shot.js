@@ -13,4 +13,4 @@ cEnemy1Shot = function(){
         this.posX -= this.speedX;
     }
 }
-cEnemy1Shot.prototype = new cShotEnemy(0, 0, 2, 10, 0);
+cEnemy1Shot.prototype = new cShotEnemy(0, 0, 2, 20, 0);

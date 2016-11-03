@@ -33,6 +33,11 @@ function newResize(){
         imgBg4Height = windowHeight/1.5;
         $("#logo").css("width", windowHeight/1.5);
         $("#logo").css("height", windowHeight/1.5);
+        $("#startMenu").css("font-size", windowHeight/14.7);
+        $("#startControls").css("font-size", windowHeight/30+"px");
+        $("#startControls").css("line-height", ((windowHeight/30)+25)+"px");
+        $("#startBest").css("font-size", windowHeight/30+"px");
+        $("#startBest").css("line-height", ((windowHeight/30)+25)+"px");
     });
 }
 
@@ -198,7 +203,7 @@ function Colisions(){
                 asteroidExplosionCount++;
                 shot.splice(s, 1);
                 asteroid.splice(a ,1);
-                console.log("le has dado");              
+                console.log("le has dado");
                 break;
             }
         }
