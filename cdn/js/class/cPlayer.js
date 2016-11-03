@@ -35,6 +35,14 @@ Player = function(){
         //  
         ctx.drawImage(playerShipImg,player.getPosX(),player.getPosY(), playerHeight, playerWidth);
     }
+    // Score
+    var score = 0;
+    this.setScore = function(score2){
+        score += score2;
+    }
+    this.getScore = function(){
+        return score;
+    }
     //AMMO
     var ammo = ammoStart;
     this.getAmmo = function(){

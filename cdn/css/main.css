@@ -106,3 +106,13 @@ img{
     font-size: 26px;
     display: none;
 }
+
+#hud3{
+    position: absolute;
+    left: 5px;
+    top: 1%;
+    font-family: Orbitron-Regular;
+    color: #FF8F43;
+    font-size: 26px;
+    display: none;
+}
