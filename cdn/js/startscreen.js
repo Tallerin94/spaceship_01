@@ -95,5 +95,6 @@ function resizeStart(){
     $("#tutorial1").css("font-size", windowHeight/30+"px");
     $("#noBalas").css("font-size", windowHeight/30+"px");
     $("#hud1").css("font-size", windowHeight/30+"px");
+    $("#hud2").css("font-size", windowHeight/30+"px");
     $("#main_menu").fadeIn(200);
 }

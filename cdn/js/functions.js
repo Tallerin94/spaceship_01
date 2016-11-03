@@ -47,6 +47,7 @@ function newResize(){
         $("#tutorial1").css("font-size", windowHeight/30+"px");
         $("#tutorial2").css("font-size", windowHeight/30+"px");
         $("#hud1").css("font-size", windowHeight/30+"px");
+        $("#hud2").css("font-size", windowHeight/30+"px");
         $("#noBalas").css("font-size", windowHeight/30+"px");
     });
 }

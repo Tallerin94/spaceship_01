@@ -96,3 +96,13 @@ img{
     font-size: 26px;
     display: none;
 }
+
+#hud2{
+    position: absolute;
+    left: 5px;
+    top: 88%;
+    font-family: Orbitron-Regular;
+    color: #FF8F43;
+    font-size: 26px;
+    display: none;
+}
