@@ -42,19 +42,6 @@ var cEnemy3 = function(){
 
         //console.log(speed);
     }
-    
-    //POSY
-    var posY = Math.random()*windowHeight;
-    this.getPosY = function(){
-        return posY;
-    }
-    this.setPosY = function(){
-        posY += speedY;
-        // Limits posY
-        if(posY>windowHeight){posY=windowHeight;}
-        if(posY<0){posY=0;}
-        //console.log(speed);
-    }
    
     // DIMENSIONS
     this.height = windowHeight/1.5;
@@ -68,5 +55,17 @@ var cEnemy3 = function(){
     this.move = function(){
         this.setPosX();
         ctx.drawImage(enemy3Img,this.getPosX(),this.getPosY(),this.height,this.width);
+    }
+        //POSY
+    var posY = Math.random()*windowHeight-this.width/2;
+    this.getPosY = function(){
+        return posY;
+    }
+    this.setPosY = function(){
+        posY += speedY;
+        // Limits posY
+        if(posY>windowHeight){posY=windowHeight;}
+        if(posY<0){posY=0;}
+        //console.log(speed);
     }
 }
