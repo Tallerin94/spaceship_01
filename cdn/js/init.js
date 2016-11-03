@@ -62,6 +62,9 @@ recImg[2] = new Image();
 recImg[2].src = "cdn/img/rec/2.png"
 var recWidth = windowWidth/40;
 var recHeight = recWidth;
+
+
+
 // Enemy1
 var enemy1 = new Array();
 var enemy1Count = 0;

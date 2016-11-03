@@ -32,7 +32,7 @@ Player = function(){
         if(dirPosY == "" && player.getSpeedY() > 0){player.newSpeedY(player.getSpeedY()-0.5);}
         if(dirPosX == "" && player.getSpeedX() < 0){player.newSpeedX(player.getSpeedX()+0.5);}
         if(dirPosX == "" && player.getSpeedX() > 0){player.newSpeedX(player.getSpeedX()-0.5);}
-        //  
+        //
         ctx.drawImage(playerShipImg,player.getPosX(),player.getPosY(), playerHeight, playerWidth);
     }
     // Score
