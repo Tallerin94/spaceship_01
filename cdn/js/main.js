@@ -25,8 +25,21 @@ function loop(){
             //console.log("Life: "+player.getLife()+" Ammo: "+player.getAmmo()); 
         }
     }else{
-        alert("muerto");
-        $("#lienzo").css("display", "none");
+        $("#lienzo").fadeOut(1000);
+        $("#HUD").fadeOut(1000);
+        $("#tutorial1").fadeOut(1000);
+        $("#tutorial2").fadeOut(1000);
+        $("#noBalas").fadeOut(1000);
+        $("#explotions").fadeOut(1000);
+        $("#gameOver1").css("display", "block");
+        $("#music").html('<audio id="musica" src="cdn/audio/gameover.wav" controls="true"></audio>');
+        var musica = document.getElementById("musica");
+	    musica.volume = 0.05;
+	    musica.play();
+        if(searchCookie("score") < player.getScore()){
+            document.cookie = "score="+player.getScore()+";";
+        }
+        setTimeout("secondGameOver()", 5500);
     }
 }
 
