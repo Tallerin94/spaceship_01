@@ -12,7 +12,11 @@ Ship = function(type, life, speedX, speedY, posX, posY){
     }
     
     this.setLessHP = function(hp){
-        life -= hp;
+        if(life > hp){
+            life -= hp;
+        }else{
+            life = 0;
+        }
     }
     //SPEED X
     var speedX = speedX;
