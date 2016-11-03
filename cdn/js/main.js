@@ -16,7 +16,7 @@ function loop(){
         contadortiempo++;
         clearTimeout(loop_string);
         loop_string = setTimeout("loop()", 30);
-        console.log("Life: "+player.getLife()+" Ammo: "+player.getAmmo()); 
+        //console.log("Life: "+player.getLife()+" Ammo: "+player.getAmmo()); 
     }
 }
 
@@ -43,6 +43,7 @@ function start(){
 //////////////////////////////////////////////////////////////////////////
 function undefinedScreen(){
     manageUndefined();
+    getSizeImg = setTimeout("sizeImg()", 200);
 }
 
 $(document).ready(function(){

@@ -198,9 +198,9 @@ function Colisions(){
                 if(Math.random()*2<1){
                     console.log("Ha soltado recompensa");
                 }
-                $("body").append("<img src='cdn/img/explosion/1.gif' id='asteroide"+contadortiempo+"' style='top:"+(asteroid[a].posY-(asteroid[a].height/2))+"px;left:"+(asteroid[a].posX-(asteroid[a].width/2))+"px;display: block;'></img>");
-                $("#asteroide"+(contadortiempo)).fadeOut(300);
-                asteroidExplosionCount++;
+                $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+(asteroid[a].posY-(asteroid[a].height/2))+"px;left:"+(asteroid[a].posX-(asteroid[a].width/2))+"px;display: block;'></img>");
+                $("#explotion"+(ExplosionCount)).fadeOut(300);
+                ExplosionCount++;
                 shot.splice(s, 1);
                 asteroid.splice(a ,1);
                 console.log("le has dado");
@@ -216,9 +216,9 @@ function Colisions(){
                 if(Math.random()*2<1){
                     console.log("Ha soltado recompensa");
                 }
-                //$("body").append("<img src='cdn/img/explosion/1.gif' id='asteroide"+contadortiempo+"' style='top:"+(asteroid[a].posY-(asteroid[a].height/2))+"px;left:"+(asteroid[a].posX-(asteroid[a].width/2))+"px;display: block;'></img>");
-                //$("#asteroide"+(contadortiempo)).fadeOut(300);
-                //asteroidExplosionCount++;
+                $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+(enemy1[e].getPosY()-(enemy1[e].height/2))+"px;left:"+(enemy1[e].getPosX()-(enemy1[e].width/2))+"px;display: block;'></img>");
+                $("#explotion"+(ExplosionCount)).fadeOut(300);
+                ExplosionCount++;
                 shot.splice(s, 1);
                 enemy1.splice(e ,1);
                 console.log("le has dado");              
@@ -230,6 +230,9 @@ function Colisions(){
     for(var a in asteroid){   
         if(Math.abs((asteroid[a].posY+asteroid[a].height/2)-(player.getPosY()+playerHeight/2)) < playerHeight/2+asteroid[a].height/2 ){  
             if(Math.abs((asteroid[a].posX+asteroid[a].width/2)-(player.getPosX()+playerWidth/2)) < playerWidth/2+asteroid[a].width/2){
+                $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+(asteroid[a].posY-(asteroid[a].height/2))+"px;left:"+(asteroid[a].posX-(asteroid[a].width/2))+"px;display: block;'></img>");
+                $("#explotion"+(ExplosionCount)).fadeOut(300);
+                ExplosionCount++;
                 console.log("as xocao");
                 asteroid.splice(a, 1);
                 //RESTA VIDA
@@ -241,6 +244,9 @@ function Colisions(){
     for(var e in enemy1){
         if(Math.abs((player.getPosY()+playerHeight/2)-(enemy1[e].getPosY()+enemy1[e].height/2)) < playerHeight/2+enemy1[e].height/2 ){  
             if(Math.abs((player.getPosX()+playerWidth/2)-(enemy1[e].getPosX()+enemy1[e].width/2)) < playerWidth/2+enemy1[e].width/2){
+                $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+(enemy1[e].getPosY()-(enemy1[e].height/2))+"px;left:"+(enemy1[e].getPosX()-(enemy1[e].width/2))+"px;display: block;'></img>");
+                $("#explotion"+(ExplosionCount)).fadeOut(300);
+                ExplosionCount++;
                 console.log("as xocao");
                 enemy1.splice(e, 1);
                 player.setLessHP();
@@ -253,6 +259,12 @@ function Colisions(){
         for(var e in enemy1){
             if(Math.abs((asteroid[a].posY+asteroid[a].height/2)-(enemy1[e].getPosY()+enemy1[e].height/2)) < enemy1[e].height/2+asteroid[a].height/2 ){  
                 if(Math.abs((asteroid[a].posX+asteroid[a].width/2)-(enemy1[e].getPosX()+enemy1[e].width/2)) < enemy1[e].width/2+asteroid[a].width/2){
+                    $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+(enemy1[e].getPosY()-(enemy1[e].height/2))+"px;left:"+(enemy1[e].getPosX()-(enemy1[e].width/2))+"px;display: block;'></img>");
+                    $("#explotion"+(ExplosionCount)).fadeOut(300);
+                    ExplosionCount++;
+                    $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+(asteroid[a].posY-(asteroid[a].height/2))+"px;left:"+(asteroid[a].posX-(asteroid[a].width/2))+"px;display: block;'></img>");
+                    $("#explotion"+(ExplosionCount)).fadeOut(300);
+                    ExplosionCount++;
                     console.log("as xocao");
                     asteroid.splice(a, 1);
                     enemy1.splice(e, 1);

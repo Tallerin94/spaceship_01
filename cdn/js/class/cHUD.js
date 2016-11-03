@@ -1,8 +1,8 @@
-var cHUD = function(posX, posY, type, width, height){
+cHUD = function(posX, posY, type, width, height){
     this.posX = posX;
     this.posY = posY;
-    this.width = hudBottomWidth;
-    this.height = hudBottomHeight;
+    this.width = width;
+    this.height = height;
     this.type = type;
 
     this.createHUD = function(){

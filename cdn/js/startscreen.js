@@ -19,7 +19,6 @@ function selectOption(){
                     case 1:
                         if(menuActive && gameRunning == false){
                             $("#main_menu").fadeOut(500);
-                            getSizeImg = setTimeout("sizeImg()", 500);
                             loop_string = setTimeout("loop()", 1000);
                             gameRunning = true;
                             menuActive = false;

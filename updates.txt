@@ -98,3 +98,5 @@
 
 - 3/11/16[NONAME]:
         - Se ha creado una pantalla de inicio con todas sus opciones.
+        - Se han arreglado las explosiones con todos los enemigos, entre ellos y con asteroides.
+        

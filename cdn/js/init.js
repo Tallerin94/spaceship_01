@@ -41,7 +41,7 @@ var dirPosY = "";
 //Asteroids
 var asteroid = new Array();
 var asteroidCount = 0;
-var asteroidExplosionCount = 0;
+var ExplosionCount = 0;
 var asteroidKillCount = 0;
 var asteroidImg = new Array();
 var asteroids = 2;
