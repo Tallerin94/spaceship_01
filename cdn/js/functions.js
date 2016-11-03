@@ -646,7 +646,6 @@ function clearNoBalas(){
 // RECOGIBLES
 function recManager(){
     drawRec();
-    console.log(rec);
 }
 function drawRec(){
     for(var r in rec){
@@ -656,7 +655,7 @@ function drawRec(){
 
 }
 function newRec(posX,posY){
-    if(Math.random()*100<25){
+    if(Math.random()*100<50){
         rec[recNum] = new Rec(posX,posY,Math.ceil(Math.random()*2))
         recNum++;
     }
