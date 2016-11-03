@@ -32,19 +32,15 @@ function main_menu(){
 //             Función para llamar la pantalla principal                //
 //////////////////////////////////////////////////////////////////////////
 function start(){
-    $("#logo").css("width", windowHeight/1.5);
-    $("#logo").css("height", windowHeight/1.5);
-    $("#startMenu").css("font-size", windowHeight/14.7);
-    $("#startControls").css("font-size", windowHeight/30+"px");
-    $("#startControls").css("line-height", ((windowHeight/30)+25)+"px");
-    $("#startBest").css("font-size", windowHeight/30+"px");
-    $("#startBest").css("line-height", ((windowHeight/30)+25)+"px");
-    $("#main_menu").fadeIn(200);
+    resizeStart();
     resizeCanvas();
     playerControl();
     loop_string = setTimeout("main_menu()", 10);
 }
 
+//////////////////////////////////////////////////////////////////////////
+//             Función para llamar la pantalla undefined                //
+//////////////////////////////////////////////////////////////////////////
 function undefinedScreen(){
     manageUndefined();
 }
