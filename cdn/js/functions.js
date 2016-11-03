@@ -201,6 +201,9 @@ function Colisions(){
                 $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+(asteroid[a].posY-(asteroid[a].height/2))+"px;left:"+(asteroid[a].posX-(asteroid[a].width/2))+"px;display: block;'></img>");
                 $("#explotion"+(ExplosionCount)).fadeOut(300);
                 ExplosionCount++;
+                if(ExplosionCount >= 3){
+                    document.getElementById("explotion"+(ExplosionCount-3)).remove();
+                }
                 shot.splice(s, 1);
                 asteroid.splice(a ,1);
                 console.log("le has dado");
@@ -219,6 +222,9 @@ function Colisions(){
                 $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+(enemy1[e].getPosY()-(enemy1[e].height/2))+"px;left:"+(enemy1[e].getPosX()-(enemy1[e].width/2))+"px;display: block;'></img>");
                 $("#explotion"+(ExplosionCount)).fadeOut(300);
                 ExplosionCount++;
+                if(ExplosionCount >= 3){
+                    document.getElementById("explotion"+(ExplosionCount-3)).remove();
+                }
                 shot.splice(s, 1);
                 enemy1.splice(e ,1);
                 console.log("le has dado");              
@@ -233,6 +239,9 @@ function Colisions(){
                 $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+(asteroid[a].posY-(asteroid[a].height/2))+"px;left:"+(asteroid[a].posX-(asteroid[a].width/2))+"px;display: block;'></img>");
                 $("#explotion"+(ExplosionCount)).fadeOut(300);
                 ExplosionCount++;
+                if(ExplosionCount >= 3){
+                    document.getElementById("explotion"+(ExplosionCount-3)).remove();
+                }
                 console.log("as xocao");
                 asteroid.splice(a, 1);
                 //RESTA VIDA
@@ -247,6 +256,9 @@ function Colisions(){
                 $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+(enemy1[e].getPosY()-(enemy1[e].height/2))+"px;left:"+(enemy1[e].getPosX()-(enemy1[e].width/2))+"px;display: block;'></img>");
                 $("#explotion"+(ExplosionCount)).fadeOut(300);
                 ExplosionCount++;
+                if(ExplosionCount >= 3){
+                    document.getElementById("explotion"+(ExplosionCount-3)).remove();
+                }
                 console.log("as xocao");
                 enemy1.splice(e, 1);
                 player.setLessHP();
@@ -262,9 +274,15 @@ function Colisions(){
                     $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+(enemy1[e].getPosY()-(enemy1[e].height/2))+"px;left:"+(enemy1[e].getPosX()-(enemy1[e].width/2))+"px;display: block;'></img>");
                     $("#explotion"+(ExplosionCount)).fadeOut(300);
                     ExplosionCount++;
+                    if(ExplosionCount >= 3){
+                        document.getElementById("explotion"+(ExplosionCount-3)).remove();
+                    }
                     $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+(asteroid[a].posY-(asteroid[a].height/2))+"px;left:"+(asteroid[a].posX-(asteroid[a].width/2))+"px;display: block;'></img>");
                     $("#explotion"+(ExplosionCount)).fadeOut(300);
                     ExplosionCount++;
+                    if(ExplosionCount >= 3){
+                        document.getElementById("explotion"+(ExplosionCount-3)).remove();
+                    }
                     console.log("as xocao");
                     asteroid.splice(a, 1);
                     enemy1.splice(e, 1);
