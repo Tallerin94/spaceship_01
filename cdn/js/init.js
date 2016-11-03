@@ -1,6 +1,7 @@
 // UNDEFINED SCREEN
 var startScreenTimer = "";
 var menu_option = 1;
+var isInMenu = true;
 
 // CANVAS
 var lienzo = document.getElementById("lienzo");

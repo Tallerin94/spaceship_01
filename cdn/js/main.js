@@ -26,21 +26,35 @@ function loop(){
 function main_menu(){
     newResize();            // Nuevo tamaño de la ventana
     $(document).keydown(function(key){
-        if(key.which == 13){
-            switch(menu_option){
-                case 1:
-                    if(menuActive && gameRunning == false){
-                        $("#main_menu").fadeOut(500);
-                        getSizeImg = setTimeout("sizeImg()", 500);
-                        loop_string = setTimeout("loop()", 1000);
-                        gameRunning = true;
-                        menuActive = false;
-                    }
-                    break;
+        if(isInMenu){
+            if(key.which == 13){
+                switch(menu_option){
+                    case 1:
+                        if(menuActive && gameRunning == false){
+                            $("#main_menu").fadeOut(500);
+                            getSizeImg = setTimeout("sizeImg()", 500);
+                            loop_string = setTimeout("loop()", 1000);
+                            gameRunning = true;
+                            menuActive = false;
+                            isInMenu = false;
+                        }
+                        break;
+                }
             }
-        }
-        if(key.which == 38){
-            console.log("has movido hacia arriba");
+            if(key.which == 38){
+                if(menu_option <= 1){
+                    menu_option = 4;
+                }else{
+                    menu_option--;
+                }
+            }
+            if(key.which == 40){
+                if(menu_option >= 4){
+                    menu_option = 1;
+                }else{
+                    menu_option++;
+                }
+            }
         }
     });
 }
