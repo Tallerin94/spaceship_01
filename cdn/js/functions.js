@@ -335,28 +335,30 @@ function Colisions(){
     // Collision Enemy3 w/Player shots
     for(var e in enemy3){
         for(var s in shot){
-            if(Math.abs((enemy3[e].getPosY()+enemy3[e].height/2)-(shot[s].posY+shot[s].height/2)) < shot[s].height/2+enemy3[e].height/2 && Math.abs((enemy3[e].getPosX()+enemy3[e].width/2)-(shot[s].posX+shot[s].width/2)) < shot[s].width/2+enemy3[e].width/2){  
-                if(ammoSelected == 1){
-                    shot.splice(s, 1);
-                    if(tutorialShotOK){
-                        tutorialShotOK = false;
-                        $("#tutorial2").fadeIn(500);
-                        textTutorialIn = setTimeout("showTutorial2()", 1);
+            if(Math.abs((enemy3[e].getPosY()+enemy3[e].height/2)-(shot[s].posY+shot[s].height/2)) < enemy3[e].height/2+shot[s].height/2 ){  
+                if(Math.abs((enemy3[e].getPosX()+enemy3[e].width/2)-(shot[s].posX+shot[s].width/2)) < enemy3[e].width/2+shot[s].height/2){
+                    if(ammoSelected == 1){
+                        shot.splice(s, 1);
+                        if(tutorialShotOK){
+                            tutorialShotOK = false;
+                            $("#tutorial2").fadeIn(500);
+                            textTutorialIn = setTimeout("showTutorial2()", 1);
+                        }
+                    }else{
+                        if(Math.random()*2<1){
+                            console.log("Ha soltado recompensa");
+                        }
+                        $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+enemy3[e].getPosY()+"px;left:"+(enemy3[e].getPosX()+(enemy3[e].width/2))+"px;display: block;'></img>");
+                        $("#explotion"+(ExplosionCount)).fadeOut(300);
+                        ExplosionCount++;
+                        if(ExplosionCount >= 3){
+                            document.getElementById("explotion"+(ExplosionCount-3)).remove();
+                        }
+                        shot.splice(s, 1);
+                        enemy3.splice(e, 1);
+                        console.log("le has dado");              
+                        break;
                     }
-                }else{
-                    if(Math.random()*2<1){
-                        console.log("Ha soltado recompensa");
-                    }
-                    $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+enemy3[e].getPosY()+"px;left:"+(enemy3[e].getPosX()+(enemy3[e].width/2))+"px;display: block;'></img>");
-                    $("#explotion"+(ExplosionCount)).fadeOut(300);
-                    ExplosionCount++;
-                    if(ExplosionCount >= 3){
-                        document.getElementById("explotion"+(ExplosionCount-3)).remove();
-                    }
-                    shot.splice(s, 1);
-                    enemy3.splice(e, 1);
-                    console.log("le has dado");              
-                    break;
                 }
             }
         }

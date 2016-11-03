@@ -4,3 +4,5 @@ Rec = function(posX, posY, type){
     this.type = type;
     this.speed = 2;
 }
+
+var rec = new Rec();
