@@ -413,10 +413,12 @@ function Colisions(){
 
     // Collision Player w/ Enemy3 ship
     for(var e in enemy3){
+        console.log("PosNave: "+enemy3[e].getPosX()+"/"+enemy3[e].getPosY());
         if(Math.abs((player.getPosY()+playerHeight/2)-(enemy3[e].getPosY()+enemy3[e].height/2)) < playerHeight/2+enemy3[e].height/2 ){  
             if(Math.abs((player.getPosX()+playerWidth/2)-(enemy3[e].getPosX()+enemy3[e].width/2)) < playerWidth/2+enemy3[e].width/2){
-                $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+(enemy3[e].getPosY()-(enemy3[e].height/2))+"px;left:"+(enemy3[e].getPosX()-(enemy3[e].width/2))+"px;display: block;'></img>");
-                $("#explotion"+(ExplosionCount)).fadeOut(300);
+                console.log("posExplosion: "+enemy3[e].getPosX()+"/"+enemy3[e].getPosY());
+                $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+enemy3[e].getPosY()+"px;left:"+(enemy3[e].getPosX()+enemy3[e].width/2)+"px;display: block;'></img>");
+                $("#explotion"+(ExplosionCount)).fadeOut(300);           
                 ExplosionCount++;
                 if(ExplosionCount >= 3){
                     document.getElementById("explotion"+(ExplosionCount-3)).remove();
