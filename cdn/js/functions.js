@@ -50,6 +50,9 @@ function newResize(){
         $("#hud2").css("font-size", windowHeight/30+"px");
         $("#hud3").css("font-size", windowHeight/30+"px");
         $("#noBalas").css("font-size", windowHeight/30+"px");
+        $("#gameOver1").css("font-size", windowHeight/15+"px");
+        $("#gameOver2").css("font-size", windowHeight/15+"px");
+        $("#gameOver3").css("font-size", windowHeight/30+"px");
     });
 }
 
@@ -622,4 +625,24 @@ function showTutorial2(){
 function clearNoBalas(){
     $("#noBalas").css("display", "none");
     clearTimeout(noBalasTutorial);
+}
+
+function secondGameOver(){
+    $("#gameOver2").html(player.getScore()+" pts");
+    $("#gameOver2").css("display", "block");
+    $("#gameOver3").css("display", "block");
+    $(document).keydown(function(key3){
+        if(key3.which == 13){
+            window.location = "";
+        }
+    });
+}
+
+function searchCookie(key){
+    var exploit = document.cookie.split(";");
+    for(var i=0;i<exploit.length;i++){
+        if(key == exploit[i].split("=")[0]){
+            return exploit[i].split("=")[1];
+        }
+    }
 }

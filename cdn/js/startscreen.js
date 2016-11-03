@@ -43,6 +43,8 @@ function selectOption(){
                             if(key2.which == 27){
                                 $("#startBest").css("display", "none");
                                 $("#startMenu").css("display", "block");
+                                $("#bestRow").html("Player1 "+searchCookie("score")+" pts");
+                                $("#bestRow").css("display", "none");
                             }
                         });
                         break;
@@ -97,5 +99,8 @@ function resizeStart(){
     $("#hud1").css("font-size", windowHeight/30+"px");
     $("#hud2").css("font-size", windowHeight/30+"px");
     $("#hud3").css("font-size", windowHeight/30+"px");
+    $("#gameOver1").css("font-size", windowHeight/15+"px");
+    $("#gameOver2").css("font-size", windowHeight/15+"px");
+    $("#gameOver3").css("font-size", windowHeight/30+"px");
     $("#main_menu").fadeIn(200);
 }

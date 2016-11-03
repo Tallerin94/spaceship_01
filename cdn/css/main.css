@@ -142,3 +142,64 @@ img{
     user-select: none;
     display: none;
 }
+
+audio{
+	display: none;
+}
+
+#gameOver1{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 45%;
+    font-family: Orbitron-Regular;
+    color: #FF8F43;
+    font-size: 26px;
+    display: none;
+    /* Can't selecct */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: none;
+}
+
+#gameOver2{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 55%;
+    font-family: Orbitron-Regular;
+    color: #FF8F43;
+    font-size: 26px;
+    display: none;
+    /* Can't selecct */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: none;
+}
+
+#gameOver3{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 65%;
+    font-family: Orbitron-Regular;
+    color: #FF8F43;
+    font-size: 26px;
+    display: none;
+    /* Can't selecct */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: none;
+}
