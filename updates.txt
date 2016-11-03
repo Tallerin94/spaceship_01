@@ -100,3 +100,9 @@
         - Se ha creado una pantalla de inicio con todas sus opciones.
         - Se han arreglado las explosiones con todos los enemigos, entre ellos y con asteroides.
         - Las explosiones antiguas se eliminan de forma que no quedan generando lag.
+        - Se ha añadido un texto al inicio de la partida.
+        - Se han creado las nuevas naves suicida.
+        - La nave suicida ya tiene responsive.
+        - Se ha implementado la nave tanque.
+        - Se ha implementado tutorial para ella.
+        - La nave tanque ya es responsive.

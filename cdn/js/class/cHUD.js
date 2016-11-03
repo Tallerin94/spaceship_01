@@ -7,7 +7,6 @@ cHUD = function(posX, posY, type, width, height){
 
     this.createHUD = function(){
         ctx.drawImage(this.type, this.posX, this.posY, this.width, this.height);
-        console.log(this.type+" / "+this.posX+" / "+this.posY+" / "+this.width+" / "+this.height);
     }
 }
 

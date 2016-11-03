@@ -20,6 +20,7 @@ function selectOption(){
                         if(menuActive && gameRunning == false){
                             $("#main_menu").fadeOut(500);
                             loop_string = setTimeout("loop()", 1000);
+                            textTutorial = setTimeout("firstTutorial()", 1500);
                             gameRunning = true;
                             menuActive = false;
                             isInMenu = false;
@@ -90,5 +91,8 @@ function resizeStart(){
     $("#startControls").css("line-height", ((windowHeight/30)+25)+"px");
     $("#startBest").css("font-size", windowHeight/30+"px");
     $("#startBest").css("line-height", ((windowHeight/30)+25)+"px");
+    $("#tutorial1").css("font-size", windowHeight/30+"px");
+    $("#tutorial1").css("font-size", windowHeight/30+"px");
+    $("#noBalas").css("font-size", windowHeight/30+"px");
     $("#main_menu").fadeIn(200);
 }

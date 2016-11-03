@@ -8,8 +8,10 @@ function loop(){
         manageBackground();     // Crea los backgrounds
         bottomHUD.createHUD();  // Crea la HUD de abajo
         player.playerMove();    // Mueve el personaje
-        enemy1func();           // Crea enemigos, los mueve y los mata
-        enemy1Shots();          
+        enemy1Func();           // Crea enemigos, los mueve y los mata
+        enemy1Shots();          // Gestiona los disparos del enemy 1
+        enemy2Func();           // Gestiona los enemigos de tipo 2
+        enemy3Func();           // Gestiona los enemigos de tipo 3
         drawPlayerShot();       // Dibuja las balas
         asteroidFunc();         // Crea asteroides, los mueve y los destruye
         Colisions();

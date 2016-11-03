@@ -62,6 +62,21 @@ var enemy1Img = new Image();
 enemy1Img.src = "cdn/img/ships/2.png" 
 var enemy1Shotx = new Array();
 var enemy1ShotCounter = 0;
+
+// Enemy2
+var enemy2 = new Array();
+var enemy2Count = 0;
+var enemy2Img = new Image();
+enemy2Img.src = "cdn/img/ships/3.png";
+
+// Enemy3
+var enemy3 = new Array();
+var enemy3Count = 0;
+var enemy3Img = new Image();
+enemy3Img.src = "cdn/img/ships/4.png";
+var enemy3Shotx = new Array();
+var enemy3ShotCounter = 0;
+
 // Background
 var backgroundImg = new Array();
 var backgroundCount = 6;
@@ -82,6 +97,11 @@ var marsImg = new Image();
 marsImg.src = "cdn/img/planets/mars.png";
 
 var contadortiempo = 0;
+
+var textTutorial = "";
+var textTutorialIn = "";
+var tutorialShotOK = true;
+var noBalasTutorial = "";
 
 var getSizeImg = "";
 

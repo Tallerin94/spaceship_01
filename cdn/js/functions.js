@@ -14,6 +14,12 @@ function newResize(){
         for(var i in enemy1){
             enemy1[i].autoSize();
         }
+        for(var i in enemy2){
+            enemy2[i].autoSize();
+        }
+        for(var i in enemy3){
+            enemy3[i].autoSize();
+        }
         for(var i in bg){
             bg[i].autoSize();
             bg[i].setPosX(i*windowWidth);
@@ -38,6 +44,9 @@ function newResize(){
         $("#startControls").css("line-height", ((windowHeight/30)+25)+"px");
         $("#startBest").css("font-size", windowHeight/30+"px");
         $("#startBest").css("line-height", ((windowHeight/30)+25)+"px");
+        $("#tutorial1").css("font-size", windowHeight/30+"px");
+        $("#tutorial2").css("font-size", windowHeight/30+"px");
+        $("#noBalas").css("font-size", windowHeight/30+"px");
     });
 }
 
@@ -49,16 +58,22 @@ function playerControl(){
         if(event.which == 37 && gameRunning){dirPosX="left";}
         if(event.which == 39 && gameRunning){dirPosX="right";}
         if(event.which == 32 && gameRunning){
-            if(player.isAmmoEmpty()){
-                //console.log("no quedan balas");
+            if(player.isAmmoEmpty(ammoSelected)){
+                $("#noBalas").css("display", "block");
+                noBalasTutorial = setTimeout("clearNoBalas()", 1000);
+                console.log("no quedan balas");
             }else{
-                //console.log("has disparado");
                 shot[playerShotNumber] = new PlayerShot();
                 shot[playerShotNumber].type = ammoSelected;
                 shot[playerShotNumber].posX = player.getPosX()+playerWidth-5;
                 shot[playerShotNumber].posY = player.getPosY()+playerHeight/2-shot[playerShotNumber].height/2;
-                player.setAmmo(1);
+                if(ammoSelected == 1){ 
+                    player.setAmmo(1);
+                }else{
+                    player.setAmmo(2);
+                }
                 playerShotNumber++;
+                console.log(player.getAmmo());
             }
             
         }        
@@ -171,22 +186,82 @@ function enemyMovement(){
 function enemyKill(){
     for(var e in enemy1){
         // si se sale de la pantalla por la izq se elimina de la matriz
-         if(enemy1[e].getPosX() <= 0-enemy1[e].width){
-            enemy1.splice(e ,1);
-        }
-        // choque con jugador
-        for(var s in shot){
-            /*if(Math.abs((enemy1[e].getPosY()+enemy1[e].height/2)-(shot[s].posY+shot[s].height/2)) < shot[s].height/2+enemy1[e].height/2){
-                console.log("xd");
-            }*/
+         if(enemy1[e].getPosX() <= -enemy1[e].width){
+            enemy1.splice(e, 1);
         }
     }
 }
 
-function enemy1func(){
+function enemy1Func(){
     newEnemy1();
     enemyMovement();
     enemyKill();
+}
+
+// ENEMIGO 2
+function newEnemy2(){
+    if(contadortiempo%300 == 0){
+        enemy2[enemy2Count] = new cEnemy2();
+        enemy2Count++;
+    }else if(Math.random()*100 < 0.1){        
+        enemy2[enemy2Count] = new cEnemy2();
+        enemy2Count++; 
+    }
+}
+
+function enemy2Movement(){
+    for(var i in enemy2){
+        if(enemy2[i].getPosY()-10 > player.getPosY()){
+            enemy2Direction = -4;
+        }else if(enemy2[i].getPosY()+10 < player.getPosY()){
+            enemy2Direction = 4;
+        }else{
+            enemy2Direction = 0;
+        }
+        enemy2[i].move(enemy2Direction);
+    }
+}
+
+function enemy2Kill(){
+    for(var i in enemy2){
+        if(enemy2[i].getPosX() <= -enemy2[i].width){
+            enemy2.splice(i, 1)
+        }
+    }
+}
+
+function enemy2Func(){
+    newEnemy2();
+    enemy2Movement();
+    enemy2Kill();
+}
+
+// ENEMIGO 3
+function newEnemy3(){
+    if(contadortiempo%3000 == 0){
+        enemy3[enemy3Count] = new cEnemy3();
+        enemy3Count++;
+    }
+}
+
+function enemy3Movement(){
+    for(var i in enemy3){
+        enemy3[i].move();
+    }
+}
+
+function enemy3Kill(){
+    for(var i in enemy3){
+        if(enemy3[i].getPosX() <= -enemy3[i].width){
+            enemy3.splice(i, 1)
+        }
+    }
+}
+
+function enemy3Func(){
+    newEnemy3();
+    enemy3Movement();
+    enemy3Kill();
 }
 
 // COLLISIONS
@@ -205,7 +280,7 @@ function Colisions(){
                     document.getElementById("explotion"+(ExplosionCount-3)).remove();
                 }
                 shot.splice(s, 1);
-                asteroid.splice(a ,1);
+                asteroid.splice(a, 1);
                 console.log("le has dado");
                 break;
             }
@@ -226,12 +301,64 @@ function Colisions(){
                     document.getElementById("explotion"+(ExplosionCount-3)).remove();
                 }
                 shot.splice(s, 1);
-                enemy1.splice(e ,1);
+                enemy1.splice(e, 1);
                 console.log("le has dado");              
                 break;
             }
         }
     }
+
+    // Collision Enemy2 w/Player shots
+    for(var e in enemy2){
+        for(var s in shot){          
+            if(Math.abs((enemy2[e].getPosY()+enemy2[e].height/2)-(shot[s].posY+shot[s].height/2)) < shot[s].height/2+enemy2[e].height/2 && Math.abs((enemy2[e].getPosX()+enemy2[e].width/2)-(shot[s].posX+shot[s].width/2)) < shot[s].width/2+enemy2[e].width/2){  
+                if(Math.random()*2<1){
+                    console.log("Ha soltado recompensa");
+                }
+                $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+(enemy2[e].getPosY()-(enemy2[e].height/2))+"px;left:"+(enemy2[e].getPosX()-(enemy2[e].width/2))+"px;display: block;'></img>");
+                $("#explotion"+(ExplosionCount)).fadeOut(300);
+                ExplosionCount++;
+                if(ExplosionCount >= 3){
+                    document.getElementById("explotion"+(ExplosionCount-3)).remove();
+                }
+                shot.splice(s, 1);
+                enemy2.splice(e, 1);
+                console.log("le has dado");              
+                break;
+            }
+        }
+    }
+
+    // Collision Enemy3 w/Player shots
+    for(var e in enemy3){
+        for(var s in shot){
+            if(Math.abs((enemy3[e].getPosY()+enemy3[e].height/2)-(shot[s].posY+shot[s].height/2)) < shot[s].height/2+enemy3[e].height/2 && Math.abs((enemy3[e].getPosX()+enemy3[e].width/2)-(shot[s].posX+shot[s].width/2)) < shot[s].width/2+enemy3[e].width/2){  
+                if(ammoSelected == 1){
+                    shot.splice(s, 1);
+                    if(tutorialShotOK){
+                        tutorialShotOK = false;
+                        $("#tutorial2").fadeIn(500);
+                        textTutorialIn = setTimeout("showTutorial2()", 1);
+                    }
+                }else{
+                    if(Math.random()*2<1){
+                        console.log("Ha soltado recompensa");
+                    }
+                    $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+(enemy3[e].getPosY()-(enemy3[e].height/2))+"px;left:"+(enemy3[e].getPosX()-(enemy3[e].width/2))+"px;display: block;'></img>");
+                    $("#explotion"+(ExplosionCount)).fadeOut(300);
+                    ExplosionCount++;
+                    if(ExplosionCount >= 3){
+                        document.getElementById("explotion"+(ExplosionCount-3)).remove();
+                    }
+                    shot.splice(s, 1);
+                    enemy3.splice(e, 1);
+                    console.log("le has dado");              
+                    break;
+                }
+            }
+        }
+    }
+
     // Collision Asteroid w/ player Ship
     for(var a in asteroid){   
         if(Math.abs((asteroid[a].posY+asteroid[a].height/2)-(player.getPosY()+playerHeight/2)) < playerHeight/2+asteroid[a].height/2 ){  
@@ -245,7 +372,7 @@ function Colisions(){
                 console.log("as xocao");
                 asteroid.splice(a, 1);
                 //RESTA VIDA
-                player.setLessHP();
+                player.setLessHP(10);
             }
         }
     }
@@ -261,7 +388,41 @@ function Colisions(){
                 }
                 console.log("as xocao");
                 enemy1.splice(e, 1);
-                player.setLessHP();
+                player.setLessHP(20);
+            }
+        }
+    }
+
+    // Collision Player w/ Enemy2 ship
+    for(var e in enemy2){
+        if(Math.abs((player.getPosY()+playerHeight/2)-(enemy2[e].getPosY()+enemy2[e].height/2)) < playerHeight/2+enemy2[e].height/2 ){  
+            if(Math.abs((player.getPosX()+playerWidth/2)-(enemy2[e].getPosX()+enemy2[e].width/2)) < playerWidth/2+enemy2[e].width/2){
+                $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+(enemy2[e].getPosY()-(enemy2[e].height/2))+"px;left:"+(enemy2[e].getPosX()-(enemy2[e].width/2))+"px;display: block;'></img>");
+                $("#explotion"+(ExplosionCount)).fadeOut(300);
+                ExplosionCount++;
+                if(ExplosionCount >= 3){
+                    document.getElementById("explotion"+(ExplosionCount-3)).remove();
+                }
+                console.log("as xocao");
+                enemy2.splice(e, 1);
+                player.setLessHP(20);
+            }
+        }
+    }
+
+    // Collision Player w/ Enemy3 ship
+    for(var e in enemy3){
+        if(Math.abs((player.getPosY()+playerHeight/2)-(enemy3[e].getPosY()+enemy3[e].height/2)) < playerHeight/2+enemy3[e].height/2 ){  
+            if(Math.abs((player.getPosX()+playerWidth/2)-(enemy3[e].getPosX()+enemy3[e].width/2)) < playerWidth/2+enemy3[e].width/2){
+                $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+(enemy3[e].getPosY()-(enemy3[e].height/2))+"px;left:"+(enemy3[e].getPosX()-(enemy3[e].width/2))+"px;display: block;'></img>");
+                $("#explotion"+(ExplosionCount)).fadeOut(300);
+                ExplosionCount++;
+                if(ExplosionCount >= 3){
+                    document.getElementById("explotion"+(ExplosionCount-3)).remove();
+                }
+                console.log("as xocao");
+                enemy3.splice(e, 1);
+                player.setLessHP(100);
             }
         }
     }
@@ -298,7 +459,7 @@ function Colisions(){
             if(Math.abs((player.getPosX()+playerWidth/2)-(enemy1Shotx[s].posX+enemy1Shotx[s].width/2)) < enemy1Shotx[s].width/2+playerWidth/2){
                 console.log("as xocao");
                 enemy1Shotx.splice(s, 1);
-                player.setLessHP();
+                player.setLessHP(10);
             }
         }
     }
@@ -396,4 +557,30 @@ function manageBackground(){
     drawBg4();              // Dibuja la nebulosa 3
     drawBg5();              // Dibuja las segundas estrellas
     drawMars();             // Dibuja marte
+}
+
+function clearTutorial1(){
+    $("#tutorial1").fadeOut(500);
+    clearTimeout(textTutorial);
+}
+
+function firstTutorial(){
+    $("#tutorial1").fadeIn(500);
+    clearTimeout(textTutorial);
+    textTutorial = setTimeout("clearTutorial1()", 4000);
+}
+
+function clearTutorialShot(){
+    $("#tutorial2").fadeOut(500);
+    clearTimeout(textTutorialIn);
+}
+
+function showTutorial2(){
+    clearTimeout(textTutorialIn);
+    textTutorialIn = setTimeout("clearTutorialShot()", 4000);
+}
+
+function clearNoBalas(){
+    $("#noBalas").css("display", "none");
+    clearTimeout(noBalasTutorial);
 }

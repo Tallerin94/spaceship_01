@@ -30,3 +30,59 @@ img{
     position: absolute;
     display: none;
 }
+
+#tutorial1{
+    font-family: Orbitron-Regular;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 1%;
+    color: #FF8F43;
+    font-size: 26px;
+    text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+    /* Can't selecct */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: none;
+}
+
+#tutorial2{
+    font-family: Orbitron-Regular;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 1%;
+    color: #FF8F43;
+    font-size: 26px;
+    text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+    /* Can't selecct */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: none;
+}
+
+#noBalas{
+    font-family: Orbitron-Regular;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 45%;
+    color: white;
+    font-size: 26px;
+    /* Can't selecct */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: none;
+}

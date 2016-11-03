@@ -1,21 +1,6 @@
-// NAVE PLANTILLA
-Ship = function(type, life, speedX, speedY, posX, posY){
-    // TYPE
-    var type = type;
-    this.getType = function(){
-        return this.type;
-    }
-    //LIFE
-    var life = life;
-    this.getLife = function(){
-        return life;
-    }
-    
-    this.setLessHP = function(hp){
-        life -= hp;
-    }
+var cEnemy3 = function(){
     //SPEED X
-    var speedX = speedX;
+    var speedX = -1;
     this.getSpeedX = function(){
         return speedX;
     }
@@ -28,7 +13,10 @@ Ship = function(type, life, speedX, speedY, posX, posY){
         setSpeedX(setSpX);
     }
     // SPEED Y
-    var speedY = speedY;
+    var speedY = Math.random()*4+2;
+    // Ajusta la valocidad Y a 2 || -2
+    if(speedY<=1){speedY = -2;}else{speedY = 2;}
+
     this.getSpeedY = function(){
         return speedY;
     }
@@ -41,7 +29,7 @@ Ship = function(type, life, speedX, speedY, posX, posY){
         setSpeedY(setSpY);
     }
     //POSX
-    var posX = posX;
+    var posX = windowWidth;
     this.getPosX = function(){
         return posX;
     }
@@ -49,30 +37,36 @@ Ship = function(type, life, speedX, speedY, posX, posY){
     this.setPosX = function(){
         posX += speedX;
         // LIMITS posX
-        if(posX > (windowWidth - playerWidth)){posX = (windowWidth - playerWidth);}
-        if(posX < 0){posX = 0;}
+        if(posX > windowWidth){posX = windowWidth;}
+        //if(posX < 0-this.width){posX = 0;}
 
         //console.log(speed);
     }
-    /*this.moveX = function(){
-        setPosX();
-    }*/
+    
     //POSY
-    var posY = posY;
+    var posY = Math.random()*windowHeight;
     this.getPosY = function(){
         return posY;
     }
     this.setPosY = function(){
         posY += speedY;
         // Limits posY
-        if(posY > (windowHeight - playerHeight)){posY = (windowHeight - playerHeight);}
-        if(posY < 0){posY = 0;}
+        if(posY>windowHeight){posY=windowHeight;}
+        if(posY<0){posY=0;}
         //console.log(speed);
     }
-    /*
-    this.moveY = function(){
-        setPosY();
-    }*/
-}
+   
+    // DIMENSIONS
+    this.height = windowHeight/1.5;
+    this.width = windowHeight/3;
 
-// NAVES ENEMIGAS 
+    this.autoSize = function(){
+        this.height = windowHeight/8;
+        this.width = this.height;
+    }
+
+    this.move = function(){
+        this.setPosX();
+        ctx.drawImage(enemy3Img,this.getPosX(),this.getPosY(),this.height,this.width);
+    }
+}

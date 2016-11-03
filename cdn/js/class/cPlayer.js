@@ -44,7 +44,15 @@ Player = function(){
         // El if no es necesario porque ya se controla
         // en el archivo funciones, pero por si acaso
         // lo ponemos.
-        if(ammo > 0){ammo -= count;}
+        if(ammo > 0){
+            if(ammoSelected == 1){
+                ammo -= count;
+            }else{
+                if(ammo > 1){
+                    ammo -= count;
+                }
+            }
+        }
     }
     // Creamos función para recargar
     this.recAmmo = function(count){
@@ -54,11 +62,19 @@ Player = function(){
             ammo = ammoMax;
         }
     }
-    this.isAmmoEmpty = function(){
-        if(this.getAmmo() > 0){
-            return false;
+    this.isAmmoEmpty = function(type){
+        if(type == 1){
+            if(this.getAmmo() > 0){
+                return false;
+            }else{
+                return true;
+            }
         }else{
-            return true;
+            if(this.getAmmo() > 1){
+                return false;
+            }else{
+                return true;
+            }
         }
     }
 }
