@@ -255,7 +255,7 @@ function enemy3Movement(){
 
 function enemy3Kill(){
     for(var i in enemy3){
-        if(enemy3[i].getPosX() <= -enemy3[i].width){
+        if(enemy3[i].getPosX() <= -enemy3[i].width*2){
             enemy3.splice(i, 1)
         }
     }
@@ -338,7 +338,7 @@ function Colisions(){
     // Collision Enemy3 w/Player shots
     for(var e in enemy3){
         for(var s in shot){
-            if(Math.abs((enemy3[e].getPosY()+enemy3[e].height/2)-(shot[s].posY+shot[s].height/2)) < shot[s].height/2+enemy3[e].height/2 && Math.abs((enemy3[e].getPosX()+enemy3[e].width/2)-(shot[s].posX+shot[s].width/2)) < shot[s].width/2+enemy3[e].width/2){  
+            if(Math.abs((enemy3[e].getPosY()+enemy3[e].height/4-40)-(shot[s].posY+shot[s].height/2)) < shot[s].height/2+enemy3[e].height/4-40 && Math.abs((enemy3[e].getPosX()+enemy3[e].width)-(shot[s].posX+shot[s].width/2)) < shot[s].width/2+enemy3[e].width){  
                 if(ammoSelected == 1){
                     shot.splice(s, 1);
                     if(tutorialShotOK){
@@ -423,11 +423,11 @@ function Colisions(){
     // Collision Player w/ Enemy3 ship
     for(var e in enemy3){
         //console.log("PosNave: "+enemy3[e].getPosX()+"/"+enemy3[e].getPosY());
-        if(Math.abs((player.getPosY()+playerHeight/2)-(enemy3[e].getPosY()+enemy3[e].height/2)) < playerHeight/2+enemy3[e].height/2 ){  
-            if(Math.abs((player.getPosX()+playerWidth/2)-(enemy3[e].getPosX()+enemy3[e].width/2)) < playerWidth/2+enemy3[e].width/2){
+        if(Math.abs((player.getPosY()+playerHeight/2)-(enemy3[e].getPosY()+enemy3[e].height/4-20)) < playerHeight/2+enemy3[e].height/4-20){  
+            if(Math.abs((player.getPosX()+playerWidth/2)-(enemy3[e].getPosX()+enemy3[e].width)) < playerWidth/2+enemy3[e].width){
                 //console.log("posExplosion: "+enemy3[e].getPosX()+"/"+enemy3[e].getPosY());
                 $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+enemy3[e].getPosY()+"px;left:"+(enemy3[e].getPosX()+enemy3[e].width/2)+"px;display: block;'></img>");
-                $("#explotion"+(ExplosionCount)).fadeOut(300);           
+                $("#explotion"+(ExplosionCount)).fadeOut(300);
                 ExplosionCount++;
                 if(ExplosionCount >= 3){
                     document.getElementById("explotion"+(ExplosionCount-3)).remove();
