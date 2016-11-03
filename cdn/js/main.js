@@ -18,6 +18,7 @@ function loop(){
             drawPlayerShot();       // Dibuja las balas
             asteroidFunc();         // Crea asteroides, los mueve y los destruye
             Colisions();
+            recManager();
             contadortiempo++;
             clearTimeout(loop_string);
             loop_string = setTimeout("loop()", 30);
