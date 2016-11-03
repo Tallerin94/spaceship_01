@@ -1,13 +1,11 @@
-cHUD = function(posX, posY, type, width, height){
+cHUD = function(posX, posY){
     this.posX = posX;
     this.posY = posY;
-    this.width = width;
-    this.height = height;
-    this.type = type;
 
-    this.createHUD = function(){
-        ctx.drawImage(this.type, this.posX, this.posY, this.width, this.height);
+    this.createHUD = function(life, name){
+        $("#"+name).css("display", "block");
+        $("#"+name).html("Heal points: "+life);
     }
 }
 
-var bottomHUD = new cHUD(windowWidth/2 - hudBottomWidth/2, windowHeight - hudBottomHeight, hudBottom, hudBottomWidth, hudBottomHeight);
+var lifeHUD = new cHUD((windowWidth - (windowWidth - 50)), (windowHeight - 50));

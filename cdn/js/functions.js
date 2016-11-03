@@ -46,6 +46,7 @@ function newResize(){
         $("#startBest").css("line-height", ((windowHeight/30)+25)+"px");
         $("#tutorial1").css("font-size", windowHeight/30+"px");
         $("#tutorial2").css("font-size", windowHeight/30+"px");
+        $("#hud1").css("font-size", windowHeight/30+"px");
         $("#noBalas").css("font-size", windowHeight/30+"px");
     });
 }
@@ -449,6 +450,32 @@ function Colisions(){
                     console.log("as xocao");
                     asteroid.splice(a, 1);
                     enemy1.splice(e, 1);
+                    break;
+                }
+            }
+        }
+    }
+
+    // Collision Asteroid w/ enemy1 Ships
+    for(var a in asteroid){
+        for(var e in enemy2){
+            if(Math.abs((asteroid[a].posY+asteroid[a].height/2)-(enemy2[e].getPosY()+enemy2[e].height/2)) < enemy2[e].height/2+asteroid[a].height/2 ){  
+                if(Math.abs((asteroid[a].posX+asteroid[a].width/2)-(enemy2[e].getPosX()+enemy2[e].width/2)) < enemy2[e].width/2+asteroid[a].width/2){
+                    $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+(enemy2[e].getPosY()-(enemy2[e].height/2))+"px;left:"+(enemy2[e].getPosX()-(enemy2[e].width/2))+"px;display: block;'></img>");
+                    $("#explotion"+(ExplosionCount)).fadeOut(300);
+                    ExplosionCount++;
+                    if(ExplosionCount >= 3){
+                        document.getElementById("explotion"+(ExplosionCount-3)).remove();
+                    }
+                    $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+(asteroid[a].posY-(asteroid[a].height/2))+"px;left:"+(asteroid[a].posX-(asteroid[a].width/2))+"px;display: block;'></img>");
+                    $("#explotion"+(ExplosionCount)).fadeOut(300);
+                    ExplosionCount++;
+                    if(ExplosionCount >= 3){
+                        document.getElementById("explotion"+(ExplosionCount-3)).remove();
+                    }
+                    console.log("as xocao");
+                    asteroid.splice(a, 1);
+                    enemy2.splice(e, 1);
                     break;
                 }
             }
