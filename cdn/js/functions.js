@@ -328,7 +328,7 @@ function Colisions(){
                 }
                 shot.splice(s, 1);
                 enemy2.splice(e, 1);
-                player.setScore(30);
+                player.setScore(20);
                 //console.log("le has dado");              
                 break;
             }
@@ -358,7 +358,7 @@ function Colisions(){
                     }
                     shot.splice(s, 1);
                     enemy3.splice(e, 1);
-                    player.setScore(100);
+                    player.setScore(50);
                     //console.log("le has dado");              
                     break;
                 }
@@ -414,7 +414,7 @@ function Colisions(){
                 }
                 //console.log("as xocao");
                 enemy2.splice(e, 1);
-                player.setScore(15);
+                player.setScore(10);
                 player.setLessHP(15);
             }
         }
@@ -433,7 +433,7 @@ function Colisions(){
                     document.getElementById("explotion"+(ExplosionCount-3)).remove();
                 }
                 //console.log("as xocao");
-                player.setScore(50);
+                player.setScore(25);
                 enemy3.splice(e, 1);
                 player.setLessHP(100);
             }
