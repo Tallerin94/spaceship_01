@@ -62,6 +62,8 @@ Player = function(){
             }
         }
     }
+    var ammoMax = 50;
+
     // Creamos función para recargar
     this.recAmmo = function(count){
         if((ammo + count) < ammoMax){

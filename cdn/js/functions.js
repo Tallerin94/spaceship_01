@@ -218,13 +218,13 @@ function newEnemy2(){
 function enemy2Movement(){
     for(var i in enemy2){
         if(enemy2[i].getPosY()-10 > player.getPosY()){
-            enemy2Direction = -4;
+            enemy2Dition = -4;
         }else if(enemy2[i].getPosY()+10 < player.getPosY()){
-            enemy2Direction = 4;
+            enemy2Dition = 4;
         }else{
-            enemy2Direction = 0;
+            enemy2Dition = 0;
         }
-        enemy2[i].move(enemy2Direction);
+        enemy2[i].move(enemy2Dition);
     }
 }
 
@@ -277,7 +277,7 @@ function Colisions(){
         for(var s in shot){          
             if(Math.abs((asteroid[a].posY+asteroid[a].height/2)-(shot[s].posY+shot[s].height/2)) < shot[s].height/2+asteroid[a].height/2 && Math.abs((asteroid[a].posX+asteroid[a].width/2)-(shot[s].posX+shot[s].width/2)) < shot[s].width/2+asteroid[a].width/2){  
                 if(Math.random()*2<1){
-                    console.log("Ha soltado recompensa");
+                    console.log("Ha soltado ompensa");
                 }
                 $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+(asteroid[a].posY-(asteroid[a].height/2))+"px;left:"+(asteroid[a].posX-(asteroid[a].width/2))+"px;display: block;'></img>");
                 $("#explotion"+(ExplosionCount)).fadeOut(300);
@@ -285,9 +285,11 @@ function Colisions(){
                 if(ExplosionCount >= 3){
                     document.getElementById("explotion"+(ExplosionCount-3)).remove();
                 }
+                newRec(asteroid[a].posX,asteroid[a].posY);
                 shot.splice(s, 1);
                 asteroid.splice(a, 1);
                 player.setScore(1);
+                
                 //console.log("le has dado");
                 break;
             }
@@ -299,7 +301,7 @@ function Colisions(){
         for(var s in shot){          
             if(Math.abs((enemy1[e].getPosY()+enemy1[e].height/2)-(shot[s].posY+shot[s].height/2)) < shot[s].height/2+enemy1[e].height/2 && Math.abs((enemy1[e].getPosX()+enemy1[e].width/2)-(shot[s].posX+shot[s].width/2)) < shot[s].width/2+enemy1[e].width/2){  
                 if(Math.random()*2<1){
-                    console.log("Ha soltado recompensa");
+                    console.log("Ha soltado ompensa");
                 }
                 $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+(enemy1[e].getPosY()-(enemy1[e].height/2))+"px;left:"+(enemy1[e].getPosX()-(enemy1[e].width/2))+"px;display: block;'></img>");
                 $("#explotion"+(ExplosionCount)).fadeOut(300);
@@ -307,6 +309,7 @@ function Colisions(){
                 if(ExplosionCount >= 3){
                     document.getElementById("explotion"+(ExplosionCount-3)).remove();
                 }
+                newRec(enemy1[e].getPosX(),enemy1[e].getPosY());
                 shot.splice(s, 1);
                 enemy1.splice(e, 1);
                 player.setScore(10);
@@ -321,7 +324,7 @@ function Colisions(){
         for(var s in shot){          
             if(Math.abs((enemy2[e].getPosY()+enemy2[e].height/2)-(shot[s].posY+shot[s].height/2)) < shot[s].height/2+enemy2[e].height/2 && Math.abs((enemy2[e].getPosX()+enemy2[e].width/2)-(shot[s].posX+shot[s].width/2)) < shot[s].width/2+enemy2[e].width/2){  
                 if(Math.random()*2<1){
-                    console.log("Ha soltado recompensa");
+                    console.log("Ha soltado ompensa");
                 }
                 $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+(enemy2[e].getPosY()-(enemy2[e].height/2))+"px;left:"+(enemy2[e].getPosX()-(enemy2[e].width/2))+"px;display: block;'></img>");
                 $("#explotion"+(ExplosionCount)).fadeOut(300);
@@ -329,6 +332,7 @@ function Colisions(){
                 if(ExplosionCount >= 3){
                     document.getElementById("explotion"+(ExplosionCount-3)).remove();
                 }
+                newRec(enemy2[e].getPosX(),enemy2[e].getPosY());
                 shot.splice(s, 1);
                 enemy2.splice(e, 1);
                 player.setScore(20);
@@ -351,7 +355,7 @@ function Colisions(){
                     }
                 }else{
                     if(Math.random()*2<1){
-                        console.log("Ha soltado recompensa");
+                        console.log("Ha soltado ompensa");
                     }
                     $("#explotions").append("<img src='cdn/img/explosion/1.gif' id='explotion"+ExplosionCount+"' style='top:"+enemy3[e].getPosY()+"px;left:"+(enemy3[e].getPosX()+(enemy3[e].width/2))+"px;display: block;'></img>");
                     $("#explotion"+(ExplosionCount)).fadeOut(300);
@@ -359,6 +363,7 @@ function Colisions(){
                     if(ExplosionCount >= 3){
                         document.getElementById("explotion"+(ExplosionCount-3)).remove();
                     }
+                    newRec(enemy3[e].getPosX(),enemy3[e].getPosY());
                     shot.splice(s, 1);
                     enemy3.splice(e, 1);
                     player.setScore(50);
@@ -519,6 +524,20 @@ function Colisions(){
             }
         }
     } 
+    for(var r in rec){
+        if(Math.abs((player.getPosY()+playerHeight/2)-(rec[r].posY+recHeight/2)) < recHeight/2+playerHeight/2){  
+            if(Math.abs((player.getPosX()+playerWidth/2)-(rec[r].posX+recWidth/2)) < recWidth/2+playerWidth/2){
+                if(rec[r].type == 1){
+                    player.recAmmo(20);
+                    console.log(player.ammoMax);
+                }else{
+                    player.setLessHP(-10);
+                }
+                console.log(rec[r].type);
+                rec.splice(r ,1);
+            }
+        }        
+    }
 }
 
 // BACKGROUND
@@ -644,5 +663,23 @@ function searchCookie(key){
         if(key == exploit[i].split("=")[0]){
             return exploit[i].split("=")[1];
         }
+    }
+}
+// RECOGIBLES
+function recManager(){
+    drawRec();
+    console.log(rec);
+}
+function drawRec(){
+    for(var r in rec){
+        ctx.drawImage(recImg[rec[r].type],rec[r].posX,rec[r].posY,recWidth,recWidth)
+        rec[r].posX += rec[r].speed; 
+    }
+
+}
+function newRec(posX,posY){
+    if(Math.random()*100<25){
+        rec[recNum] = new Rec(posX,posY,Math.ceil(Math.random()*2))
+        recNum++;
     }
 }

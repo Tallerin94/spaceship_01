@@ -53,8 +53,15 @@ asteroidImg[2] = new Image();
 asteroidImg[2].src = "cdn/img/asteroid/2.png";
 
 //Rec
+var recNum = 0;
 var rec = new Array();
-
+var recImg = new Array();
+recImg[1] = new Image();
+recImg[1].src = "cdn/img/rec/1.png"
+recImg[2] = new Image();
+recImg[2].src = "cdn/img/rec/2.png"
+var recWidth = windowWidth/40;
+var recHeight = recWidth;
 // Enemy1
 var enemy1 = new Array();
 var enemy1Count = 0;
